@@ -15,14 +15,21 @@ import UIKit
 protocol MainDisplayLogic: class
 {
   func displayFetchList(viewModel: Main.Something.ViewModel)
+  func displayLoader()
+  func hideLoader()
 }
 
 class MainViewController: UIViewController, MainDisplayLogic
 {
+
   var interactor: MainBusinessLogic?
   var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
   var movieList: [Main.Something.ViewModel.Movie] = []
-
+  lazy var loadingView: UIViewController = {
+    let loadingView = self.loading
+    return loadingView
+  }()
+  
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -95,9 +102,16 @@ class MainViewController: UIViewController, MainDisplayLogic
     movieList = viewModel.movieList
     self.tableView.reloadData()
   }
-    
-}
 
+  func displayLoader() {
+    add(loadingView)
+  }
+
+  func hideLoader() {
+    loadingView.remove()
+  }
+
+}
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
   

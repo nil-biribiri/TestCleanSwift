@@ -29,11 +29,11 @@ class MainInteractor: MainBusinessLogic, MainDataStore
   
   var presenter: MainPresentationLogic?
   var worker = MainWorker()
-  //var name: String = ""
   
   // MARK: Do something
   
   func fetchMovie() {
+    presenter?.showLoading()
     worker.doSomeWork { (result) in
       self.movieList = result
       let response = Main.Something.Response(movieList: result)

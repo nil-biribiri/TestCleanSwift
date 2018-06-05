@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20AD77B020C6DC780028A2E5 /* UIViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */; };
 		2C6479A771C981D569F984BB /* Pods_TestCleanSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38DDDD0F293B96AC82D8989 /* Pods_TestCleanSwiftTests.framework */; };
 		8524997978C48F7E283F24E1 /* Pods_TestCleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4341517F93A30BFF0199B6C /* Pods_TestCleanSwift.framework */; };
 		85DD1D803C2EDAA9062CE581 /* Pods_TestCleanSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD0E102922697BDC6FAC29E /* Pods_TestCleanSwiftUITests.framework */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		193611CABD6309A818572D19 /* Pods-TestCleanSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift.release.xcconfig"; sourceTree = "<group>"; };
+		20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewcontroller.swift; sourceTree = "<group>"; };
 		50CA5BD23A48BF02C620068A /* Pods-TestCleanSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		68ABED78F9693490C02D7BB0 /* Pods-TestCleanSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		A16EA07220BFF6D5007B7201 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B15B6920BFA9D8005510DB /* ImageExtension.swift */,
+				20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -315,8 +318,6 @@
 				A17894F820B80615008C40A3 /* Sources */,
 				A17894F920B80615008C40A3 /* Frameworks */,
 				A17894FA20B80615008C40A3 /* Resources */,
-				E19D22F28661E2B916E9CC22 /* [CP] Embed Pods Frameworks */,
-				54330EEF3FEA527D199ECBE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -335,8 +336,6 @@
 				A178950C20B80616008C40A3 /* Sources */,
 				A178950D20B80616008C40A3 /* Frameworks */,
 				A178950E20B80616008C40A3 /* Resources */,
-				D8DF7818F4A3C02934499696 /* [CP] Embed Pods Frameworks */,
-				F1571D371CB90A3855BFA23E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,8 +355,6 @@
 				A178951720B80616008C40A3 /* Sources */,
 				A178951820B80616008C40A3 /* Frameworks */,
 				A178951920B80616008C40A3 /* Resources */,
-				66B5D4EB9D1E7BA26E27FA4C /* [CP] Embed Pods Frameworks */,
-				5A86ED4D4F4DE83468C4548E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -461,51 +458,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54330EEF3FEA527D199ECBE0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A86ED4D4F4DE83468C4548E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftUITests/Pods-TestCleanSwiftUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66B5D4EB9D1E7BA26E27FA4C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftUITests/Pods-TestCleanSwiftUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6FDA32197ABCD0DCA7A2DD71 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,51 +494,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8DF7818F4A3C02934499696 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E19D22F28661E2B916E9CC22 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1571D371CB90A3855BFA23E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -595,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A178953920B8072D008C40A3 /* MainViewController.swift in Sources */,
+				20AD77B020C6DC780028A2E5 /* UIViewcontroller.swift in Sources */,
 				A178954420BBEEAB008C40A3 /* InfoPresenter.swift in Sources */,
 				A178953720B8072D008C40A3 /* MainRouter.swift in Sources */,
 				A16EA07420BFF6D5007B7201 /* MainTableViewCell.swift in Sources */,

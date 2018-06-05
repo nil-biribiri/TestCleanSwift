@@ -75,11 +75,14 @@ class InfoViewController: UIViewController, InfoDisplayLogic
       blurImageView.addBlurEffect(withStyle: .dark)
     }
   }
-  @IBOutlet weak var movieDetailLabel: UILabel!
+  @IBOutlet weak var movieDetailLabel: UILabel! {
+    didSet{
+      movieDetailLabel.textColor = .white
+      movieDetailLabel.text = ""
+    }
+  }
   
   private func setUI() {
-    movieDetailLabel.textColor = .white
-    movieDetailLabel.text = ""
     view.backgroundColor = .black
   }
   

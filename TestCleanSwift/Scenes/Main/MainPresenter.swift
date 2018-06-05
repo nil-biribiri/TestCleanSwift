@@ -15,10 +15,13 @@ import UIKit
 protocol MainPresentationLogic
 {
   func presentSomething(response: Main.Something.Response)
+  func showLoading()
+  func hideLoading()
 }
 
 class MainPresenter: MainPresentationLogic
 {
+
   weak var viewController: MainDisplayLogic?
   
   // MARK: Do something
@@ -34,6 +37,15 @@ class MainPresenter: MainPresentationLogic
                                                  moviePosterPath: posterPath)
       viewModel.movieList.append(movie)
     }
+    hideLoading()
     viewController?.displayFetchList(viewModel: viewModel)
+  }
+
+  func showLoading() {
+    viewController?.displayLoader()
+  }
+
+  func hideLoading() {
+    viewController?.hideLoader()
   }
 }
