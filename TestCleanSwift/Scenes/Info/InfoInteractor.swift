@@ -15,7 +15,7 @@ import UIKit
 protocol InfoBusinessLogic
 {
   func doSomething(request: Info.Something.Request)
-  func showInfo()
+  func showMovieDetail()
 }
 
 protocol InfoDataStore
@@ -42,7 +42,7 @@ class InfoInteractor: InfoBusinessLogic, InfoDataStore
 //    presenter?.presentSomething(response: response)
   }
   
-  func showInfo() {
+  func showMovieDetail() {
     presenter?.presentMovie(response: Info.Something.Response(movie: movie))
   }
 }

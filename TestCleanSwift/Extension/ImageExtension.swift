@@ -45,3 +45,16 @@ extension UIImage {
     self.init(cgImage: cgImage)
   }
 }
+
+extension UIImageView
+{
+  func addBlurEffect(withStyle style: UIBlurEffectStyle = .dark)
+  {
+    let blurEffect = UIBlurEffect(style: style)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.frame = self.bounds
+    
+    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+    self.addSubview(blurEffectView)
+  }
+}

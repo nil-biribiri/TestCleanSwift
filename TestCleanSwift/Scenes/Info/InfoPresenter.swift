@@ -34,8 +34,14 @@ class InfoPresenter: InfoPresentationLogic
   }
   
   func presentMovie(response: Info.Something.Response) {
-    let viewModel = Info.Something.ViewModel(movieName: response.movie.title)
-    viewController?.displayMovieName(viewModel: viewModel)
+    let posterPath = "https://image.tmdb.org/t/p/original\(response.movie.posterPath)"
+    let rating     = "Rating: \(response.movie.voteAverage)/10"
+    let movie = Info.Something.ViewModel.Movie(movieTitle: response.movie.title,
+                                               movieRating: rating,
+                                               moviePosterPath: posterPath,
+                                               movieOverview: response.movie.overview)
+    let viewModel = Info.Something.ViewModel(movie: movie)
+    viewController?.displayMovieDetail(viewModel: viewModel)
   }
   
 }

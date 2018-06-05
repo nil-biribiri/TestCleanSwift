@@ -17,14 +17,23 @@ extension NSError {
   }
 }
 
+typealias DownloadImageCompletion =  (_ image: UIImage?, _ error: Error? ) -> Void
+typealias SetImageCompletion = (() -> Void)?
+
 class NilImageCaching {
   
   //MARK: - Public
-  static func downloadImage(url: URL, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
+  static func downloadImage(url: URL, completion: @escaping DownloadImageCompletion ) {
     if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
       return completion(cachedImage, nil)
     } else {
+      DispatchQueue.main.async {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+      }
       NilImageCaching.downloadData(url: url) { data, response, error in
+        DispatchQueue.main.async {
+          UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
         if let error = error {
           return completion(nil, error)
         } else if let data = data,
@@ -53,19 +62,24 @@ class NilImageCaching {
 }
 
 extension UIImageView {
-  func imageCaching(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+  func imageCaching(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit,
+                    completion: SetImageCompletion = nil) {
     contentMode = mode
     NilImageCaching.downloadImage(url: url) { (image, error) in
       if (error != nil) { return }
       DispatchQueue.main.async() {
         self.image = image
+        if let completion = completion {
+          completion()
+        }
       }
     }
   }
   
-  func imageCaching(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+  func imageCaching(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit,
+                    completion: SetImageCompletion = nil) {
     guard let url = URL(string: link) else { return }
-    imageCaching(url: url, contentMode: mode)
+    imageCaching(url: url, completion: completion)
   }
 }
 

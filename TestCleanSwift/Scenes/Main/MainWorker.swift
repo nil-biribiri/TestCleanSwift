@@ -25,7 +25,9 @@ class MainWorker {
                           resultType: MovieList.self) { (result) in
                             switch result {
                             case .success(let val):
-                              completion(val)
+                              DispatchQueue.main.async {
+                                completion(val)
+                              }
                             case .failure(_):
                               break
                             }

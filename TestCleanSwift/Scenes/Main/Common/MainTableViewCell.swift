@@ -25,6 +25,11 @@ class MainTableViewCell: UITableViewCell {
   private func setUI() {
     movieNameLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
     movieRateLabel.font = UIFont.systemFont(ofSize: 14.0)
+    
+    selectionStyle = .none
+    backgroundColor = .black
+    movieNameLabel.textColor = .white
+    movieRateLabel.textColor = .white
   }
   
   func configureData(data: Main.Something.ViewModel.Movie) {
@@ -34,5 +39,9 @@ class MainTableViewCell: UITableViewCell {
 //    moviePosterImageView.downloadedFrom(link: data.posterPath, contentMode: .scaleAspectFill)
   }
   
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    moviePosterImageView.image = nil
+  }
  
 }

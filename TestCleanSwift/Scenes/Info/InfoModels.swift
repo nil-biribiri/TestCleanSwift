@@ -27,7 +27,13 @@ enum Info
     }
     struct ViewModel
     {
-      let movieName: String
+      struct Movie {
+        let movieTitle: String
+        let movieRating: String
+        let moviePosterPath: String
+        let movieOverview: String
+      }
+      let movie: Movie
     }
   }
 }

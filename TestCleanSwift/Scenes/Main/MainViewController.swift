@@ -64,6 +64,7 @@ class MainViewController: UIViewController, MainDisplayLogic
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.title = "Movies"
+    self.view.backgroundColor = .black
   }
   
   // MARK: Do something
@@ -79,6 +80,8 @@ class MainViewController: UIViewController, MainDisplayLogic
       )
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.estimatedRowHeight = 150
+      tableView.backgroundColor = .black
+      tableView.separatorStyle = .none
     }
   }
 

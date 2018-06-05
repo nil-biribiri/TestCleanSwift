@@ -15,7 +15,7 @@ import UIKit
 protocol InfoDisplayLogic: class
 {
   func displaySomething(viewModel: Info.Something.ViewModel)
-  func displayMovieName(viewModel: Info.Something.ViewModel)
+  func displayMovieDetail(viewModel: Info.Something.ViewModel)
 }
 
 class InfoViewController: UIViewController, InfoDisplayLogic
@@ -56,15 +56,32 @@ class InfoViewController: UIViewController, InfoDisplayLogic
     
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
-    interactor?.showInfo()
+    interactor?.showMovieDetail()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setUI()
+  }
+    
   // MARK: Do something
   
-  @IBOutlet weak var movieNameLabel: UILabel!    
+//  @IBOutlet weak var movieNameLabel: UILabel!
+  @IBOutlet weak var movieImageView: UIImageView!
+  @IBOutlet weak var blurImageView: UIImageView! {
+    didSet{
+      blurImageView.addBlurEffect(withStyle: .dark)
+    }
+  }
+  @IBOutlet weak var movieDetailLabel: UILabel!
+  
+  private func setUI() {
+    movieDetailLabel.textColor = .white
+    movieDetailLabel.text = ""
+    view.backgroundColor = .black
+  }
   
   func doSomething()
   {
@@ -77,8 +94,11 @@ class InfoViewController: UIViewController, InfoDisplayLogic
     //nameTextField.text = viewModel.name
   }
   
-  func displayMovieName(viewModel: Info.Something.ViewModel) {
-    movieNameLabel.text = viewModel.movieName
-
+  func displayMovieDetail(viewModel: Info.Something.ViewModel) {
+    title = viewModel.movie.movieTitle
+    movieImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill) {
+      self.movieDetailLabel.text = viewModel.movie.movieOverview
+    }
+    blurImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill)
   }
 }

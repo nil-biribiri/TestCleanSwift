@@ -22,7 +22,7 @@ struct Movie: Codable {
   let title: String
   let voteAverage: Double
   let posterPath: String
-  
+  let overview: String
 //  enum DataCodingKeys: String, CodingKey {
 //    case results
 //  }
