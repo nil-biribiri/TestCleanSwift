@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-fileprivate let imageCache = NSCache<NSString, UIImage>()
+//private let imageCache = NSCache<NSString, UIImage>()
+private let imageCache:NSCache<NSString, UIImage> = {
+  let imageCache = NSCache<NSString, UIImage>()
+//  imageCache.totalCostLimit = 10*1024*1024 // Max 10MB used.
+  return imageCache
+}()
 
 extension NSError {
   static func generalParsingError(domain: String) -> Error {
@@ -21,7 +26,7 @@ typealias DownloadImageCompletion =  (_ image: UIImage?, _ error: Error? ) -> Vo
 typealias SetImageCompletion = (() -> Void)?
 
 class NilImageCaching {
-  
+
   //MARK: - Public
   static func downloadImage(url: URL, completion: @escaping DownloadImageCompletion ) {
     if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
@@ -65,10 +70,10 @@ extension UIImageView {
   func imageCaching(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit,
                     completion: SetImageCompletion = nil) {
     contentMode = mode
-    NilImageCaching.downloadImage(url: url) { (image, error) in
+    NilImageCaching.downloadImage(url: url) { [weak self] (image, error) in
       if (error != nil) { return }
       DispatchQueue.main.async() {
-        self.image = image
+        self?.image = image
         if let completion = completion {
           completion()
         }

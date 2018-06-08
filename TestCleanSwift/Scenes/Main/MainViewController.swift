@@ -12,23 +12,17 @@
 
 import UIKit
 
-protocol MainDisplayLogic: class
-{
+protocol MainDisplayLogic: BaseDisplayLogic {
   func displayFetchList(viewModel: Main.Something.ViewModel)
-  func displayLoader()
-  func hideLoader()
 }
 
-class MainViewController: UIViewController, MainDisplayLogic
+class MainViewController: BaseViewController, MainDisplayLogic
 {
 
   var interactor: MainBusinessLogic?
   var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
   var movieList: [Main.Something.ViewModel.Movie] = []
-  lazy var loadingView: UIViewController = {
-    let loadingView = self.loading
-    return loadingView
-  }()
+ 
   
   // MARK: Object lifecycle
   
@@ -101,14 +95,6 @@ class MainViewController: UIViewController, MainDisplayLogic
   {
     movieList = viewModel.movieList
     self.tableView.reloadData()
-  }
-
-  func displayLoader() {
-    add(loadingView)
-  }
-
-  func hideLoader() {
-    loadingView.remove()
   }
 
 }

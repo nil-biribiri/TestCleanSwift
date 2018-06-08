@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
+class LoadingViewController: UIViewController {}
+
 extension UIViewController {
   var loading: UIViewController {
     let viewController = UIViewController()
-
+    
     let indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
     indicator.translatesAutoresizingMaskIntoConstraints = false
     indicator.startAnimating()
@@ -35,6 +37,8 @@ extension UIViewController {
 extension UIViewController {
   func add(_ child: UIViewController) {
     addChildViewController(child)
+    self.view.layoutIfNeeded()
+    child.view.frame = view.bounds
     view.addSubview(child.view)
     child.didMove(toParentViewController: self)
   }

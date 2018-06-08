@@ -12,22 +12,22 @@
 
 import UIKit
 
-protocol MainPresentationLogic
-{
+protocol MainPresentationLogic: BasePresenterLogic {
   func presentSomething(response: Main.Something.Response)
-  func showLoading()
-  func hideLoading()
 }
 
-class MainPresenter: MainPresentationLogic
-{
-
-  weak var viewController: MainDisplayLogic?
+class MainPresenter: BasePresenter, MainPresentationLogic {
+  
+  weak var viewController: MainDisplayLogic? {
+    didSet{
+      baseViewController = viewController
+    }
+  }
   
   // MARK: Do something
   
-  func presentSomething(response: Main.Something.Response)
-  {
+  func presentSomething(response: Main.Something.Response) {
+    
     var viewModel: Main.Something.ViewModel = Main.Something.ViewModel(movieList: [])
     response.movieList.movies.forEach{
       let posterPath = "https://image.tmdb.org/t/p/w200\($0.posterPath)"
@@ -39,13 +39,5 @@ class MainPresenter: MainPresentationLogic
     }
     hideLoading()
     viewController?.displayFetchList(viewModel: viewModel)
-  }
-
-  func showLoading() {
-    viewController?.displayLoader()
-  }
-
-  func hideLoading() {
-    viewController?.hideLoader()
   }
 }
