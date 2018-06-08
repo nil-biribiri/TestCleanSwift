@@ -197,14 +197,13 @@ extension NetworkClient {
   }
   
   private static func getErrorFromPayload(json: [String:AnyObject]??) -> [String?]? {
-//    guard let serializeJSON = json, let convertedJSON = serializeJSON else {
-//      return nil
-//    }
-//    if let errorBody = convertedJSON["errors"],
-//      let errorArr = errorBody as? [[String:Any]],
-//      let error = errorArr.first {
-//      return [error["message"] as? String]
-//    }
+    guard let serializeJSON = json, let convertedJSON = serializeJSON else {
+      return nil
+    }
+    if let statusCode = convertedJSON["status_code"],
+      let statusMessage = convertedJSON["status_message"] {
+      return [statusCode as? String, statusMessage as? String]
+    }
 //    if let errorBody = convertedJSON["status"], let error = errorBody as? [String:Any] {
 //      return [error["message"] as? String]
 //    }

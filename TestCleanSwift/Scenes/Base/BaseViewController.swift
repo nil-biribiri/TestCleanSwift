@@ -14,23 +14,19 @@ protocol BaseDisplayLogic: class {
   func hideLoader()
 }
 
-//extension BaseDisplayLogic where Self: UIViewController {
-//  func displayLoader() {
-//    add(loading)
-//  }
-//
-//  func hideLoader() {
-//    childViewControllers.filter{ $0 is LoadingViewController }.forEach{ $0.remove() }
-//  }
-//}
-
 class BaseViewController: UIViewController, BaseDisplayLogic {
   
   private lazy var loadingView: UIViewController = {
     let loadingView = self.loading
     return loadingView
   }()
-  
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.view.backgroundColor = .black
+    
+  }
+
   func displayLoader() {
     add(loadingView)
   }
@@ -38,4 +34,5 @@ class BaseViewController: UIViewController, BaseDisplayLogic {
   func hideLoader() {
     loadingView.remove()
   }
+
 }

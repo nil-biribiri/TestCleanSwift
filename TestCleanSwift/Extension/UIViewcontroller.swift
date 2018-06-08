@@ -32,9 +32,6 @@ extension UIViewController {
     return viewController
   }
 
-}
-
-extension UIViewController {
   func add(_ child: UIViewController) {
     addChildViewController(child)
     self.view.layoutIfNeeded()
@@ -52,4 +49,27 @@ extension UIViewController {
     removeFromParentViewController()
     view.removeFromSuperview()
   }
+
+  func showInfoAlert(title: String? = "", message: String? = "", buttonTitle: String? = "OK", handler: ((UIAlertAction) -> Void)? = nil){
+    DispatchQueue.main.async {
+      let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+      if (buttonTitle != nil) {alert.addAction(UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default, handler: {
+        handler
+      }()))
+      }
+      self.present(alert, animated: true, completion: nil)
+    }
+  }
+
+  func showConfirmAlert(title: String? = "", message: String? = "", buttonTitle1: String? = "OK", buttonTitle2: String? = "Cancel", handler1: ((UIAlertAction) -> Void)? = nil, handler2: ((UIAlertAction) -> Void)? = nil){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: buttonTitle1, style: UIAlertActionStyle.default, handler: {
+      handler1
+    }()))
+    alert.addAction(UIAlertAction(title: buttonTitle2, style: UIAlertActionStyle.default, handler: {
+      handler2
+    }()))
+    self.present(alert, animated: true, completion: nil)
+  }
+  
 }

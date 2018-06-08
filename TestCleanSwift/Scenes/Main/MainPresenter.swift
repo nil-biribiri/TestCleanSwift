@@ -14,10 +14,12 @@ import UIKit
 
 protocol MainPresentationLogic: BasePresenterLogic {
   func presentSomething(response: Main.Something.Response)
+  func presentErrorMessage(error: Main.Something.Error)
+
 }
 
 class MainPresenter: BasePresenter, MainPresentationLogic {
-  
+
   weak var viewController: MainDisplayLogic? {
     didSet{
       baseViewController = viewController
@@ -39,5 +41,10 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
     }
     hideLoading()
     viewController?.displayFetchList(viewModel: viewModel)
+  }
+
+  func presentErrorMessage(error: Main.Something.Error) {
+    hideLoading()
+    viewController?.displayError(title: "Error", message: error.error.localizedDescription)
   }
 }

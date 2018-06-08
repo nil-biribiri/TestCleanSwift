@@ -12,22 +12,20 @@
 
 import UIKit
 
-enum Main
-{
+enum Main {
   // MARK: Use cases
   
-  enum Something
-  {
-    struct Request
-    {
+  enum Something {
+    struct Request {
       
     }
-    struct Response
-    {
+    struct Response {
       var movieList: MovieList
     }
-    struct ViewModel
-    {
+    struct Error {
+      var error: NetworkErrorResponse
+    }
+    struct ViewModel {
       struct Movie {
         let movieTitle: String
         let movieRating: String

@@ -82,7 +82,8 @@ extension NetworkErrorResponse: LocalizedError {
 
 public extension Error {
   var errorObject: NetworkErrorResponse {
-    let _self = Result<NetworkServiceError>.failure(self)
-    return NetworkBaseService.transformServiceResponse(_self).error as? NetworkErrorResponse ?? NetworkErrorResponse()
+    return self as? NetworkErrorResponse ?? NetworkErrorResponse()
+//    let _self = Result<NetworkServiceError>.failure(self)
+//    return NetworkBaseService.transformServiceResponse(_self).error as? NetworkErrorResponse ?? NetworkErrorResponse()
   }
 }

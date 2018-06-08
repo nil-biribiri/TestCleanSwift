@@ -14,6 +14,7 @@ import UIKit
 
 protocol MainDisplayLogic: BaseDisplayLogic {
   func displayFetchList(viewModel: Main.Something.ViewModel)
+  func displayError(title: String, message: String)
 }
 
 class MainViewController: BaseViewController, MainDisplayLogic
@@ -65,7 +66,6 @@ class MainViewController: BaseViewController, MainDisplayLogic
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.title = "Movies"
-    self.view.backgroundColor = .black
   }
   
   // MARK: Do something
@@ -83,18 +83,38 @@ class MainViewController: BaseViewController, MainDisplayLogic
       tableView.estimatedRowHeight = 150
       tableView.backgroundColor = .black
       tableView.separatorStyle = .none
+      tableView.refreshControl = refreshControl
     }
   }
 
-  private func showMovieList()
-  {
-    interactor?.fetchMovie()
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action:
+      #selector(self.refreshMovieList),
+                             for: .valueChanged)
+    refreshControl.tintColor = .white
+
+    return refreshControl
+  }()
+
+  private func showMovieList() {
+    interactor?.fetchMovie(withLoadingIndicator: true)
   }
-  
-  func displayFetchList(viewModel: Main.Something.ViewModel)
-  {
+
+  @objc private func refreshMovieList() {
+    interactor?.fetchMovie(withLoadingIndicator: false)
+  }
+
+  func displayFetchList(viewModel: Main.Something.ViewModel) {
     movieList = viewModel.movieList
+    self.refreshControl.endRefreshing()
     self.tableView.reloadData()
+  }
+
+  func displayError(title: String, message: String) {
+    showInfoAlert(title: title, message: message, buttonTitle: "OK") { _ in
+      self.refreshControl.endRefreshing()
+    }
   }
 
 }

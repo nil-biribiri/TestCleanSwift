@@ -14,17 +14,6 @@ protocol BasePresenterLogic {
   func hideLoading()
 }
 
-//extension BasePresenterLogic where Self: BaseDisplayLogic {
-//  func showLoading() {
-////    self.displayLoader()
-//  }
-//
-//  func hideLoading() {
-////    self.hideLoader()
-//  }
-//
-//}
-
 class BasePresenter {
   
   weak var baseViewController: BaseDisplayLogic?

@@ -14,7 +14,7 @@ import UIKit
 
 protocol MainBusinessLogic
 {
-  func fetchMovie()
+  func fetchMovie(withLoadingIndicator: Bool)
 }
 
 protocol MainDataStore
@@ -32,12 +32,17 @@ class MainInteractor: MainBusinessLogic, MainDataStore
   
   // MARK: Do something
   
-  func fetchMovie() {
-    presenter?.showLoading()
+  func fetchMovie(withLoadingIndicator: Bool) {
+    withLoadingIndicator ? presenter?.showLoading() : nil
     worker.doSomeWork { (result) in
-      self.movieList = result
-      let response = Main.Something.Response(movieList: result)
-      self.presenter?.presentSomething(response: response)
+      switch result {
+      case .success(let value):
+        self.movieList = value
+        let response = Main.Something.Response(movieList: value)
+        self.presenter?.presentSomething(response: response)
+      case .failure(let error):
+        self.presenter?.presentErrorMessage(error: Main.Something.Error(error: error.errorObject))
+      }
     }
   }
 }
