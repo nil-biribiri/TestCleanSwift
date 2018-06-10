@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M1Q-yl-HKE">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M1Q-yl-HKE">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIQ-Kk-fve">
@@ -65,6 +65,7 @@
             <constraints>
                 <constraint firstItem="M1Q-yl-HKE" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="AvY-bi-Ygd"/>
                 <constraint firstItem="M1Q-yl-HKE" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="DYV-k6-Ifb"/>
+                <constraint firstItem="M1Q-yl-HKE" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="G5M-NA-0KZ"/>
                 <constraint firstItem="PIQ-Kk-fve" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="KTn-cr-5Vi"/>
                 <constraint firstItem="PIQ-Kk-fve" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Kw5-MR-HCy"/>
                 <constraint firstItem="M1Q-yl-HKE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aFS-pn-nxj"/>

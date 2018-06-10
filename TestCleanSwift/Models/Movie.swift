@@ -10,16 +10,18 @@ import Foundation
 
 
 struct MovieList: Codable {
-  let movies: [Movie]
-  
+  var movies: [Movie]
+  let page: Int
+
   enum CodingKeys: String, CodingKey {
     case movies = "results"
+    case page
   }
   
 }
 
 struct Movie: Codable {
-  let title: String
+  let name: String
   let voteAverage: Double
   let posterPath: String
   let overview: String

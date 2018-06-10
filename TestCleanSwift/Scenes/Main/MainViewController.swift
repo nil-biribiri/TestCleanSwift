@@ -97,23 +97,42 @@ class MainViewController: BaseViewController, MainDisplayLogic
     return refreshControl
   }()
 
+  lazy var loadingSpinner: UIActivityIndicatorView = {
+    let loadingSpinner = UIActivityIndicatorView(activityIndicatorStyle: .white)
+    loadingSpinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 30.0)
+    loadingSpinner.startAnimating()
+    return loadingSpinner
+  }()
+
+
   private func showMovieList() {
-    interactor?.fetchMovie(withLoadingIndicator: true)
+    let fetchMovieRequest = Main.Something.Request(loadingIndicator: true)
+    interactor?.fetchMovie(request: fetchMovieRequest)
+  }
+
+  private func showMoreMovieList() {
+    let fetchMovieRequest = Main.Something.Request(loadingIndicator: false)
+    interactor?.fetchMoreMovie(request: fetchMovieRequest)
   }
 
   @objc private func refreshMovieList() {
-    interactor?.fetchMovie(withLoadingIndicator: false)
+    let fetchMovieRequest = Main.Something.Request(loadingIndicator: false)
+    interactor?.refreshMovie(request: fetchMovieRequest)
   }
 
   func displayFetchList(viewModel: Main.Something.ViewModel) {
     movieList = viewModel.movieList
     self.refreshControl.endRefreshing()
-    self.tableView.reloadData()
+    UIView.animate(withDuration: 0.1, animations: {
+      self.tableView.tableFooterView = nil
+      self.tableView.reloadData()
+    }, completion: nil)
   }
 
   func displayError(title: String, message: String) {
     showInfoAlert(title: title, message: message, buttonTitle: "OK") { _ in
       self.refreshControl.endRefreshing()
+      self.tableView.tableFooterView = nil
     }
   }
 
@@ -135,6 +154,17 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     router?.navigateToInfo(movie: movieList[indexPath.row])
+  }
+
+
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let lastElement = movieList.count - 1
+    if indexPath.row == lastElement {
+      // handle your logic here to get more items, add it to dataSource and reload tableview
+      tableView.tableFooterView = loadingSpinner
+      showMoreMovieList()
+    }
+
   }
   
 }

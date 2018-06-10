@@ -13,9 +13,9 @@
 import UIKit
 
 class MainWorker {
-  func doSomeWork(completion: @escaping (Result<(MovieList)>) -> Void) {
+  func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
     
-    let requestURL = "https://api.themoviedb.org/3/discover/movie?page=1&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=e2889e1e96107371259d511ce3c23f8b"
+    let requestURL = APIs.fetchSeriesList.fectchSeries(withPage: page)
     
     NetworkClient.request(url: requestURL,
                           params: nil,

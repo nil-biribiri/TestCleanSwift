@@ -17,7 +17,7 @@ enum Main {
   
   enum Something {
     struct Request {
-      
+      var loadingIndicator: Bool
     }
     struct Response {
       var movieList: MovieList

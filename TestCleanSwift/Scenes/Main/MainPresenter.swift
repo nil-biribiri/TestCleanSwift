@@ -34,7 +34,7 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
     response.movieList.movies.forEach{
       let posterPath = "https://image.tmdb.org/t/p/w200\($0.posterPath)"
       let rating     = "Rating: \($0.voteAverage)/10"
-      let movie = Main.Something.ViewModel.Movie(movieTitle: $0.title,
+      let movie = Main.Something.ViewModel.Movie(movieTitle: $0.name,
                                                  movieRating: rating,
                                                  moviePosterPath: posterPath)
       viewModel.movieList.append(movie)

@@ -100,8 +100,9 @@ class InfoViewController: UIViewController, InfoDisplayLogic
   func displayMovieDetail(viewModel: Info.Something.ViewModel) {
     title = viewModel.movie.movieTitle
     movieImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill) {
+      self.blurImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill)
       self.movieDetailLabel.text = viewModel.movie.movieOverview
     }
-    blurImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill)
+    
   }
 }

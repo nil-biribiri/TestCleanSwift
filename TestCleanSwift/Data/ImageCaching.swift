@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-//private let imageCache = NSCache<NSString, UIImage>()
 private let imageCache:NSCache<NSString, UIImage> = {
   let imageCache = NSCache<NSString, UIImage>()
 //  imageCache.totalCostLimit = 10*1024*1024 // Max 10MB used.
@@ -70,9 +69,17 @@ extension UIImageView {
   func imageCaching(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit,
                     completion: SetImageCompletion = nil) {
     contentMode = mode
+
+    self.image = UIImage(imageColor: .clear, imageSize: self.bounds.size)
+    let loadingView = UIViewController().loading
+    layoutIfNeeded()
+    loadingView.view.frame = self.bounds
+    self.addSubview(loadingView.view)
+
     NilImageCaching.downloadImage(url: url) { [weak self] (image, error) in
       if (error != nil) { return }
       DispatchQueue.main.async() {
+        loadingView.view.removeFromSuperview()
         self?.image = image
         if let completion = completion {
           completion()
@@ -84,8 +91,20 @@ extension UIImageView {
   func imageCaching(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit,
                     completion: SetImageCompletion = nil) {
     guard let url = URL(string: link) else { return }
-    imageCaching(url: url, completion: completion)
+    imageCaching(url: url, contentMode: contentMode, completion: completion)
   }
 }
 
+extension UIImage {
+  public convenience init?(imageColor: UIColor, imageSize: CGSize = CGSize(width: 1, height: 1)) {
+    let rect = CGRect(origin: .zero, size: imageSize)
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+    imageColor.setFill()
+    UIRectFill(rect)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
 
+    guard let cgImage = image?.cgImage else { return nil }
+    self.init(cgImage: cgImage)
+  }
+}
