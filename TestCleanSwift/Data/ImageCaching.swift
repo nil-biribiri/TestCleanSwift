@@ -11,7 +11,7 @@ import UIKit
 
 private let imageCache:NSCache<NSString, UIImage> = {
   let imageCache = NSCache<NSString, UIImage>()
-//  imageCache.totalCostLimit = 10*1024*1024 // Max 10MB used.
+  //  imageCache.totalCostLimit = 10*1024*1024 // Max 10MB used.
   return imageCache
 }()
 
@@ -24,48 +24,22 @@ extension NSError {
 typealias DownloadImageCompletion =  (_ image: UIImage?, _ error: Error? ) -> Void
 typealias SetImageCompletion = (() -> Void)?
 
-class NilImageCaching {
+class NilImageCaching: UIImageView {
+
+  private var currentImageURL: URL?
+
+  final private class NilImageClientSession {
+    private init() {}
+    static let shared: URLSession = {
+      let configuration                           = URLSessionConfiguration.default
+      configuration.requestCachePolicy            = .reloadIgnoringLocalAndRemoteCacheData
+      configuration.urlCache                      = nil
+
+      return URLSession(configuration: configuration)
+    }()
+  }
 
   //MARK: - Public
-  static func downloadImage(url: URL, completion: @escaping DownloadImageCompletion ) {
-    if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
-      return completion(cachedImage, nil)
-    } else {
-      DispatchQueue.main.async {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-      }
-      NilImageCaching.downloadData(url: url) { data, response, error in
-        DispatchQueue.main.async {
-          UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
-        if let error = error {
-          return completion(nil, error)
-        } else if let data = data,
-          let image = UIImage(data: data),
-          let mimeType = response?.mimeType, mimeType.hasPrefix("image") {
-            imageCache.setObject(image, forKey: url.absoluteString as NSString)
-            return completion(image, nil)
-        } else {
-          return completion(nil, NSError.generalParsingError(domain: url.absoluteString))
-        }
-      }
-    }
-  }
-  
-  //MARK: - Private
-  fileprivate static func downloadData(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-    
-    let configuration = URLSessionConfiguration.default
-    configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-    
-    URLSession(configuration: configuration).dataTask(with: URLRequest(url: url)) { data, response, error in
-      completion(data, response, error)
-      }.resume()
-  }
-  
-}
-
-extension UIImageView {
   func imageCaching(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit,
                     completion: SetImageCompletion = nil) {
     contentMode = mode
@@ -76,10 +50,10 @@ extension UIImageView {
     loadingView.view.frame = self.bounds
     self.addSubview(loadingView.view)
 
-    NilImageCaching.downloadImage(url: url) { [weak self] (image, error) in
-      if (error != nil) { return }
-      DispatchQueue.main.async() {
+    self.downloadImage(url: url) { [weak self] (image, error) in
+      DispatchQueue.main.async {
         loadingView.view.removeFromSuperview()
+        if (error != nil) { return }
         self?.image = image
         if let completion = completion {
           completion()
@@ -87,11 +61,59 @@ extension UIImageView {
       }
     }
   }
-  
+
   func imageCaching(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit,
                     completion: SetImageCompletion = nil) {
     guard let url = URL(string: link) else { return }
     imageCaching(url: url, contentMode: contentMode, completion: completion)
+  }
+
+
+}
+
+private extension NilImageCaching {
+  //MARK: - Private
+  private func getCacheImage(url: URL) -> UIImage? {
+    if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
+      return cachedImage
+    }
+    return nil
+  }
+
+  private func downloadImage(url: URL, completion: @escaping DownloadImageCompletion ) {
+    currentImageURL = url
+    if let cachedImage = self.getCacheImage(url: url) {
+      return completion(cachedImage, nil)
+    } else {
+      DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = true }
+      self.downloadData(url: url) { data, response, error in
+        DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
+        if let error = error {
+          return completion(nil, error)
+        } else if let data = data,
+          let image = UIImage(data: data),
+          let mimeType = response?.mimeType, mimeType.hasPrefix("image") {
+          imageCache.setObject(image, forKey: url.absoluteString as NSString)
+          if self.currentImageURL == url {
+            return completion(image, nil)
+          } else {
+            return completion(self.getCacheImage(url: self.currentImageURL!), nil)
+          }
+        } else {
+          return completion(nil, NSError.generalParsingError(domain: url.absoluteString))
+        }
+      }
+    }
+  }
+
+  private func downloadData(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+
+    let configuration = URLSessionConfiguration.default
+    configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+
+    NilImageClientSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+      completion(data, response, error)
+      }.resume()
   }
 }
 

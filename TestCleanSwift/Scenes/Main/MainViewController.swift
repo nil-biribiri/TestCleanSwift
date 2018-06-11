@@ -99,7 +99,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
 
   lazy var loadingSpinner: UIActivityIndicatorView = {
     let loadingSpinner = UIActivityIndicatorView(activityIndicatorStyle: .white)
-    loadingSpinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 30.0)
+    loadingSpinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 40.0)
     loadingSpinner.startAnimating()
     return loadingSpinner
   }()

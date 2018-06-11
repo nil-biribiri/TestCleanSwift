@@ -69,8 +69,8 @@ class InfoViewController: UIViewController, InfoDisplayLogic
   // MARK: Do something
   
 //  @IBOutlet weak var movieNameLabel: UILabel!
-  @IBOutlet weak var movieImageView: UIImageView!
-  @IBOutlet weak var blurImageView: UIImageView! {
+  @IBOutlet weak var movieImageView: NilImageCaching!
+  @IBOutlet weak var blurImageView: NilImageCaching! {
     didSet{
       blurImageView.addBlurEffect(withStyle: .dark)
     }

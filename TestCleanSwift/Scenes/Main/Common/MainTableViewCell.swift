@@ -12,7 +12,7 @@ class MainTableViewCell: UITableViewCell {
   
   static let cellIdentifier = String(describing: MainTableViewCell.self)
   
-  @IBOutlet weak var moviePosterImageView: UIImageView!
+  @IBOutlet weak var moviePosterImageView: NilImageCaching!
   @IBOutlet weak var movieNameLabel: UILabel!
   @IBOutlet weak var movieRateLabel: UILabel!
   
@@ -41,7 +41,7 @@ class MainTableViewCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    moviePosterImageView.image = nil
+//    moviePosterImageView.image = nil
   }
  
 }
