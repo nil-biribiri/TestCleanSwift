@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct MovieList: Codable {
+struct MovieList: Codable, Equatable {
   var movies: [Movie]
   let page: Int
 
@@ -18,9 +18,10 @@ struct MovieList: Codable {
     case page
   }
   
+ 
 }
 
-struct Movie: Codable {
+struct Movie: Codable, Equatable {
   let name: String
   let voteAverage: Double
   let posterPath: String

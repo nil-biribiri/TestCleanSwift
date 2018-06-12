@@ -39,9 +39,5 @@ class MainTableViewCell: UITableViewCell {
 //    moviePosterImageView.downloadedFrom(link: data.posterPath, contentMode: .scaleAspectFill)
   }
   
-  override func prepareForReuse() {
-    super.prepareForReuse()
-//    moviePosterImageView.image = nil
-  }
  
 }

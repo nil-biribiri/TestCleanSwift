@@ -11,8 +11,9 @@ import Foundation
 struct Config {
   private init() {}
 
-  static let baseAPI = "https://api.themoviedb.org/3"
-  static let APIKeys = "e2889e1e96107371259d511ce3c23f8b"
+  static let baseAPI        = "https://api.themoviedb.org/3"
+  static let baseImageAPI   = "https://image.tmdb.org/t/p"
+  static let APIKeys        = "e2889e1e96107371259d511ce3c23f8b"
   
 
 }

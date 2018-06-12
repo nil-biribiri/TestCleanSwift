@@ -204,12 +204,12 @@ extension NetworkClient {
       let statusMessage = convertedJSON["status_message"] {
       return [statusCode as? String, statusMessage as? String]
     }
-//    if let errorBody = convertedJSON["status"], let error = errorBody as? [String:Any] {
-//      return [error["message"] as? String]
-//    }
-//    if let errorBody = convertedJSON["error"], let error = errorBody as? [String: Any] {
-//      return [error["display_code"] as? String, error["message"] as? String]
-//    }
+    
+    if let errorArr = convertedJSON["errors"],
+      let errorStatus = (errorArr as? [String])?.first {
+      return [nil, errorStatus]
+    }
+
     return nil
   }
   

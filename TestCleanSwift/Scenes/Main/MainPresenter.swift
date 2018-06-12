@@ -13,7 +13,7 @@
 import UIKit
 
 protocol MainPresentationLogic: BasePresenterLogic {
-  func presentSomething(response: Main.Something.Response)
+  func presentMovieList(response: Main.Something.Response)
   func presentErrorMessage(error: Main.Something.Error)
 
 }
@@ -28,11 +28,11 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
   
   // MARK: Do something
   
-  func presentSomething(response: Main.Something.Response) {
+  func presentMovieList(response: Main.Something.Response) {
     
     var viewModel: Main.Something.ViewModel = Main.Something.ViewModel(movieList: [])
     response.movieList.movies.forEach{
-      let posterPath = "https://image.tmdb.org/t/p/w200\($0.posterPath)"
+      let posterPath = APIs.downloadImage.loadImage(withSize: .thumbnail, withPath: $0.posterPath)
       let rating     = "Rating: \($0.voteAverage)/10"
       let movie = Main.Something.ViewModel.Movie(movieTitle: $0.name,
                                                  movieRating: rating,

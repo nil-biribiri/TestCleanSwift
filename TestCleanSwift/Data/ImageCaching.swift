@@ -27,7 +27,7 @@ typealias SetImageCompletion = (() -> Void)?
 class NilImageCaching: UIImageView {
 
   private var currentImageURL: URL?
-
+  
   final private class NilImageClientSession {
     private init() {}
     static let shared: URLSession = {
@@ -40,19 +40,23 @@ class NilImageCaching: UIImageView {
   }
 
   //MARK: - Public
-  func imageCaching(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit,
+  func imageCaching(url: URL,
+                    contentMode mode: UIViewContentMode = .scaleAspectFit,
+                    withDownloadIndicator indicator: Bool,
                     completion: SetImageCompletion = nil) {
     contentMode = mode
 
     self.image = UIImage(imageColor: .clear, imageSize: self.bounds.size)
-    let loadingView = UIViewController().loading
-    layoutIfNeeded()
-    loadingView.view.frame = self.bounds
-    self.addSubview(loadingView.view)
-
+    var loadingView: UIViewController?
+    if indicator {
+      loadingView = UIViewController().loading
+      layoutIfNeeded()
+      loadingView?.view.frame = self.bounds
+      self.addSubview(loadingView!.view)
+    }
     self.downloadImage(url: url) { [weak self] (image, error) in
       DispatchQueue.main.async {
-        loadingView.view.removeFromSuperview()
+        loadingView?.view.removeFromSuperview()
         if (error != nil) { return }
         self?.image = image
         if let completion = completion {
@@ -62,10 +66,12 @@ class NilImageCaching: UIImageView {
     }
   }
 
-  func imageCaching(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit,
+  func imageCaching(link: String,
+                    contentMode mode: UIViewContentMode = .scaleAspectFit,
+                    withDownloadIndicator indicator: Bool = true,
                     completion: SetImageCompletion = nil) {
     guard let url = URL(string: link) else { return }
-    imageCaching(url: url, contentMode: contentMode, completion: completion)
+    imageCaching(url: url, contentMode: contentMode, withDownloadIndicator: indicator, completion: completion)
   }
 
 

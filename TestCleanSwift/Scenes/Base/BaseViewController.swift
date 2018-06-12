@@ -24,7 +24,6 @@ class BaseViewController: UIViewController, BaseDisplayLogic {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.view.backgroundColor = .black
-    
   }
 
   func displayLoader() {

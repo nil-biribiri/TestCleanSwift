@@ -18,4 +18,15 @@ struct APIs {
     }
   }
 
+  struct downloadImage {
+    private init() {}
+    enum imageSize: String {
+      case thumbnail  = "/w200"
+      case original   = "/original"
+    }
+    static func loadImage(withSize size: imageSize, withPath posterPath: String) -> String {
+      return Config.baseImageAPI + size.rawValue + posterPath
+    }
+  }
+  
 }

@@ -48,7 +48,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore
         }
         self.currentPage = value.page
         let response = Main.Something.Response(movieList: self.movieList!)
-        self.presenter?.presentSomething(response: response)
+        self.presenter?.presentMovieList(response: response)
       case .failure(let error):
         self.presenter?.presentErrorMessage(error: Main.Something.Error(error: error.errorObject))
       }

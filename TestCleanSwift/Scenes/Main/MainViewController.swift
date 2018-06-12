@@ -123,10 +123,13 @@ class MainViewController: BaseViewController, MainDisplayLogic
   func displayFetchList(viewModel: Main.Something.ViewModel) {
     movieList = viewModel.movieList
     self.refreshControl.endRefreshing()
+    self.tableView.reloadData()
     UIView.animate(withDuration: 0.1, animations: {
       self.tableView.tableFooterView = nil
-      self.tableView.reloadData()
-    }, completion: nil)
+    }) { [weak self] (_) in
+      guard let _ = self else { return }
+//      strongSelf.tableView.reloadData()
+    }
   }
 
   func displayError(title: String, message: String) {
@@ -141,9 +144,10 @@ class MainViewController: BaseViewController, MainDisplayLogic
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let movie = movieList[indexPath.row]
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellIdentifier, for: indexPath) as? MainTableViewCell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellIdentifier, for: indexPath) as? MainTableViewCell,
+      movieList.indices.contains(indexPath.row)
       else { return UITableViewCell() }
+      let movie = movieList[indexPath.row]
       cell.configureData(data: movie)
       return cell
   }
@@ -156,6 +160,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     router?.navigateToInfo(movie: movieList[indexPath.row])
   }
 
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
 
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     let lastElement = movieList.count - 1
@@ -164,7 +171,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
       tableView.tableFooterView = loadingSpinner
       showMoreMovieList()
     }
-
   }
   
 }
