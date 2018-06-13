@@ -148,7 +148,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
       movieList.indices.contains(indexPath.row)
       else { return UITableViewCell() }
       let movie = movieList[indexPath.row]
-      cell.configureData(data: movie)
+      cell.configureData(data: movie, indexPath: indexPath.row)
+      cell.delegate = self
       return cell
   }
   
@@ -171,6 +172,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
       tableView.tableFooterView = loadingSpinner
       showMoreMovieList()
     }
+  }
+  
+}
+
+extension MainViewController: MainTableViewCellProtocol {
+  func movieButtonAction(textInput: String?, indexPath: Int) {
+    interactor?.validateInput(textInput: textInput, indexPath: indexPath)
   }
   
 }

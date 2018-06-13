@@ -46,12 +46,16 @@ class MainViewControllerTests: XCTestCase {
   // MARK: Test doubles
   
   class MainBusinessLogicSpy: MainBusinessLogic {
+    
+    
+    
+    
     // MARK: Method call expectations
     
     var fetchMovieCalled = false
     var fetchMoreMovieCalled = false
     var refreshMovieCalled = false
-    
+    var validateInputCalled = false
     // MARK: Spied methods
 
     func fetchMovie(request: Main.Something.Request) {
@@ -66,6 +70,9 @@ class MainViewControllerTests: XCTestCase {
       refreshMovieCalled = true
     }
     
+    func validateInput(textInput: String?, indexPath: Int) {
+      validateInputCalled = true
+    }
   }
   
   class TableViewSpy: UITableView {
@@ -79,6 +86,17 @@ class MainViewControllerTests: XCTestCase {
     {
       reloadDataCalled = true
     }
+  }
+  
+  class TableViewCellSpy: MainTableViewCell {
+    // MARK: Method call expectations
+    
+    
+//    func movieButtonAction(_ sender: Any) {
+//      dele
+//    }
+    // MARK: Spied methods
+    
   }
   
   // MARK: Tests
@@ -101,7 +119,7 @@ class MainViewControllerTests: XCTestCase {
     sut.tableView = tableViewSpy
     
     // When
-    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
+    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path", movieInputErrorMessage: nil)]
     let viewModel = Main.Something.ViewModel(movieList: mockMovieList)
     sut.displayFetchList(viewModel: viewModel)
     
@@ -149,6 +167,23 @@ class MainViewControllerTests: XCTestCase {
     // Then
     XCTAssertEqual(cell?.movieNameLabel.text, "Inception", "A properly configured table view cell should display the order movieName")
     XCTAssertEqual(cell?.movieRateLabel.text, "10/10", "A properly configured table view cell should display the order movieRate")
+
+  }
+  
+  func testValidateInput() {
+    // Given
+    let tableViewSpy = TableViewSpy()
+    sut.tableView = tableViewSpy
+    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
+    sut.movieList = mockMovieList
+    
+    // When
+    let indexPath = IndexPath(row: 0, section: 0)
+    let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
+    cell?.movieButtonAction(self)
+    
+    // Then
+//    XCTAssertEqual(cell?.movieInput.text, "Empty input.", "A properly configured table view cell should display the order movieInput")
 
   }
   

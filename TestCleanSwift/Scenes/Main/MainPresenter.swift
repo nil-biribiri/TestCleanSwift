@@ -26,17 +26,24 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
     }
   }
   
+//  var viewModel: Main.Something.ViewModel = Main.Something.ViewModel(movieList: [])
+
   // MARK: Do something
   
   func presentMovieList(response: Main.Something.Response) {
-    
     var viewModel: Main.Something.ViewModel = Main.Something.ViewModel(movieList: [])
-    response.movieList.movies.forEach{
-      let posterPath = APIs.downloadImage.loadImage(withSize: .thumbnail, withPath: $0.posterPath)
-      let rating     = "Rating: \($0.voteAverage)/10"
-      let movie = Main.Something.ViewModel.Movie(movieTitle: $0.name,
+
+    response.movieList.movies.enumerated().forEach { (index, eachMovie) in
+      let posterPath = APIs.downloadImage.loadImage(withSize: .thumbnail, withPath: eachMovie.posterPath)
+      let rating     = "Rating: \(eachMovie.voteAverage)/10"
+      var inputErrorMessage: String?
+      if let validateError = (response.validateError?.filter{ $0.validateErrorIndex == index }.first) {
+        inputErrorMessage = validateError.validateErrorMessage
+      }
+      let movie = Main.Something.ViewModel.Movie(movieTitle: eachMovie.name,
                                                  movieRating: rating,
-                                                 moviePosterPath: posterPath)
+                                                 moviePosterPath: posterPath,
+                                                 movieInputErrorMessage: inputErrorMessage)
       viewModel.movieList.append(movie)
     }
     hideLoading()
@@ -45,6 +52,7 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
 
   func presentErrorMessage(error: Main.Something.Error) {
     hideLoading()
-    viewController?.displayError(title: "Error", message: error.error.localizedDescription)
+    viewController?.displayError(title: "Error", message: error.errorMessage)
   }
+
 }

@@ -117,7 +117,7 @@ class MainPresenterTests: XCTestCase
     // Given
     let spy = MainDisplayLogicSpy()
     sut.viewController = spy
-    let error = Main.Something.Error(error: NetworkErrorResponse())
+    let error = Main.Something.Error(errorMessage: "Error")
     
     // When
     sut.presentErrorMessage(error: error)

@@ -17,6 +17,7 @@ protocol MainBusinessLogic
   func fetchMovie(request: Main.Something.Request)
   func fetchMoreMovie(request: Main.Something.Request)
   func refreshMovie(request: Main.Something.Request)
+  func validateInput(textInput: String?, indexPath: Int)
 }
 
 protocol MainDataStore
@@ -24,11 +25,12 @@ protocol MainDataStore
   var movieList: MovieList? { get }
 }
 
-class MainInteractor: MainBusinessLogic, MainDataStore
-{
+class MainInteractor: MainBusinessLogic, MainDataStore {
+  
   var movieList: MovieList?
   var currentPage: Int?
-
+  var response: Main.Something.Response?
+  
   var presenter: MainPresentationLogic?
   var worker = MainWorker()
   
@@ -47,10 +49,10 @@ class MainInteractor: MainBusinessLogic, MainDataStore
           self.movieList?.movies += value.movies
         }
         self.currentPage = value.page
-        let response = Main.Something.Response(movieList: self.movieList!)
-        self.presenter?.presentMovieList(response: response)
+        self.response = Main.Something.Response(movieList: self.movieList!, validateError: self.response?.validateError)
+        self.presenter?.presentMovieList(response: self.response!)
       case .failure(let error):
-        self.presenter?.presentErrorMessage(error: Main.Something.Error(error: error.errorObject))
+        self.presenter?.presentErrorMessage(error: Main.Something.Error(errorMessage: error.localizedDescription))
       }
     }
   }
@@ -65,7 +67,26 @@ class MainInteractor: MainBusinessLogic, MainDataStore
   func refreshMovie(request: Main.Something.Request) {
     movieList = nil
     currentPage = nil
+    response = nil
     fetchMovie(request: request)
+  }
+  
+  func validateInput(textInput: String?, indexPath: Int) {
+    guard let text = textInput, text != "" else {
+      let validateError = Main.Something.Response.validateError(validateErrorIndex: indexPath, validateErrorMessage: "Empty input.")
+      if response?.validateError == nil {
+        response?.validateError = []
+      }
+      if var storedValidate = response?.validateError {
+        storedValidate.append(validateError)
+        response?.validateError = storedValidate
+      }
+      
+      guard let checkMovieList = movieList else { return }
+      response = Main.Something.Response(movieList: checkMovieList, validateError: response?.validateError)
+      self.presenter?.presentMovieList(response: response!)
+      return
+    }
   }
 }
 

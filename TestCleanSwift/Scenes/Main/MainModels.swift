@@ -21,15 +21,35 @@ enum Main {
     }
     struct Response {
       var movieList: MovieList
+      var validateError: [validateError]?
+      struct validateError {
+        var validateErrorIndex: Int?
+        var validateErrorMessage: String?
+      }
+      init(movieList: MovieList,
+           validateError: [validateError]? = nil) {
+        self.movieList = movieList
+        self.validateError = validateError
+      }
     }
     struct Error {
-      var error: NetworkErrorResponse
+      var errorMessage: String
     }
     struct ViewModel {
-      struct Movie {
+      struct Movie: Equatable {
         let movieTitle: String
         let movieRating: String
         let moviePosterPath: String
+        var movieInputErrorMessage: String?
+        init(movieTitle: String,
+             movieRating: String,
+             moviePosterPath: String,
+             movieInputErrorMessage: String? = nil) {
+          self.movieTitle = movieTitle
+          self.movieRating = movieRating
+          self.moviePosterPath = moviePosterPath
+          self.movieInputErrorMessage = movieInputErrorMessage
+        }
       }
       var movieList: [Movie]
     }
