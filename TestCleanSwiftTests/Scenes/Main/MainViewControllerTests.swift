@@ -46,10 +46,7 @@ class MainViewControllerTests: XCTestCase {
   // MARK: Test doubles
   
   class MainBusinessLogicSpy: MainBusinessLogic {
-    
-    
-    
-    
+
     // MARK: Method call expectations
     
     var fetchMovieCalled = false
@@ -86,19 +83,10 @@ class MainViewControllerTests: XCTestCase {
     {
       reloadDataCalled = true
     }
+
+
   }
-  
-  class TableViewCellSpy: MainTableViewCell {
-    // MARK: Method call expectations
-    
-    
-//    func movieButtonAction(_ sender: Any) {
-//      dele
-//    }
-    // MARK: Spied methods
-    
-  }
-  
+
   // MARK: Tests
   
   func testShouldFetchMovieWhenViewIsLoaded() {
@@ -170,21 +158,58 @@ class MainViewControllerTests: XCTestCase {
 
   }
   
-  func testValidateInput() {
+  func testValidateInputCalled() {
     // Given
+    let spy = MainBusinessLogicSpy()
+    sut.interactor = spy
     let tableViewSpy = TableViewSpy()
     sut.tableView = tableViewSpy
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList = mockMovieList
-    
+
     // When
     let indexPath = IndexPath(row: 0, section: 0)
     let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
     cell?.movieButtonAction(self)
+
     
     // Then
-//    XCTAssertEqual(cell?.movieInput.text, "Empty input.", "A properly configured table view cell should display the order movieInput")
+    XCTAssertTrue(spy.validateInputCalled, "validateInput() should call when movie button in MainTableViewCell pressed")
+  }
 
+  func testRefreshMovieCalled() {
+    // Given
+    let spy = MainBusinessLogicSpy()
+    sut.interactor = spy
+    let tableViewSpy = TableViewSpy()
+    sut.tableView = tableViewSpy
+    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
+    sut.movieList = mockMovieList
+
+    // When
+    sut.tableView.refreshControl?.sendActions(for: .valueChanged)
+
+    // Then
+    XCTAssertTrue(spy.refreshMovieCalled, "refreshMovie() should call when pulled tableView to refresh")
+  }
+
+  func testFetchMoreMovieCalled() {
+    // Given
+    let spy = MainBusinessLogicSpy()
+    sut.interactor = spy
+    let tableViewSpy = TableViewSpy()
+    sut.tableView = tableViewSpy
+    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path"),
+                         Main.Something.ViewModel.Movie(movieTitle: "Shutter Island", movieRating: "10/10", moviePosterPath: "Shutter Island Poster path")]
+    sut.movieList = mockMovieList
+
+    // When
+    let indexPath = IndexPath(row: sut.movieList.count - 1, section: 0)
+    sut.tableView(sut.tableView!, willDisplay: MainTableViewCell(), forRowAt: indexPath)
+//    sut.tableView.scrollToBottom()
+
+    // Then
+    XCTAssertTrue(spy.fetchMoreMovieCalled, "fetchMoreMovie() should call when scroll tableView to the end of dataSource list")
   }
   
 }

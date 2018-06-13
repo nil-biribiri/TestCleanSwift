@@ -219,5 +219,21 @@ extension MainInteractorTests {
     XCTAssertEqual(sut.movieList!.movies, storedMovieList.movies, "fetchMoreMovie() should not mutate movie list")
     XCTAssertEqual(sut.movieList!.page, storedMovieList.page, "fetchMoreMovie() should not mutate page")
   }
+
+  func testValidateInput() {
+    // Given
+    let spy = MainPresentationLogicSpy()
+    sut.presenter = spy
+    sut.response = Main.Something.Response(movieList: MovieList(movies: [Movie](), page: 1))
+
+    // When
+    sut.validateInput(textInput: nil, indexPath: 1)
+    sut.validateInput(textInput: "Some Input", indexPath: 2)
+
+    // Then
+    XCTAssertFalse(sut.response?.validateError?.filter{ $0.validateErrorIndex == 1 }.isEmpty ?? true, "testValidateInput() should append indexPath of incorrect input")
+    XCTAssertTrue(sut.response?.validateError?.filter{ $0.validateErrorIndex == 2 }.isEmpty ?? true, "testValidateInput() should not append indexPath of correct input")
+
+  }
   
 }
