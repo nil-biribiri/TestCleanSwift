@@ -19,8 +19,6 @@ protocol InfoPresentationLogic
 
 class InfoPresenter: InfoPresentationLogic
 {
-  
-  
 
   weak var viewController: InfoDisplayLogic?
   

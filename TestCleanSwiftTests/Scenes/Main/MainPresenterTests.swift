@@ -72,8 +72,6 @@ class MainPresenterTests: XCTestCase
     func hideLoader() {
       hideLoaderCalled = true
     }
-    
-    
   }
   
   // MARK: Tests
@@ -98,7 +96,6 @@ class MainPresenterTests: XCTestCase
       XCTAssertEqual(displayedOrder.moviePosterPath, "https://image.tmdb.org/t/p/w200\(sourceOrder.posterPath)", "Presenting fetched orders should properly format order moviePosterPath")
     }
     XCTAssertEqual(mockResponse.validateError?.first?.validateErrorMessage, displayedOrders[1].movieInputErrorMessage, "Presenting fetched orders should properly format order movieInputErrorMessage")
-    
   }
   
   func testDisplayFetchList() {
@@ -127,7 +124,6 @@ class MainPresenterTests: XCTestCase
     // Then
     XCTAssertTrue(spy.hideLoaderCalled, "presentErrorMessage(error:) should ask the view controller to hide loader")
     XCTAssertTrue(spy.displayErrorCalled, "presentErrorMessage(error:) should ask the view controller to display the error")
-    
   }
   
 }

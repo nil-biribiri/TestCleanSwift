@@ -123,13 +123,14 @@ class MainViewController: BaseViewController, MainDisplayLogic
   func displayFetchList(viewModel: Main.Something.ViewModel) {
     movieList = viewModel.movieList
     self.refreshControl.endRefreshing()
-    self.tableView.reloadData()
     UIView.animate(withDuration: 0.1, animations: {
       self.tableView.tableFooterView = nil
-    }) { [weak self] (_) in
-      guard let _ = self else { return }
-//      strongSelf.tableView.reloadData()
+    }) { [weak self] _ in
+      guard let strongSelf = self else { return }
+      strongSelf.view.layoutIfNeeded()
+      strongSelf.tableView.reloadData()
     }
+    
   }
 
   func displayError(title: String, message: String) {

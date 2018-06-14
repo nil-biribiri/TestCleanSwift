@@ -27,6 +27,8 @@ typealias SetImageCompletion = (() -> Void)?
 class NilImageCaching: UIImageView {
 
   private var currentImageURL: URL?
+  private var loadingView: UIViewController?
+  private var isShowIndicator: Bool = false
   
   final private class NilImageClientSession {
     private init() {}
@@ -45,18 +47,11 @@ class NilImageCaching: UIImageView {
                     withDownloadIndicator indicator: Bool,
                     completion: SetImageCompletion = nil) {
     contentMode = mode
-
     self.image = UIImage(imageColor: .clear, imageSize: self.bounds.size)
-    var loadingView: UIViewController?
-    if indicator {
-      loadingView = UIViewController().loading
-      layoutIfNeeded()
-      loadingView?.view.frame = self.bounds
-      self.addSubview(loadingView!.view)
-    }
+    self.isShowIndicator = indicator
     self.downloadImage(url: url) { [weak self] (image, error) in
       DispatchQueue.main.async {
-        loadingView?.view.removeFromSuperview()
+        if image != nil { self?.loadingView?.view.removeFromSuperview() }
         if (error != nil) { return }
         self?.image = image
         if let completion = completion {
@@ -91,6 +86,7 @@ private extension NilImageCaching {
     if let cachedImage = self.getCacheImage(url: url) {
       return completion(cachedImage, nil)
     } else {
+      self.isShowIndicator ? showIndicator() : nil
       DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = true }
       self.downloadData(url: url) { data, response, error in
         DispatchQueue.main.async { UIApplication.shared.isNetworkActivityIndicatorVisible = false }
@@ -120,6 +116,13 @@ private extension NilImageCaching {
     NilImageClientSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
       completion(data, response, error)
       }.resume()
+  }
+  
+  private func showIndicator() {
+    loadingView = UIViewController().loading
+    layoutIfNeeded()
+    loadingView?.view.frame = self.bounds
+    self.addSubview(loadingView!.view)
   }
 }
 

@@ -45,7 +45,7 @@ class MainTableViewCell: UITableViewCell {
   func configureData(data: Main.Something.ViewModel.Movie, indexPath: Int) {
     movieNameLabel.text = data.movieTitle
     movieRateLabel.text = data.movieRating
-    moviePosterImageView.imageCaching(link: data.moviePosterPath, contentMode: .scaleAspectFit)
+    moviePosterImageView.imageCaching(link: data.moviePosterPath, contentMode: .scaleAspectFit, withDownloadIndicator: true)
     movieInput.text = data.movieInputErrorMessage
     rowOfIndexPath = indexPath
 //    moviePosterImageView.downloadedFrom(link: data.posterPath, contentMode: .scaleAspectFill)

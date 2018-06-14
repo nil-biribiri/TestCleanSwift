@@ -87,6 +87,7 @@ class MainInteractorTests: XCTestCase
     }
   }
   
+  
 }
 
 // MARK: Tests
@@ -160,6 +161,7 @@ extension MainInteractorTests {
     sut.worker = workerSpy
     sut.movieList = MovieList(movies: [Movie](), page: 1)
     sut.currentPage = 10
+    sut.response = Main.Something.Response(movieList: MovieList(movies: [Movie](), page: 11))
     let request = Main.Something.Request(loadingIndicator: false)
     
     // When
@@ -171,8 +173,8 @@ extension MainInteractorTests {
     XCTAssertTrue(spy.presentErrorMessage, "refreshMovie() should ask the presenter present error message")
     XCTAssertNil(sut.movieList, "refreshMovie() should reset movieList to nil")
     XCTAssertNil(sut.currentPage, "refreshMovie() should reset currentPage to nil")
+    XCTAssertNil(sut.response, "refreshMovie() should reset response to nil")
   }
-  
 }
 
 extension MainInteractorTests {
@@ -234,7 +236,6 @@ extension MainInteractorTests {
     XCTAssertFalse(sut.response?.validateError?.filter{ $0.validateErrorIndex == 1 }.isEmpty ?? true, "testValidateInput() should append indexPath of incorrect input")
     XCTAssertEqual(sut.response?.validateError?.filter{ $0.validateErrorIndex == 1 }.first?.validateErrorMessage, "Empty input.", "testValidateInput() should append empty input message of incorrect indexPath")
     XCTAssertTrue(sut.response?.validateError?.filter{ $0.validateErrorIndex == 2 }.isEmpty ?? true, "testValidateInput() should not append indexPath of correct input")
-
   }
   
 }

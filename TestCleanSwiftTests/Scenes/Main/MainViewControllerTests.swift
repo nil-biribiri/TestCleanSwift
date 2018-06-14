@@ -105,16 +105,18 @@ class MainViewControllerTests: XCTestCase {
     // Given
     let tableViewSpy = TableViewSpy()
     sut.tableView = tableViewSpy
-    
+
     // When
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path", movieInputErrorMessage: nil)]
     let viewModel = Main.Something.ViewModel(movieList: mockMovieList)
     sut.displayFetchList(viewModel: viewModel)
-    
+
     // Then
     XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false, "Displaying fetched orders should hide load more indicator at the top of tableView")
     XCTAssertEqual(sut.tableView.tableFooterView, nil, "Displaying fetched orders should hide load more indicator at the bottom of tableView")
-    XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+      XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
+    }
 
   }
   

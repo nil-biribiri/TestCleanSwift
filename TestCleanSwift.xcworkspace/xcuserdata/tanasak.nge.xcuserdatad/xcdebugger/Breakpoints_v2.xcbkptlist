@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TestCleanSwift/Scenes/Main/MainInteractor.swift"
-            timestampString = "550652231.004444"
+            filePath = "TestCleanSwiftTests/Scenes/Main/MainViewControllerTests.swift"
+            timestampString = "550668135.1696039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "validateInput(textInput:indexPath:)"
+            landmarkName = "reloadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
