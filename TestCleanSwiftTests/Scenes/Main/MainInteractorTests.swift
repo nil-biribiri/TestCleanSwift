@@ -232,6 +232,7 @@ extension MainInteractorTests {
 
     // Then
     XCTAssertFalse(sut.response?.validateError?.filter{ $0.validateErrorIndex == 1 }.isEmpty ?? true, "testValidateInput() should append indexPath of incorrect input")
+    XCTAssertEqual(sut.response?.validateError?.filter{ $0.validateErrorIndex == 1 }.first?.validateErrorMessage, "Empty input.", "testValidateInput() should append empty input message of incorrect indexPath")
     XCTAssertTrue(sut.response?.validateError?.filter{ $0.validateErrorIndex == 2 }.isEmpty ?? true, "testValidateInput() should not append indexPath of correct input")
 
   }

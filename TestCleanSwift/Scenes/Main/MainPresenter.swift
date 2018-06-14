@@ -26,8 +26,6 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
     }
   }
   
-//  var viewModel: Main.Something.ViewModel = Main.Something.ViewModel(movieList: [])
-
   // MARK: Do something
   
   func presentMovieList(response: Main.Something.Response) {

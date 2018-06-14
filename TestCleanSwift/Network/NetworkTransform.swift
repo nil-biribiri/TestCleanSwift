@@ -20,41 +20,41 @@ class NetworkBaseService: NSObject {
         
       case NetworkServiceError.receiveErrorFromService(let errorCode, let displayCode, let message):
         return .failure(NetworkErrorResponse(message: message,
-                                         code: errorCode,
-                                         displayCode: displayCode))
+                                             code: errorCode,
+                                             displayCode: displayCode))
         
       case NetworkServiceError.urlError:
         return .failure(NetworkErrorResponse(message: "Invalid URL request."))
         
       case NetworkServiceError.noInternetConnection(let message):
         return .failure(NetworkErrorResponse(message: message,
-                                         code: 10000,
-                                         displayCode: "APP10000"))
+                                             code: 10000,
+                                             displayCode: "APP10000"))
         
       case NetworkServiceError.cannotGetErrorMessage:
         return .failure(NetworkErrorResponse(message: "Unknown Error.",
-                                         code: 10001,
-                                         displayCode: "APP10001"))
+                                             code: 10001,
+                                             displayCode: "APP10001"))
         
-        //            case EDCServiceError.parseJSONError(let resultType, let errorMessage):
-        //                return .failure(EDCErrorResponse(message: "ParseJSON \(resultType) Error: \(errorMessage).",
-        //                    code: 10002,
-        //                    displayCode: "APP10002"))
+      case NetworkServiceError.parseJSONError(let resultType, let errorMessage):
+        return .failure(NetworkErrorResponse(message: "ParseJSON \(resultType) Error: \(errorMessage).",
+          code: 10002,
+          displayCode: "APP10002"))
         
-      case NetworkServiceError.parseJSONError:
-        return .failure(NetworkErrorResponse(message: "ParseJSON Error.",
-                                         code: 10002,
-                                         displayCode: "APP10002"))
+        //      case NetworkServiceError.parseJSONError:
+        //        return .failure(NetworkErrorResponse(message: "ParseJSON Error.",
+        //                                         code: 10002,
+        //                                         displayCode: "APP10002"))
         
       case NetworkServiceError.connectionTimeout(let message):
         return .failure(NetworkErrorResponse(message: message,
-                                         code: 10003,
-                                         displayCode: "APP10003"))
+                                             code: 10003,
+                                             displayCode: "APP10003"))
         
       case NetworkServiceError.unknownError(let message):
         return .failure(NetworkErrorResponse(message: message,
-                                         code: 10004,
-                                         displayCode: "APP10004"))
+                                             code: 10004,
+                                             displayCode: "APP10004"))
         
       default:
         return .failure(NetworkErrorResponse())
@@ -83,7 +83,7 @@ extension NetworkErrorResponse: LocalizedError {
 public extension Error {
   var errorObject: NetworkErrorResponse {
     return self as? NetworkErrorResponse ?? NetworkErrorResponse()
-//    let _self = Result<NetworkServiceError>.failure(self)
-//    return NetworkBaseService.transformServiceResponse(_self).error as? NetworkErrorResponse ?? NetworkErrorResponse()
+    //    let _self = Result<NetworkServiceError>.failure(self)
+    //    return NetworkBaseService.transformServiceResponse(_self).error as? NetworkErrorResponse ?? NetworkErrorResponse()
   }
 }

@@ -112,7 +112,10 @@ class MainViewControllerTests: XCTestCase {
     sut.displayFetchList(viewModel: viewModel)
     
     // Then
+    XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false, "Displaying fetched orders should hide load more indicator at the top of tableView")
+    XCTAssertEqual(sut.tableView.tableFooterView, nil, "Displaying fetched orders should hide load more indicator at the bottom of tableView")
     XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
+
   }
   
   func testTableViewSectionShouldAlwaysBeOne() {
@@ -145,7 +148,7 @@ class MainViewControllerTests: XCTestCase {
     // Given
     let tableViewSpy = TableViewSpy()
     sut.tableView = tableViewSpy
-    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
+    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path", movieInputErrorMessage: "Empty input.")]
     sut.movieList  = mockMovieList
 
     // When
@@ -155,7 +158,7 @@ class MainViewControllerTests: XCTestCase {
     // Then
     XCTAssertEqual(cell?.movieNameLabel.text, "Inception", "A properly configured table view cell should display the order movieName")
     XCTAssertEqual(cell?.movieRateLabel.text, "10/10", "A properly configured table view cell should display the order movieRate")
-
+    XCTAssertEqual(cell?.movieInput.text, "Empty input.", "A properly configured table view cell should display the order movieInput")
   }
   
   func testValidateInputCalled() {
@@ -206,10 +209,10 @@ class MainViewControllerTests: XCTestCase {
     // When
     let indexPath = IndexPath(row: sut.movieList.count - 1, section: 0)
     sut.tableView(sut.tableView!, willDisplay: MainTableViewCell(), forRowAt: indexPath)
-//    sut.tableView.scrollToBottom()
 
     // Then
     XCTAssertTrue(spy.fetchMoreMovieCalled, "fetchMoreMovie() should call when scroll tableView to the end of dataSource list")
+    XCTAssertEqual(sut.tableView.tableFooterView, sut.loadingSpinner, "fetchMoreMovie() should show loading indicator at bottom of tableView")
   }
   
 }

@@ -14,7 +14,6 @@ import UIKit
 
 protocol InfoBusinessLogic
 {
-  func doSomething(request: Info.Something.Request)
   func showMovieDetail()
 }
 

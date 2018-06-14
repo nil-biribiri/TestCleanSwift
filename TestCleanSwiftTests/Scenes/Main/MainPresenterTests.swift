@@ -49,13 +49,13 @@ class MainPresenterTests: XCTestCase
     var displayErrorCalled = false
     var displayLoaderCalled = false
     var hideLoaderCalled = false
-
+    
     // MARK: Argument expectations
     
     var viewModel: Main.Something.ViewModel!
-
+    
     // MARK: Spied methods
-
+    
     func displayFetchList(viewModel: Main.Something.ViewModel) {
       displayFetchListCalled = true
       self.viewModel = viewModel
@@ -85,7 +85,8 @@ class MainPresenterTests: XCTestCase
     // When
     let mockMovieList = [Movie(name: "Inception", voteAverage: 10, posterPath: "InceptionPath", overview: "Some Inception detail"),
                          Movie(name: "Shutter Island", voteAverage: 8.5, posterPath: "ShutterIslandPath", overview: "Some Shutter Island detail")]
-    let mockResponse: Main.Something.Response = Main.Something.Response(movieList: MovieList(movies: mockMovieList, page: 1))
+    let mockValidateErrorList = [Main.Something.Response.validateError(validateErrorIndex: 1, validateErrorMessage: "Empty Input.")]
+    let mockResponse: Main.Something.Response = Main.Something.Response(movieList: MovieList(movies: mockMovieList, page: 1), validateError: mockValidateErrorList)
     sut.presentMovieList(response: mockResponse)
     
     // Then
@@ -96,7 +97,8 @@ class MainPresenterTests: XCTestCase
       XCTAssertEqual(displayedOrder.movieRating, "Rating: \(sourceOrder.voteAverage)/10", "Presenting fetched orders should properly format order movieRating")
       XCTAssertEqual(displayedOrder.moviePosterPath, "https://image.tmdb.org/t/p/w200\(sourceOrder.posterPath)", "Presenting fetched orders should properly format order moviePosterPath")
     }
-
+    XCTAssertEqual(mockResponse.validateError?.first?.validateErrorMessage, displayedOrders[1].movieInputErrorMessage, "Presenting fetched orders should properly format order movieInputErrorMessage")
+    
   }
   
   func testDisplayFetchList() {
@@ -125,7 +127,7 @@ class MainPresenterTests: XCTestCase
     // Then
     XCTAssertTrue(spy.hideLoaderCalled, "presentErrorMessage(error:) should ask the view controller to hide loader")
     XCTAssertTrue(spy.displayErrorCalled, "presentErrorMessage(error:) should ask the view controller to display the error")
-
+    
   }
   
 }

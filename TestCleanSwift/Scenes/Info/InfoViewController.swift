@@ -14,7 +14,6 @@ import UIKit
 
 protocol InfoDisplayLogic: class
 {
-  func displaySomething(viewModel: Info.Something.ViewModel)
   func displayMovieDetail(viewModel: Info.Something.ViewModel)
 }
 
@@ -86,16 +85,6 @@ class InfoViewController: UIViewController, InfoDisplayLogic
     view.backgroundColor = .black
   }
   
-  func doSomething()
-  {
-    let request = Info.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Info.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
   
   func displayMovieDetail(viewModel: Info.Something.ViewModel) {
     title = viewModel.movie.movieTitle

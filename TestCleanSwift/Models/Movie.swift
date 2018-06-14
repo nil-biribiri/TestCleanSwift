@@ -26,18 +26,24 @@ struct Movie: Codable, Equatable {
   let voteAverage: Double
   let posterPath: String
   let overview: String
-//  enum DataCodingKeys: String, CodingKey {
-//    case results
-//  }
-//  
-//  init(from decoder: Decoder) throws {
-//    let data              = try decoder.container(keyedBy: DataCodingKeys.self)
-//    let container         = try data.nestedContainer(keyedBy:CodingKeys.self, forKey: .results)
-//    
-//    title                 = try container.decode(String.self, forKey: .title)
-//    voteAverage           = try container.decode(Double.self, forKey: .voteAverage)
-//    posterPath            = try container.decode(String.self, forKey: .posterPath)
-//
-//  }
+
+  init(name: String,
+       voteAverage: Double,
+       posterPath: String,
+       overview: String) {
+    self.name = name
+    self.voteAverage = voteAverage
+    self.posterPath = posterPath
+    self.overview = overview
+  }
+  
+  init(from decoder: Decoder) throws {
+    let container         = try decoder.container(keyedBy: CodingKeys.self)
+    
+    name                  = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+    voteAverage           = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0
+    posterPath            = try container.decodeIfPresent(String.self, forKey: .posterPath) ?? ""
+    overview              = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
+  }
   
 }

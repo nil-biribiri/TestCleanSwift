@@ -178,8 +178,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MainViewController: MainTableViewCellProtocol {
   func movieButtonAction(textInput: String?, indexPath: Int) {
-//    interactor?.validateInput(textInput: textInput, indexPath: indexPath)
-    tableView.scrollToBottom()
+    interactor?.validateInput(textInput: textInput, indexPath: indexPath)
   }
   
 }
