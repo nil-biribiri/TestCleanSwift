@@ -122,13 +122,11 @@ class MainViewController: BaseViewController, MainDisplayLogic
 
   func displayFetchList(viewModel: Main.Something.ViewModel) {
     movieList = viewModel.movieList
-    self.refreshControl.endRefreshing()
+    refreshControl.endRefreshing()
     UIView.animate(withDuration: 0.1, animations: {
       self.tableView.tableFooterView = nil
     }) { [weak self] _ in
-      guard let strongSelf = self else { return }
-      strongSelf.view.layoutIfNeeded()
-      strongSelf.tableView.reloadData()
+      self?.tableView.reloadData()
     }
     
   }
@@ -139,7 +137,6 @@ class MainViewController: BaseViewController, MainDisplayLogic
       self.tableView.tableFooterView = nil
     }
   }
-
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
@@ -167,6 +164,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//    tableView.tableFooterView = loadingSpinner
+//    showMoreMovieList()
+
     let lastElement = movieList.count - 1
     if indexPath.row == lastElement {
       // handle your logic here to get more items, add it to dataSource and reload tableview

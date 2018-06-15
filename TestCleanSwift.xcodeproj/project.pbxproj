@@ -50,6 +50,7 @@
 		A1F229D120CF839C00B7AAFF /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229CD20CF839C00B7AAFF /* MainInteractorTests.swift */; };
 		A1F229D220CF839C00B7AAFF /* MainWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229CE20CF839C00B7AAFF /* MainWorkerTests.swift */; };
 		A1F229D320CF839C00B7AAFF /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229CF20CF839C00B7AAFF /* MainPresenterTests.swift */; };
+		A1F229D520D3708B00B7AAFF /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229D420D3708B00B7AAFF /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A1F229CD20CF839C00B7AAFF /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
 		A1F229CE20CF839C00B7AAFF /* MainWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerTests.swift; sourceTree = "<group>"; };
 		A1F229CF20CF839C00B7AAFF /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		A1F229D420D3708B00B7AAFF /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		A38DDDD0F293B96AC82D8989 /* Pods_TestCleanSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestCleanSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37C4A4936156A883790B76A /* Pods-TestCleanSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwiftUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwiftUITests/Pods-TestCleanSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFD0E102922697BDC6FAC29E /* Pods_TestCleanSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestCleanSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,6 +309,7 @@
 				A1B15B6920BFA9D8005510DB /* ImageExtension.swift */,
 				20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */,
 				208365EC20D18526003F899D /* UITableView.swift */,
+				A1F229D420D3708B00B7AAFF /* UIApplication.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				A178954820BBEEAB008C40A3 /* InfoViewController.swift in Sources */,
 				A178950020B80615008C40A3 /* AppDelegate.swift in Sources */,
 				A1BA9C1220CA64740013F580 /* BasePresenter.swift in Sources */,
+				A1F229D520D3708B00B7AAFF /* UIApplication.swift in Sources */,
 				A178953A20B8072D008C40A3 /* MainInteractor.swift in Sources */,
 				A1C43B0D20C650170000F306 /* NetworkTransform.swift in Sources */,
 				A1C43B0B20C64FCB0000F306 /* NetworkErrors.swift in Sources */,

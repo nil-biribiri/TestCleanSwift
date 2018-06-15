@@ -50,7 +50,15 @@ class MainViewControllerTests: XCTestCase {
     // MARK: Method call expectations
     
     var fetchMovieCalled = false
-    var fetchMoreMovieCalled = false
+    
+    var fetchMoreMovieCalled = false {
+      didSet {
+        fetchMoreMovieCalledTimes += 1
+      }
+    }
+    var fetchMoreMovieCalledTimes = 0
+    var fetchMoreMovieCalledCorrect = false
+    
     var refreshMovieCalled = false
     var validateInputCalled = false
     // MARK: Spied methods
@@ -101,30 +109,47 @@ class MainViewControllerTests: XCTestCase {
     XCTAssertTrue(spy.fetchMovieCalled, "viewDidLoad() should ask the interactor to fetch movie")
   }
   
-  func testShouldDisplayFetchedOrders() {
+  func testDisplayFetchList() {
     // Given
     let tableViewSpy = TableViewSpy()
     sut.tableView = tableViewSpy
-
+    sut.tableView.refreshControl?.beginRefreshing()
+    sut.tableView.tableFooterView = UIView()
+    
     // When
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path", movieInputErrorMessage: nil)]
     let viewModel = Main.Something.ViewModel(movieList: mockMovieList)
     sut.displayFetchList(viewModel: viewModel)
-
+    
+    
     // Then
-    XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false, "Displaying fetched orders should hide load more indicator at the top of tableView")
-    XCTAssertEqual(sut.tableView.tableFooterView, nil, "Displaying fetched orders should hide load more indicator at the bottom of tableView")
+    XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false, "displayFetchList(viewModel: ) should hide load more indicator at the top of tableView")
+    XCTAssertEqual(sut.tableView.tableFooterView, nil, "displayFetchList(viewModel: ) should hide load more indicator at the bottom of tableView")
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched orders should reload the table view")
+      XCTAssert(tableViewSpy.reloadDataCalled, "displayFetchList(viewModel: ) should reload the table view after animation 0.1 sec")
     }
-
+  }
+  
+  func testDisplayError() {
+    // Given
+    loadView()
+    
+    
+    // When
+    sut.displayError(title: "Error", message: "error message")
+    let alertController = sut.presentedViewController as? UIAlertController
+    
+    
+    // Then
+    XCTAssertNotNil(alertController, "displayError(title: , message: ) should show alert view controller")
+    XCTAssertEqual(alertController?.title, "Error")
+    XCTAssertEqual(alertController?.message, "error message")
   }
   
   func testTableViewSectionShouldAlwaysBeOne() {
     // Given
-    let tableViewSpy = TableViewSpy()
-    sut.tableView = tableViewSpy
-
+    loadView()
+    
     // When
     let numberOfSections = sut.numberOfSections(in: sut.tableView!)
     
@@ -134,8 +159,7 @@ class MainViewControllerTests: XCTestCase {
   
   func testNumberOfRowsShouldEqualNumberOfMovieList() {
     // Given
-    let tableViewSpy = TableViewSpy()
-    sut.tableView = tableViewSpy
+    loadView()
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList  = mockMovieList
 
@@ -148,11 +172,10 @@ class MainViewControllerTests: XCTestCase {
 
   func testShouldConfigureTableViewCellToDisplayMovieDetail() {
     // Given
-    let tableViewSpy = TableViewSpy()
-    sut.tableView = tableViewSpy
+    loadView()
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path", movieInputErrorMessage: "Empty input.")]
     sut.movieList  = mockMovieList
-
+    
     // When
     let indexPath = IndexPath(row: 0, section: 0)
     let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
@@ -165,13 +188,13 @@ class MainViewControllerTests: XCTestCase {
   
   func testValidateInputCalled() {
     // Given
+    loadView()
     let spy = MainBusinessLogicSpy()
     sut.interactor = spy
-    let tableViewSpy = TableViewSpy()
-    sut.tableView = tableViewSpy
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList = mockMovieList
 
+    
     // When
     let indexPath = IndexPath(row: 0, section: 0)
     let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
@@ -184,10 +207,9 @@ class MainViewControllerTests: XCTestCase {
 
   func testRefreshMovieCalled() {
     // Given
+    loadView()
     let spy = MainBusinessLogicSpy()
     sut.interactor = spy
-    let tableViewSpy = TableViewSpy()
-    sut.tableView = tableViewSpy
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList = mockMovieList
 
@@ -200,20 +222,27 @@ class MainViewControllerTests: XCTestCase {
 
   func testFetchMoreMovieCalled() {
     // Given
+    loadView()
     let spy = MainBusinessLogicSpy()
     sut.interactor = spy
-    let tableViewSpy = TableViewSpy()
-    sut.tableView = tableViewSpy
-    let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path"),
+    var mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path"),
                          Main.Something.ViewModel.Movie(movieTitle: "Shutter Island", movieRating: "10/10", moviePosterPath: "Shutter Island Poster path")]
+    mockMovieList += mockMovieList
     sut.movieList = mockMovieList
 
     // When
-    let indexPath = IndexPath(row: sut.movieList.count - 1, section: 0)
-    sut.tableView(sut.tableView!, willDisplay: MainTableViewCell(), forRowAt: indexPath)
+    for (i, _) in mockMovieList.enumerated() {
+      if i == mockMovieList.count - 1 {
+        spy.fetchMoreMovieCalledTimes != 0 ? (spy.fetchMoreMovieCalled = false) : nil
+      }
+      let indexPath = IndexPath(row: i, section: 0)
+      let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
+      sut.tableView(sut.tableView!, willDisplay: cell!, forRowAt: indexPath)
+    }
+    spy.fetchMoreMovieCalledTimes == 1 ? (spy.fetchMoreMovieCalledCorrect = true) : nil
 
     // Then
-    XCTAssertTrue(spy.fetchMoreMovieCalled, "fetchMoreMovie() should call when scroll tableView to the end of dataSource list")
+    XCTAssertTrue(spy.fetchMoreMovieCalledCorrect, "fetchMoreMovie() should call when scroll tableView to the end of dataSource list")
     XCTAssertEqual(sut.tableView.tableFooterView, sut.loadingSpinner, "fetchMoreMovie() should show loading indicator at bottom of tableView")
   }
   
