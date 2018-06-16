@@ -86,6 +86,8 @@ class MainInteractorTests: XCTestCase
       completion(Result.failure(NetworkServiceError.cannotGetErrorMessage))
     }
   }
+
+  
   
   
 }

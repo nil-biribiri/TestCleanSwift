@@ -239,7 +239,7 @@ class MainViewControllerTests: XCTestCase {
       let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
       sut.tableView(sut.tableView!, willDisplay: cell!, forRowAt: indexPath)
     }
-    spy.fetchMoreMovieCalledTimes == 1 ? (spy.fetchMoreMovieCalledCorrect = true) : nil
+    (spy.fetchMoreMovieCalledTimes == 1 && spy.fetchMoreMovieCalled == true) ? (spy.fetchMoreMovieCalledCorrect = true) : nil
 
     // Then
     XCTAssertTrue(spy.fetchMoreMovieCalledCorrect, "fetchMoreMovie() should call when scroll tableView to the end of dataSource list")
