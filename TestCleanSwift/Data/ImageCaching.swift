@@ -26,7 +26,7 @@ typealias SetImageCompletion = (() -> Void)?
 
 class NilImageCaching: UIImageView {
 
-  private var currentImageURL: URL?
+  private(set) var currentImageURL: URL?
   private var loadingView: UIViewController?
   private var isShowIndicator: Bool = false
   

@@ -16,22 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    UIApplication.shared.statusBarStyle = .lightContent
+    
+    if ProcessInfo.processInfo.environment["XCInjectBundleInto"] != nil {
+      return false
+    }
 
-    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-    // Sets shadow (line below the bar) to a blank image
-    UINavigationBar.appearance().shadowImage = UIImage()
-    // Sets the translucent background color
-    UINavigationBar.appearance().backgroundColor = .clear
-    // Set translucent. (Default value is already true, so this can be removed if desired.)
-    UINavigationBar.appearance().isTranslucent = true
-    
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    ApplicationManager.sharedInstance.initCommon(window: self.window)
 
-    
-    
-    window?.rootViewController = UINavigationController.init(rootViewController: MainViewController())
-    
     return true
   }
   

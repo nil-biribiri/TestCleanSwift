@@ -46,7 +46,7 @@ class MainViewControllerTests: XCTestCase {
   // MARK: Test doubles
   
   class MainBusinessLogicSpy: MainBusinessLogic {
-
+    
     // MARK: Method call expectations
     
     var fetchMovieCalled = false
@@ -62,7 +62,7 @@ class MainViewControllerTests: XCTestCase {
     var refreshMovieCalled = false
     var validateInputCalled = false
     // MARK: Spied methods
-
+    
     func fetchMovie(request: Main.Something.Request) {
       fetchMovieCalled = true
     }
@@ -91,10 +91,10 @@ class MainViewControllerTests: XCTestCase {
     {
       reloadDataCalled = true
     }
-
-
+    
+    
   }
-
+  
   // MARK: Tests
   
   func testShouldFetchMovieWhenViewIsLoaded() {
@@ -162,14 +162,14 @@ class MainViewControllerTests: XCTestCase {
     loadView()
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList  = mockMovieList
-
+    
     // When
     let numberOfRows = sut.tableView(sut.tableView!, numberOfRowsInSection: 0)
-
+    
     // Then
     XCTAssertEqual(numberOfRows, mockMovieList.count, "The number of table view rows should equal the number of orders to display")
   }
-
+  
   func testShouldConfigureTableViewCellToDisplayMovieDetail() {
     // Given
     loadView()
@@ -193,18 +193,18 @@ class MainViewControllerTests: XCTestCase {
     sut.interactor = spy
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList = mockMovieList
-
+    
     
     // When
     let indexPath = IndexPath(row: 0, section: 0)
     let cell = sut.tableView(sut.tableView!, cellForRowAt: indexPath) as? MainTableViewCell
     cell?.movieButtonAction(self)
-
+    
     
     // Then
     XCTAssertTrue(spy.validateInputCalled, "validateInput() should call when movie button in MainTableViewCell pressed")
   }
-
+  
   func testRefreshMovieCalled() {
     // Given
     loadView()
@@ -212,14 +212,14 @@ class MainViewControllerTests: XCTestCase {
     sut.interactor = spy
     let mockMovieList = [Main.Something.ViewModel.Movie(movieTitle: "Inception", movieRating: "10/10", moviePosterPath: "Inception Poster path")]
     sut.movieList = mockMovieList
-
+    
     // When
     sut.tableView.refreshControl?.sendActions(for: .valueChanged)
-
+    
     // Then
     XCTAssertTrue(spy.refreshMovieCalled, "refreshMovie() should call when pulled tableView to refresh")
   }
-
+  
   func testFetchMoreMovieCalled() {
     // Given
     loadView()
@@ -229,7 +229,7 @@ class MainViewControllerTests: XCTestCase {
                          Main.Something.ViewModel.Movie(movieTitle: "Shutter Island", movieRating: "10/10", moviePosterPath: "Shutter Island Poster path")]
     mockMovieList += mockMovieList
     sut.movieList = mockMovieList
-
+    
     // When
     for (i, _) in mockMovieList.enumerated() {
       if i == mockMovieList.count - 1 {
