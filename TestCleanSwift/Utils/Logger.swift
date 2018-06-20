@@ -23,6 +23,7 @@ enum LogEvent: String {
 // Output example:
 //  2017-11-23 03:16:32025 [ℹ️][BasePage.swift]:18 19 waitForPage() -> Page AztecUITests.BlogsPage is loaded
 class Logger {
+  private init() {}
   // 1. The date formatter
   static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS" // Use your own
   static var dateFormatter: DateFormatter {
