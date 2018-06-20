@@ -33,12 +33,7 @@ final private class EDCClientSession {
   }()
 }
 
-//public typealias RequestRetryCompletion = () -> Void
-
 final class NetworkClient {
-//  private static var requestsToRetry: Queue<RequestRetryCompletion> = Queue()
-  private static var isRefreshToken: Bool = false
-  
   class func request<_Param: Codable, _Result: Codable>(url: String? = nil,
                                                         urlRequest: URLRequest? = nil,
                                                         params: _Param?,
@@ -51,15 +46,7 @@ final class NetworkClient {
     if url == nil && urlRequest == nil {
       return completion(Result.failure(NetworkServiceError.urlError))
     }
-    
-//    if isRefreshToken && urlRequest?.url?.absoluteString != API.Token.getTokenAPI {
-//      // enqueue retry request
-//      EDCClient.requestsToRetry.enqueue {
-//        EDCClient.request(url: url, urlRequest: urlRequest, params: params, paramsType: paramsType, method: method, headers: headers, resultType: resultType, completion: completion)
-//      }
-//      return
-//    }
-    
+
     var request: URLRequest?
     
     if let urlString = url, var url = URL(string: urlString) {
@@ -77,9 +64,9 @@ final class NetworkClient {
     }
     
     checkedRequest.httpMethod = method.rawValue
-    print("Request URL: \(checkedRequest.url!)")
-    print("Request Headers: \(checkedRequest.allHTTPHeaderFields! as AnyObject)")
-    
+    Logger.log(message: "Request URL: \(checkedRequest.url!)", event: .d)
+    Logger.log(message: "Request Headers: \(checkedRequest.allHTTPHeaderFields! as AnyObject)", event: .d)
+
     if method != .get {
       let encoder = JSONEncoder()
       encoder.outputFormatting  = .prettyPrinted
@@ -87,7 +74,7 @@ final class NetworkClient {
       let paramData = try? encoder.encode(params)
       if let param = paramData {
         checkedRequest.httpBody = paramData
-        print("Request Body: \(String(decoding: param, as: UTF8.self))")
+        Logger.log(message: "Request Body: \(String(decoding: param, as: UTF8.self))", event: .d)
       }
     }
     
@@ -103,7 +90,8 @@ final class NetworkClient {
       if let data = data,
         let json  = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
         let logJson = json {
-        print("Response: \(logJson.prettyPrint())")
+        Logger.log(message: "Response: \(logJson.prettyPrint())", event: .d)
+
       }
       
       if let error = error {
@@ -138,23 +126,6 @@ final class NetworkClient {
           return completion(Result.failure(NetworkServiceError.parseJSONError(resultType: String(describing: _Result.self),
                                                                           message: decodingError.debugDescription)))
         }
-//      case 401:
-//        // enqueue retry request
-//        EDCClient.requestsToRetry.enqueue {
-//          EDCClient.request(url: url, urlRequest: urlRequest, params: params, paramsType: paramsType, method: method, headers: headers, resultType: resultType, completion: completion)
-//        }
-//        // cancel all previous tasks
-//        EDCClientSession.shared.getAllTasks(completionHandler: { (allTasks) in
-//          allTasks.forEach{ $0.cancel() }
-//        })
-//        EDCClient.isRefreshToken = true
-//        // call get token (oauth)
-//        GetTokenService.callGetTokenService(completion: { (_) in
-//          EDCClient.isRefreshToken = false
-//          while EDCClient.requestsToRetry.count != 0 {
-//            EDCClient.requestsToRetry.dequeue()!()
-//          }
-//        })
       default:
         let errorMessage = "Unknown Error."
         if let data  = data {
@@ -179,7 +150,6 @@ extension NetworkClient {
   private static func buildRequestHeader(request: inout URLRequest, headers: [String: String]?) {
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//    request.addValue("\(EDCTokenResponse.shared.tokenType) \(EDCTokenResponse.shared.accessToken)", forHTTPHeaderField: "Authorization")
     headers?.forEach {
       request.addValue($0.value, forHTTPHeaderField: $0.key)
     }

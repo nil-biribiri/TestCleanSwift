@@ -104,7 +104,6 @@ class MainViewController: BaseViewController, MainDisplayLogic
     return loadingSpinner
   }()
 
-
   private func showMovieList() {
     let fetchMovieRequest = Main.Something.Request(loadingIndicator: true)
     interactor?.fetchMovie(request: fetchMovieRequest)
@@ -128,7 +127,6 @@ class MainViewController: BaseViewController, MainDisplayLogic
     }) { [weak self] _ in
       self?.tableView.reloadData()
     }
-    
   }
 
   func displayError(title: String, message: String) {
@@ -164,9 +162,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//    tableView.tableFooterView = loadingSpinner
-//    showMoreMovieList()
-
     let lastElement = movieList.count - 1
     if indexPath.row == lastElement {
       // handle your logic here to get more items, add it to dataSource and reload tableview
@@ -181,5 +176,4 @@ extension MainViewController: MainTableViewCellProtocol {
   func movieButtonAction(textInput: String?, indexPath: Int) {
     interactor?.validateInput(textInput: textInput, indexPath: indexPath)
   }
-  
 }

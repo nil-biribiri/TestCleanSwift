@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct MovieList: Codable, Equatable {
   var movies: [Movie]
   let page: Int
@@ -17,8 +16,6 @@ struct MovieList: Codable, Equatable {
     case movies = "results"
     case page
   }
-  
- 
 }
 
 struct Movie: Codable, Equatable {
@@ -45,5 +42,4 @@ struct Movie: Codable, Equatable {
     posterPath            = try container.decodeIfPresent(String.self, forKey: .posterPath) ?? ""
     overview              = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
   }
-  
 }

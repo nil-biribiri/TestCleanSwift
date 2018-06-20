@@ -61,6 +61,7 @@ class MainViewControllerTests: XCTestCase {
     
     var refreshMovieCalled = false
     var validateInputCalled = false
+
     // MARK: Spied methods
     
     func fetchMovie(request: Main.Something.Request) {
