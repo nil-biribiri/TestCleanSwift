@@ -22,9 +22,9 @@ enum LogEvent: String {
 //  Logger.log(message: "Hey ho, lets go!", event: .v)
 // Output example:
 //  2017-11-23 03:16:32025 [ℹ️][BasePage.swift]:18 19 waitForPage() -> Page AztecUITests.BlogsPage is loaded
+
 class Logger {
   private init() {}
-  // 1. The date formatter
   static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS" // Use your own
   static var dateFormatter: DateFormatter {
     let formatter = DateFormatter()
@@ -42,14 +42,12 @@ class Logger {
   class func log(message: String, event: LogEvent,
                  fileName: String = #file, line: Int = #line,
                  column: Int = #column, funcName: String = #function) {
-    #if DEBUG // 7.
+    #if DEBUG
     print("\(Date().toString()) \(event.rawValue)[\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \n\(message)")
-    #endif // 7.
+    #endif
   }
 }
 
-
-// 2. The Date to String extension
 extension Date {
   func toString() -> String {
     return Logger.dateFormatter.string(from: self as Date)
