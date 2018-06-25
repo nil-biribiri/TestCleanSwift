@@ -157,7 +157,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    router?.navigateToInfo(movie: movieList[indexPath.row])
+//    router?.navigateToInfo(movie: movieList[indexPath.row])
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
