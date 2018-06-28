@@ -61,8 +61,7 @@ class MainScreen: BaseScreen<MainContext> {
 
   func checkScrollingShowLoadMoreAppearance() -> MainScreen {
 //    setContext(name: .checkScrollingShowLoadMore) {
-      app.scrollToElement(element: mainTableViewLastCell)
-//      mainTableView.scrollToElement(element: mainTableViewLastCell)
+      mainTableView.scrollToElement(element: mainTableViewLastCell)
 //    }
     return self
   }

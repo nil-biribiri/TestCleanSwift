@@ -10,12 +10,23 @@ import XCTest
 
 class BaseTestCase: XCTestCase {
   var app: XCUIApplication!
+  static var swizzledOutIdle = false
 
   override func setUp() {
+    if !BaseTestCase.swizzledOutIdle { // ensure the swizzle only happens once
+      let original = class_getInstanceMethod(objc_getClass("XCUIApplicationProcess") as? AnyClass, Selector(("waitForQuiescenceIncludingAnimationsIdle:")))
+      let replaced = class_getInstanceMethod(type(of: self), #selector(BaseTestCase.replace))
+      method_exchangeImplementations(original!, replaced!)
+      BaseTestCase.swizzledOutIdle = true
+    }
+
     super.setUp()
 
     continueAfterFailure = false
     app = XCUIApplication()
+  }
+  @objc func replace() {
+    return
   }
 
   override func tearDown() {

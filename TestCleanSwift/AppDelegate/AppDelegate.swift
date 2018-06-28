@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     if CommandLine.arguments.contains("--uitesting") {
       // reset state for ui testing
+//      UIView.setAnimationsEnabled(false)
+//      UIApplication.shared.keyWindow?.layer.speed = MAXFLOAT
+//      UIApplication.shared.windows.first?.layer.speed = MAXFLOAT
+
     }
 
     ApplicationManager.sharedInstance.initCommon(window: self.window)

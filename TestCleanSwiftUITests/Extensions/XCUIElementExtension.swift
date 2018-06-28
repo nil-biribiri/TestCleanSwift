@@ -16,9 +16,10 @@ extension XCUIElement {
   }
   
   func scrollToElement(element: XCUIElement) {
-        while !element.visible() {
-//    while (true) {
-      gentleSwipe(.Up)
+//    while !element.visible() {
+          while (true) {
+      swipeUp()
+//      gentleSwipe(.Up)
     }
   }
   
@@ -65,3 +66,4 @@ extension XCUIElement {
 
 
 }
+
