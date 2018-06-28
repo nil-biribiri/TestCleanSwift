@@ -16,6 +16,7 @@ class MainScreenTest: BaseTestCase {
       .checkMainScrennAppearance()
       .checkMainTableViewAppearance()
       .checkMainTableViewCellAppearance()
+      .checkScrollingShowLoadMoreAppearance()
     takeScreenshot(of: .MainScreen)
   }
 

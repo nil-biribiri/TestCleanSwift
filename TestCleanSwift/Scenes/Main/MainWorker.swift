@@ -13,11 +13,11 @@
 import UIKit
 
 class MainWorker {
-  func fetchList(page: String, completion: @escaping (NResult<(MovieList)>) -> Void) {
+  func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
 
     let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
 
-    HTTPClient.shared.executeRequest(request: request) { (result: NResult<MovieList>) in
+    HTTPClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
       completion(result)
     }
 
@@ -39,7 +39,7 @@ class MainWorker {
 
   static func testPost() {
     let request = Request(endpoint: FetchMovieEndPoint.testPost(name: "Yo!", job: "iOS"))
-    HTTPClient.shared.executeRequest(request: request) { (result: NResult<testPostModel>) in
+    HTTPClient.shared.executeRequest(request: request) { (result: Result<testPostModel>) in
 
     }
   }

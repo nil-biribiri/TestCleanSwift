@@ -75,7 +75,7 @@ class MainInteractorTests: XCTestCase
     var movieList = MovieList(movies: [Movie(name: "", voteAverage: 0, posterPath: "", overview: "")], page: 1)
     override func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
       fetchListCalled = true
-      completion(Result.success(movieList))
+      completion(Result.success(Response(statusCode: 200, body: nil, bodyObject: movieList, responseHeaders: nil, url: nil)))
     }
   }
   

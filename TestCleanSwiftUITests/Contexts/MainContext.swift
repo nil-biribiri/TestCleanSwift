@@ -9,7 +9,9 @@
 import Foundation
 
 enum MainContext: String {
-  case checkMainView          = "Main view should be displayed"
-  case checkMainTableView     = "Main tableView should be displayed"
-  case checlMainTableViewCell = "Main tableView cell should be displayed"
+  case checkMainView                  = "Main view should be displayed"
+  case checkMainTableView             = "Main tableView should be displayed"
+  case checkMainTableViewCell         = "Main tableView cell should be displayed"
+  case checkScrollingShowLoadMore     = "Load more view should be displayed"
+
 }

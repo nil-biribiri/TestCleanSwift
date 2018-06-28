@@ -61,8 +61,8 @@ extension HTTPClient: HTTP {
     case error(Error)
   }
 
-  public func executeRequest<_Result: Codable>(request: Request) -> NResult<_Result> {
-    var result: NResult<_Result> = NResult.failure(NetworkServiceError.cannotGetErrorMessage)
+  public func executeRequest<_Result: Codable>(request: Request) -> Result<_Result> {
+    var result: Result<_Result> = Result.failure(NetworkServiceError.cannotGetErrorMessage)
     let urlRequest: URLRequest = URLRequest(request: request)
     requestsPool.append(request)
     Logger.log(message: "Request: \(request)", event: .d)
@@ -75,19 +75,19 @@ extension HTTPClient: HTTP {
     return result
   }
 
-  public func get<_Result: Codable>(url: URL) -> NResult<_Result> {
+  public func get<_Result: Codable>(url: URL) -> Result<_Result> {
     let request = Request(URL: url)
     return self.executeRequest(request: request)
   }
 
   public func executeRequest<_Result: Codable>(request: Request,
-                                               completionHandler: @escaping (NResult<_Result>) -> Void) {
+                                               completionHandler: @escaping (Result<_Result>) -> Void) {
     let urlRequest: URLRequest = URLRequest(request: request)
     requestsPool.append(request)
     Logger.log(message: "Request: \(request)", event: .d)
     urlSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
       self.removeFromPool(request: request)
-      let result: NResult<_Result> = self.handleResponse(withData: data,
+      let result: Result<_Result> = self.handleResponse(withData: data,
                                                          urlResponse: urlResponse,
                                                          error: error)
       DispatchQueue.main.async {
@@ -97,7 +97,7 @@ extension HTTPClient: HTTP {
   }
 
   public func get<_Result: Codable>(url: URL,
-                                    completionHandler: @escaping (NResult<_Result>) -> Void) {
+                                    completionHandler: @escaping (Result<_Result>) -> Void) {
 //    let request = Request(URL: url, method: HTTPMethod.GET, parameters: DummyModel(), requestGenerator: StandardRequestGenerator())
     let request = Request(URL: url)
     return self.executeRequest(request: request, completionHandler: completionHandler)
@@ -111,7 +111,7 @@ extension HTTPClient: HTTP {
   }
 
   private func handleResponse<_Result: Codable>(withData data: Data?, urlResponse: URLResponse?, error: Error?)
-    -> NResult<_Result> {
+    -> Result<_Result> {
       if let data = data,
         let json  = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
         let logJson = json {
@@ -121,11 +121,11 @@ extension HTTPClient: HTTP {
         let errorCode = (error as NSError).code
         switch errorCode {
         case -1001:
-          return NResult.failure(NetworkServiceError.connectionTimeout(message: error.localizedDescription))
+          return Result.failure(NetworkServiceError.connectionTimeout(message: error.localizedDescription))
         case -1009:
-          return NResult.failure(NetworkServiceError.noInternetConnection(message: error.localizedDescription))
+          return Result.failure(NetworkServiceError.noInternetConnection(message: error.localizedDescription))
         default:
-          return NResult.failure(NetworkServiceError.unknownError(message: error.localizedDescription))
+          return Result.failure(NetworkServiceError.unknownError(message: error.localizedDescription))
         }
       }
       if let httpResponse = urlResponse as? HTTPURLResponse {
@@ -139,18 +139,18 @@ extension HTTPClient: HTTP {
                                                        bodyObject: bodyObject,
                                                        responseHeaders: httpResponse.allHeaderFields,
                                                        url: httpResponse.url)
-            return NResult.success(response)
+            return Result.success(response)
           case .error(let error):
-            return NResult.failure(error)
+            return Result.failure(error)
           }
         case 401:
           handleUnauthorized()
         default:
           let responseError = parseError(data: data, statusCode: httpResponse.statusCode)
-          return NResult.failure(responseError)
+          return Result.failure(responseError)
         }
       }
-      return NResult.failure(NetworkServiceError.cannotGetErrorMessage)
+      return Result.failure(NetworkServiceError.cannotGetErrorMessage)
   }
 
   /// Parses the response body data.

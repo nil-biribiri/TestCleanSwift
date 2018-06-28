@@ -2,7 +2,7 @@ import Foundation
 
 /// Enumeration representing result from http request.
 /// The successfull result can be any type (Response, Image, etc).
-public enum NResult<T> {
+public enum Result<T> {
   
   /// When the request was successful.
   case success(Response<T>)
@@ -60,7 +60,7 @@ public struct Response<T> {
   public let bodyObject: T
   
   // Contains the headers of the response.
-  public let responseHeaders: [AnyHashable : Any]
+  public let responseHeaders: [AnyHashable : Any]?
   
   // The url of the response.
   public let url: URL?
@@ -74,27 +74,27 @@ public protocol HTTP {
   ///
   /// - Parameter request: The request object containing all required data.
   /// - Returns: The http result containing a repsone object and an error object if the request fails.
-  func executeRequest<_Result: Codable>(request: Request) -> NResult<_Result>
+  func executeRequest<_Result: Codable>(request: Request) -> Result<_Result>
   
   /// Executes the provided request and returns enumeration of type Result.
   ///
   /// - Parameter request: The request object containing all required data.
   /// - Parameter completionHandler: completion handler with the result of the request.
   func executeRequest<_Result: Codable>(request: Request,
-                                        completionHandler: @escaping (NResult<_Result>) -> Void)
+                                        completionHandler: @escaping (Result<_Result>) -> Void)
   
   /// Executes get request with the provided url.
   ///
   /// - Parameter url: The url of the endpoint.
   /// - Returns: The http result containing a repsone object and an error object if the request fails.
-  func get<_Result: Codable>(url: URL) -> NResult<_Result>
+  func get<_Result: Codable>(url: URL) -> Result<_Result>
   
   /// Executes get request with the provided url.
   ///
   /// - Parameter url: The url of the endpoint.
   /// - Parameter completionHandler: completion handler with the result of the request.
   func get<_Result: Codable>(url: URL,
-                             completionHandler: @escaping (NResult<_Result>) -> Void)
+                             completionHandler: @escaping (Result<_Result>) -> Void)
 
   func handleUnauthorized()
 }
