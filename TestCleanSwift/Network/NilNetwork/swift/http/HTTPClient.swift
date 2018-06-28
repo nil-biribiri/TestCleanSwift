@@ -15,6 +15,8 @@ public class HTTPClient {
 
   private let sessionDelegate: DefaultSessionDelegate = DefaultSessionDelegate()
   private let urlSession: URLSession
+  private struct DummyModel: Codable {}
+
   private(set) var requestsPool: [Request] = [Request]()
 
   /// Init method with possibility to customise the NSURLSession used for the requests.
@@ -96,6 +98,7 @@ extension HTTPClient: HTTP {
 
   public func get<_Result: Codable>(url: URL,
                                     completionHandler: @escaping (NResult<_Result>) -> Void) {
+//    let request = Request(URL: url, method: HTTPMethod.GET, parameters: DummyModel(), requestGenerator: StandardRequestGenerator())
     let request = Request(URL: url)
     return self.executeRequest(request: request, completionHandler: completionHandler)
   }

@@ -21,6 +21,7 @@ class MainWorker {
       completion(result)
     }
 
+
 //    let requestURL = APIs.fetchSeriesList.fectchSeries(withPage: page)
 
 
@@ -36,5 +37,11 @@ class MainWorker {
 //    }
   }
 
+  static func testPost() {
+    let request = Request(endpoint: FetchMovieEndPoint.testPost(name: "Yo!", job: "iOS"))
+    HTTPClient.shared.executeRequest(request: request) { (result: NResult<testPostModel>) in
+
+    }
+  }
 }
 

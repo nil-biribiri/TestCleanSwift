@@ -8,27 +8,43 @@
 
 import Foundation
 
-struct SecureRequestGenerator : RequestGenerator {
+struct SecureRequestGenerator: RequestGenerator {
   func generateRequest(method: HTTPMethod) -> MutableRequest {
-    return request(withMethod: method) |> withJsonSupport
+    return request(withMethod: method)
   }
 }
 
 enum FetchMovieEndPoint {
   case FetchMovieList(page: String)
+  case testPost(name: String, job: String)
 }
 
-extension FetchMovieEndPoint : ServiceEndpoint {
+extension FetchMovieEndPoint: ServiceEndpoint {
+
+  var parameters: Codable?{
+    switch self {
+    case .FetchMovieList:
+      return nil
+    case .testPost(let name, let job):
+      return testPostModel(name: name, job: job)
+    }
+  }
 
   var baseURL: URL {
-    get {
+    switch self {
+    case .FetchMovieList:
       return URL(string: Config.baseAPI)!
+    case .testPost:
+      return URL(string: "https://reqres.in/api")!
     }
   }
   
   var method: HTTPMethod {
-    get {
+    switch self {
+    case .FetchMovieList:
       return .GET
+    case .testPost:
+      return .POST
     }
   }
   
@@ -36,6 +52,8 @@ extension FetchMovieEndPoint : ServiceEndpoint {
     switch self {
     case .FetchMovieList:
       return "/discover/tv"
+    case .testPost:
+      return "/users"
     }
   }
   
@@ -49,6 +67,13 @@ extension FetchMovieEndPoint : ServiceEndpoint {
     switch self {
     case .FetchMovieList(let page):
       return ["api_key" : Config.APIKeys, "language" : "en-US", "sort_by" : "popularity.desc", "page" : page ]
+    case .testPost:
+      return nil
     }
   }
+}
+
+struct testPostModel: Codable {
+  let name: String
+  let job: String
 }

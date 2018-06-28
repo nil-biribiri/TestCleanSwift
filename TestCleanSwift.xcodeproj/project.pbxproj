@@ -14,7 +14,6 @@
 		208A0B7D20E3EF9500C50FC8 /* MovieEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B7C20E3EF9500C50FC8 /* MovieEndPoint.swift */; };
 		208A0B9B20E3F1D900C50FC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8120E3F1D900C50FC8 /* Constants.swift */; };
 		208A0B9C20E3F1D900C50FC8 /* DateStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8220E3F1D900C50FC8 /* DateStringUtils.swift */; };
-		208A0B9D20E3F1D900C50FC8 /* SwiftyBeaverLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8320E3F1D900C50FC8 /* SwiftyBeaverLogger.swift */; };
 		208A0B9E20E3F1D900C50FC8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8420E3F1D900C50FC8 /* Utils.swift */; };
 		208A0B9F20E3F1D900C50FC8 /* ConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8620E3F1D900C50FC8 /* ConfigUtil.swift */; };
 		208A0BA020E3F1D900C50FC8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8720E3F1D900C50FC8 /* Configuration.swift */; };
@@ -108,7 +107,6 @@
 		208A0B7C20E3EF9500C50FC8 /* MovieEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndPoint.swift; sourceTree = "<group>"; };
 		208A0B8120E3F1D900C50FC8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		208A0B8220E3F1D900C50FC8 /* DateStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateStringUtils.swift; sourceTree = "<group>"; };
-		208A0B8320E3F1D900C50FC8 /* SwiftyBeaverLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyBeaverLogger.swift; sourceTree = "<group>"; };
 		208A0B8420E3F1D900C50FC8 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		208A0B8620E3F1D900C50FC8 /* ConfigUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigUtil.swift; sourceTree = "<group>"; };
 		208A0B8720E3F1D900C50FC8 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			children = (
 				208A0B8120E3F1D900C50FC8 /* Constants.swift */,
 				208A0B8220E3F1D900C50FC8 /* DateStringUtils.swift */,
-				208A0B8320E3F1D900C50FC8 /* SwiftyBeaverLogger.swift */,
 				208A0B8420E3F1D900C50FC8 /* Utils.swift */,
 			);
 			path = util;
@@ -906,7 +903,6 @@
 				208A0B9E20E3F1D900C50FC8 /* Utils.swift in Sources */,
 				A178954920BBEEAB008C40A3 /* InfoInteractor.swift in Sources */,
 				208A0BAC20E3F1D900C50FC8 /* RequestGenerator.swift in Sources */,
-				208A0B9D20E3F1D900C50FC8 /* SwiftyBeaverLogger.swift in Sources */,
 				A1B15B6A20BFA9D8005510DB /* ImageExtension.swift in Sources */,
 				208A0BAB20E3F1D900C50FC8 /* ServiceEndpoint.swift in Sources */,
 				A178955320BE59E8008C40A3 /* NetworkClient.swift in Sources */,
