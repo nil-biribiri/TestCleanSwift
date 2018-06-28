@@ -13,21 +13,28 @@
 import UIKit
 
 class MainWorker {
-  func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
-    
-    let requestURL = APIs.fetchSeriesList.fectchSeries(withPage: page)
-    
-    NetworkClient.request(url: requestURL,
-                          params: nil,
-                          paramsType: MovieList.self,
-                          method: HTTPMethod.get,
-                          headers: nil,
-                          resultType: MovieList.self) { (result) in
-                            DispatchQueue.main.async {
-                              completion(NetworkBaseService.transformServiceResponse(result))
-                            }
+  func fetchList(page: String, completion: @escaping (NResult<(MovieList)>) -> Void) {
+
+    let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
+
+    HTTPClient.shared.executeRequest(request: request) { (result: NResult<MovieList>) in
+      completion(result)
     }
+
+//    let requestURL = APIs.fetchSeriesList.fectchSeries(withPage: page)
+
+
+//    NetworkClient.request(url: requestURL,
+//                          params: nil,
+//                          paramsType: MovieList.self,
+//                          method: HTTPMethod.get,
+//                          headers: nil,
+//                          resultType: MovieList.self) { (result) in
+//                            DispatchQueue.main.async {
+//                              completion(NetworkBaseService.transformServiceResponse(result))
+//                            }
+//    }
   }
 
-  
 }
+

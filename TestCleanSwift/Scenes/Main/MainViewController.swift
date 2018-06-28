@@ -60,6 +60,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    self.navigationController?.navigationBar.accessibilityLabel = "MainScene.Title"
     showMovieList()
   }
   
@@ -84,6 +85,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
       tableView.backgroundColor = .black
       tableView.separatorStyle = .none
       tableView.refreshControl = refreshControl
+      tableView.accessibilityIdentifier = "MainScene.MainMovieTableView"
     }
   }
 

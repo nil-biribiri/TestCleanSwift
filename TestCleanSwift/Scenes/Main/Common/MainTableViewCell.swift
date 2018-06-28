@@ -16,7 +16,11 @@ class MainTableViewCell: UITableViewCell {
   
   static let cellIdentifier = String(describing: MainTableViewCell.self)
   
-  @IBOutlet weak var moviePosterImageView: NilImageCaching!
+  @IBOutlet weak var moviePosterImageView: NilImageCaching!{
+    didSet{
+      moviePosterImageView.accessibilityIdentifier    = "mainCell.moviePosterImageView"
+    }
+  }
   @IBOutlet weak var movieNameLabel: UILabel!
   @IBOutlet weak var movieRateLabel: UILabel!
   @IBOutlet weak var movieInput: UITextField!
@@ -25,11 +29,12 @@ class MainTableViewCell: UITableViewCell {
   weak var delegate: MainTableViewCellProtocol?
   
   private var rowOfIndexPath : Int = 0
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
     setUI()
+    setIdentifier()
   }
   
   private func setUI() {
@@ -41,14 +46,22 @@ class MainTableViewCell: UITableViewCell {
     movieNameLabel.textColor = .white
     movieRateLabel.textColor = .white
   }
+
+  private func setIdentifier() {
+    movieNameLabel.accessibilityIdentifier          = "mainCell.movieNameLabel"
+    movieRateLabel.accessibilityIdentifier          = "mainCell.movieRateLabel"
+    moviePosterImageView.accessibilityIdentifier    = "mainCell.moviePosterImageView"
+
+  }
+
   
   func configureData(data: Main.Something.ViewModel.Movie, indexPath: Int) {
+    accessibilityIdentifier = "mainCell_\(indexPath)"
     movieNameLabel.text = data.movieTitle
     movieRateLabel.text = data.movieRating
     moviePosterImageView.imageCaching(link: data.moviePosterPath, contentMode: .scaleAspectFit, withDownloadIndicator: true)
     movieInput.text = data.movieInputErrorMessage
     rowOfIndexPath = indexPath
-//    moviePosterImageView.downloadedFrom(link: data.posterPath, contentMode: .scaleAspectFill)
   }
   
   @IBAction func movieButtonAction(_ sender: Any) {

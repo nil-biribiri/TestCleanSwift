@@ -23,6 +23,9 @@
                         <subviews>
                             <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="78I-Gd-g0s" customClass="NilImageCaching" customModule="TestCleanSwift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="14" width="80" height="120"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="78I-Gd-g0s" secondAttribute="height" multiplier="2:3" id="Rbp-rj-n3O"/>
                                     <constraint firstAttribute="height" priority="999" constant="120" id="jR0-FU-lAp"/>

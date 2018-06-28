@@ -86,17 +86,13 @@ class MainInteractorTests: XCTestCase
       completion(Result.failure(NetworkServiceError.cannotGetErrorMessage))
     }
   }
-
-  
-  
-  
 }
 
 // MARK: Tests
 
 extension MainInteractorTests {
   
-  func testFetchMovieSuccessInteractor() {
+  func testFetchMovieSuccess() {
     // Given
     let spy = MainPresentationLogicSpy()
     sut.presenter = spy
@@ -113,7 +109,7 @@ extension MainInteractorTests {
     XCTAssertTrue(spy.presentMovieListCalled, "fetchMovie() should ask the presenter present movie list")
   }
   
-  func testFetchMovieFailureInteractor() {
+  func testFetchMovieFailure() {
     // Given
     let spy = MainPresentationLogicSpy()
     sut.presenter = spy
@@ -134,7 +130,7 @@ extension MainInteractorTests {
 
 extension MainInteractorTests {
   
-  func testRefreshMovieSuccessInteractor() {
+  func testRefreshMovieSuccess() {
     // Given
     let spy = MainPresentationLogicSpy()
     sut.presenter = spy
@@ -155,7 +151,7 @@ extension MainInteractorTests {
     XCTAssertEqual(sut.movieList!.page, workerSpy.movieList.page, "refreshMovie() should reset page to nil then set to new page")
   }
   
-  func testRefreshMovieFailureInteractor() {
+  func testRefreshMovieFailure() {
     // Given
     let spy = MainPresentationLogicSpy()
     sut.presenter = spy
@@ -180,7 +176,7 @@ extension MainInteractorTests {
 }
 
 extension MainInteractorTests {
-  func testLoadMoreMovieSuccessInteractor() {
+  func testLoadMoreMovieSuccess() {
     // Given
     let spy = MainPresentationLogicSpy()
     sut.presenter = spy
@@ -202,7 +198,7 @@ extension MainInteractorTests {
     XCTAssertEqual(sut.movieList!.page, workerSpy.movieList.page, "fetchMoreMovie() should set page to new page")
   }
   
-  func testLoadMoreMovieFailureInteractor() {
+  func testLoadMoreMovieFailure() {
     // Given
     let spy = MainPresentationLogicSpy()
     sut.presenter = spy

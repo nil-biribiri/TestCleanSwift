@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkBaseService: NSObject {
-  static func transformServiceResponse<T>(_ original: Result<T>) -> Result<T> {
+  static func transformServiceResponse<T>(_ original: NResult<T>) -> NResult<T> {
     switch original {
       
     case .success(let value):
