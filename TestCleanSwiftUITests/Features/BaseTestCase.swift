@@ -47,6 +47,13 @@ class BaseTestCase: XCTestCase {
     }
   }
 
+  func continueApp() {
+    setContext(name: .firstLaunch) {
+      app.launchArguments.append("--uitesting")
+      app.activate()
+    }
+  }
+
 
   func takeScreenshot(of context: ScreenContext) {
     XCTContext.runActivity(named: context.rawValue) { _ in

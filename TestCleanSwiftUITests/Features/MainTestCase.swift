@@ -13,11 +13,17 @@ class MainScreenTest: BaseTestCase {
   func testMainScreen() {
     resetApp()
     _ = MainScreen()
-//      .checkMainScrennAppearance()
-//      .checkMainTableViewAppearance()
-//      .checkMainTableViewCellAppearance()
-      .checkScrollingShowLoadMoreAppearance()
+      .checkMainScrennAppearance()
+      .checkMainTableViewAppearance()
+      .checkMainTableViewCellAppearance()
     takeScreenshot(of: .MainScreen)
+  }
+
+  func testLoadMore() {
+    resetApp()
+    _ = MainScreen()
+      .checkMainTableViewAppearance()
+      .checkScrollingShowLoadMoreAppearance()
   }
   
 }

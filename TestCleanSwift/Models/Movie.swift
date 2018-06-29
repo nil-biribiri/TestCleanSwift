@@ -9,13 +9,14 @@
 import Foundation
 
 struct MovieList: Codable, Equatable {
-  var movies: [Movie]
+  var movies: [Movie?]
   let page: Int
 
   enum CodingKeys: String, CodingKey {
     case movies = "results"
     case page
   }
+
 }
 
 struct Movie: Codable, Equatable {

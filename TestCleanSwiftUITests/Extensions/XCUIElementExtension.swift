@@ -12,17 +12,15 @@ import XCTest
 extension XCUIElement {
   /// Whether or not the element is exists, hitable, enabled for user interaction.
   var isExitsHitableEnabled: Bool {
-    return self.exists && self.isHittable && self.isEnabled
+    return self.exists && self.isHittable
   }
   
   func scrollToElement(element: XCUIElement) {
-//    while !element.visible() {
-          while (true) {
+    while !element.visible() {
       swipeUp()
-//      gentleSwipe(.Up)
     }
   }
-  
+
   func visible() -> Bool {
     guard self.exists && !self.frame.isEmpty else { return false }
     return XCUIApplication().windows.element(boundBy: 0).frame.contains(self.frame)
@@ -61,9 +59,6 @@ extension XCUIElement {
       centre.press(forDuration: pressDuration, thenDragTo: rightOfCentre)
       break
     }
-
   }
-
-
 }
 
