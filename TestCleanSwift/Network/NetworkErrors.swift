@@ -15,6 +15,7 @@ enum NetworkServiceError: Error {
   case noInternetConnection(message: String)
   case parseJSONError(resultType: String, message: String)
   case cannotGetErrorMessage
+  case unauthorized
   case connectionTimeout(message: String)
 }
 

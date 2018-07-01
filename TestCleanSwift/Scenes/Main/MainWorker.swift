@@ -12,11 +12,17 @@
 
 import UIKit
 
+class TestHttpClient: HTTPClient {
+  override func handleUnauthorized() {
+    if let request = requestsToRetry.dequeue() {
+      request()
+    }
+  }
+}
+
 class MainWorker {
   func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
-
     let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
-
     HTTPClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
       completion(result)
     }
@@ -40,8 +46,15 @@ class MainWorker {
   static func testPost() {
     let request = Request(endpoint: FetchMovieEndPoint.testPost(name: "Yo!", job: "iOS"))
     HTTPClient.shared.executeRequest(request: request) { (result: Result<testPostModel>) in
+    }
+  }
+
+  static func testError() {
+    let httpClient = TestHttpClient()
+    let request = Request(endpoint: FetchMovieEndPoint.testError)
+    httpClient.executeRequest(request: request) { (result: Result<testPostModel>) in
 
     }
   }
-}
 
+}

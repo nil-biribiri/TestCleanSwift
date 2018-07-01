@@ -96,11 +96,5 @@ public protocol HTTP {
   func get<_Result: Codable>(url: URL,
                              completionHandler: @escaping (Result<_Result>) -> Void)
 
-  func handleUnauthorized()
 }
 
-public extension HTTP {
-  func handleUnauthorized() {
-    
-  }
-}

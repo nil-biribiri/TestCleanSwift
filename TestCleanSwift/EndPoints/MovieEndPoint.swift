@@ -9,14 +9,15 @@
 import Foundation
 
 struct SecureRequestGenerator: RequestGenerator {
-  func generateRequest(method: HTTPMethod) -> MutableRequest {
-    return request(withMethod: method)
+  func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
+    return request(withMethod: method) |> withJsonSupport
   }
 }
 
 enum FetchMovieEndPoint {
   case FetchMovieList(page: String)
   case testPost(name: String, job: String)
+  case testError
 }
 
 extension FetchMovieEndPoint: ServiceEndpoint {
@@ -27,6 +28,8 @@ extension FetchMovieEndPoint: ServiceEndpoint {
       return nil
     case .testPost(let name, let job):
       return testPostModel(name: name, job: job)
+    case .testError:
+      return nil
     }
   }
 
@@ -34,14 +37,14 @@ extension FetchMovieEndPoint: ServiceEndpoint {
     switch self {
     case .FetchMovieList:
       return URL(string: Config.baseAPI)!
-    case .testPost:
+    case .testPost, .testError:
       return URL(string: "https://reqres.in/api")!
     }
   }
   
   var method: HTTPMethod {
     switch self {
-    case .FetchMovieList:
+    case .FetchMovieList, .testError:
       return .GET
     case .testPost:
       return .POST
@@ -54,6 +57,8 @@ extension FetchMovieEndPoint: ServiceEndpoint {
       return "/discover/tv"
     case .testPost:
       return "/users"
+    case .testError:
+      return "/api/unknown/23"
     }
   }
   
@@ -67,7 +72,7 @@ extension FetchMovieEndPoint: ServiceEndpoint {
     switch self {
     case .FetchMovieList(let page):
       return ["api_key" : Config.APIKeys, "language" : "en-US", "sort_by" : "popularity.desc", "page" : page ]
-    case .testPost:
+    case .testPost, .testError:
       return nil
     }
   }

@@ -10,12 +10,13 @@ import Foundation
 ///
 /// You can also use async requests with completion handler.
 public class HTTPClient {
-
+  
   static let shared = HTTPClient()
 
+  var requestsToRetry: Queue<() -> Void> = Queue()
+  private var isRefreshToken: Bool = false
   private let sessionDelegate: DefaultSessionDelegate = DefaultSessionDelegate()
   private let urlSession: URLSession
-  private struct DummyModel: Codable {}
 
   private(set) var requestsPool: [Request] = [Request]()
 
@@ -50,7 +51,24 @@ public class HTTPClient {
   //        }
   //        return nil
   //    }
+  func handleUnauthorized() {}
 
+  func getErrorFromPayload(json: [String:AnyObject]??) -> (statusCode: String?, statusMessage: String?)? {
+    guard let serializeJSON = json, let convertedJSON = serializeJSON else {
+      return nil
+    }
+    if let statusCode = convertedJSON["status_code"],
+      let statusMessage = convertedJSON["status_message"] {
+      return (statusCode: statusCode as? String, statusMessage: statusMessage as? String)
+    }
+
+    if let errorArr = convertedJSON["errors"],
+      let errorStatus = (errorArr as? [String])?.first {
+      return (nil, statusMessage: errorStatus)
+    }
+    return nil
+  }
+  
 }
 
 // MARK: - HTTP protocol
@@ -69,9 +87,8 @@ extension HTTPClient: HTTP {
     urlSession.sendSynchronousRequest(request: urlRequest) { [unowned self]
       data, urlResponse, error in
       self.removeFromPool(request: request)
-      result = self.handleResponse(withData: data, urlResponse: urlResponse, error: error)
+      result = self.handleResponse(withData: data, urlResponse: urlResponse, error: error, request: request)
     }
-
     return result
   }
 
@@ -89,7 +106,9 @@ extension HTTPClient: HTTP {
       self.removeFromPool(request: request)
       let result: Result<_Result> = self.handleResponse(withData: data,
                                                          urlResponse: urlResponse,
-                                                         error: error)
+                                                         error: error,
+                                                         request: request,
+                                                         completion: completionHandler)
       DispatchQueue.main.async {
         completionHandler(NetworkBaseService.transformServiceResponse(result))
       }
@@ -98,7 +117,6 @@ extension HTTPClient: HTTP {
 
   public func get<_Result: Codable>(url: URL,
                                     completionHandler: @escaping (Result<_Result>) -> Void) {
-//    let request = Request(URL: url, method: HTTPMethod.GET, parameters: DummyModel(), requestGenerator: StandardRequestGenerator())
     let request = Request(URL: url)
     return self.executeRequest(request: request, completionHandler: completionHandler)
   }
@@ -110,8 +128,11 @@ extension HTTPClient: HTTP {
     }
   }
 
-  private func handleResponse<_Result: Codable>(withData data: Data?, urlResponse: URLResponse?, error: Error?)
-    -> Result<_Result> {
+  private func handleResponse<_Result: Codable>(withData data: Data?,
+                                                urlResponse: URLResponse?,
+                                                error: Error?,
+                                                request: Request,
+                                                completion: ((Result<_Result>) -> Void)? = nil) -> Result<_Result> {
       if let data = data,
         let json  = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
         let logJson = json {
@@ -143,8 +164,16 @@ extension HTTPClient: HTTP {
           case .error(let error):
             return Result.failure(error)
           }
-        case 401:
+        case 401, 404:
+          requestsToRetry.enqueue {
+            if let completionHandler = completion {
+              self.executeRequest(request: request, completionHandler: completionHandler)
+            } else {
+              let _: Result<_Result> = self.executeRequest(request: request)
+            }
+          }
           handleUnauthorized()
+          return Result.failure(NetworkServiceError.unauthorized)
         default:
           let responseError = parseError(data: data, statusCode: httpResponse.statusCode)
           return Result.failure(responseError)
@@ -152,7 +181,7 @@ extension HTTPClient: HTTP {
       }
       return Result.failure(NetworkServiceError.cannotGetErrorMessage)
   }
-
+  
   /// Parses the response body data.
   ///
   /// - Parameter data: The data object which should be parsed.
@@ -191,22 +220,6 @@ extension HTTPClient: HTTP {
     return NetworkServiceError.unknownError(message: errorMessage)
   }
 
-  private func getErrorFromPayload(json: [String:AnyObject]??) -> (statusCode: String?, statusMessage: String?)? {
-    guard let serializeJSON = json, let convertedJSON = serializeJSON else {
-      return nil
-    }
-    if let statusCode = convertedJSON["status_code"],
-      let statusMessage = convertedJSON["status_message"] {
-      return (statusCode: statusCode as? String, statusMessage: statusMessage as? String)
-    }
-
-    if let errorArr = convertedJSON["errors"],
-      let errorStatus = (errorArr as? [String])?.first {
-      return (nil, statusMessage: errorStatus)
-    }
-
-    return nil
-  }
 }
 
 /// Extension of the NSURLSession that blocks the data task with semaphore, so we can perform
