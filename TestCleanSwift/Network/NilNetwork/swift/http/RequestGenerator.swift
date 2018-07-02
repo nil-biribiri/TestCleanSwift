@@ -38,6 +38,7 @@ public protocol RequestGenerator {
     /// - Parameter method: The method of the http request.
     /// - Returns: A mutable request which can be changed afterwards.
     func generateRequest(withMethod method: HTTPMethod) -> MutableRequest
+
 }
 
 /// Default implementation of the RequestGenerator.
@@ -53,8 +54,11 @@ public extension RequestGenerator {
 
     public func withBasicAuth(request: MutableRequest) -> MutableRequest {
         var request = request
-        let username = configuration()[Constants.AuthUsername] as? String
-        let password = configuration()[Constants.AuthPassword] as? String
+//        let username = configuration()[Constants.AuthUsername] as? String
+//        let password = configuration()[Constants.AuthPassword] as? String
+        let username = Constants.AuthUsername as? String
+        let password = Constants.AuthPassword as? String
+
         if let username = username, let password = password {
             let authorizationString = "\(username):\(password)"
             if let authorizationData = authorizationString.data(using: String.Encoding.utf8) {
@@ -63,6 +67,7 @@ public extension RequestGenerator {
                 let authorization = "\(Constants.BasicAuth) \(base64Data)"
                 let authorizationHeader = [Constants.Authorization : authorization]
                 request.updateHTTPHeaderFields(headerFields: authorizationHeader)
+                request.updateHTTPHeaderFields(headerFields: ["Content-Type" : "application/x-www-form-urlencoded; charset=utf-8"])
             }
         }
         return request

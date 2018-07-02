@@ -11,7 +11,6 @@ import Foundation
 public struct Queue<T> {
   private var array = [T?]()
   private var head = 0
-  private typealias funcType = () -> ()
 
   public var isEmpty: Bool {
     return count == 0
@@ -21,18 +20,16 @@ public struct Queue<T> {
     return array.count - head
   }
 
+  public func getAllData() -> [T?] {
+    return array
+  }
+
   public var front: T? {
     if isEmpty {
       return nil
     } else {
       return array[head]
     }
-  }
-
-  private func synced(_ lock: Any, closure: funcType) {
-    objc_sync_enter(lock)
-    closure()
-    objc_sync_exit(lock)
   }
 
   public mutating func enqueue(_ element: T) {
@@ -47,21 +44,6 @@ public struct Queue<T> {
 
     removeUnusedEmptySpace()
 
-    return element
-  }
-
-  public mutating func dequeueSyncAndExecute() -> T? {
-    guard head < array.count, let element = array[head] else { return nil }
-
-    array[head] = nil
-    head += 1
-
-    removeUnusedEmptySpace()
-
-    // Execute each element synchronously
-    synced(self) {
-      (element as? funcType)?()
-    }
     return element
   }
 

@@ -93,7 +93,7 @@ extension HTTPClient: HTTP {
   }
 
   public func get<_Result: Codable>(url: URL) -> Result<_Result> {
-    let request = Request(URL: url)
+    let request = Request(url: url)
     return self.executeRequest(request: request)
   }
 
@@ -117,7 +117,7 @@ extension HTTPClient: HTTP {
 
   public func get<_Result: Codable>(url: URL,
                                     completionHandler: @escaping (Result<_Result>) -> Void) {
-    let request = Request(URL: url)
+    let request = Request(url: url)
     return self.executeRequest(request: request, completionHandler: completionHandler)
   }
 
@@ -164,7 +164,7 @@ extension HTTPClient: HTTP {
           case .error(let error):
             return Result.failure(error)
           }
-        case 401, 404:
+        case 401:
           requestsToRetry.enqueue {
             if let completionHandler = completion {
               self.executeRequest(request: request, completionHandler: completionHandler)
@@ -190,8 +190,8 @@ extension HTTPClient: HTTP {
     do {
       // Decode result to object
       let jsonDecoder = JSONDecoder()
-      jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-      if let data  = data {
+//      jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+      if let data = data {
         let result  = try jsonDecoder.decode(_Result.self, from: data)
         return ParseResult.success(result)
       } else {

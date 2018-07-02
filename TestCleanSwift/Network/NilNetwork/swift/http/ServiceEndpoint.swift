@@ -20,6 +20,9 @@ public protocol ServiceEndpoint {
   /// The query parameters which are added to the url.
   var queryParameters: [String : String]? { get }
 
+  /// The parameters which are added to the header.
+  var headerParameters: [String : String]? { get }
+
   /// An instance of the request generator which prepares the HTTP request.
   var requestGenerator: RequestGenerator { get }
 }
@@ -41,6 +44,12 @@ public extension ServiceEndpoint {
   }
 
   var queryParameters: [String : String]? {
+    get {
+      return nil
+    }
+  }
+
+  var headerParameters: [String : String]? {
     get {
       return nil
     }

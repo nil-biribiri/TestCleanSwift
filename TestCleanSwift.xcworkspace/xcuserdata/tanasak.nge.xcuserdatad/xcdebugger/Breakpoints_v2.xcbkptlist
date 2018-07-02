@@ -35,5 +35,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestCleanSwift/Scenes/Main/MainWorker.swift"
+            timestampString = "552223221.636797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "handleUnauthorized()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestCleanSwift/Network/NilNetwork/swift/http/HTTPClient.swift"
+            timestampString = "552223221.637314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "handleResponse(withData:urlResponse:error:request:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestCleanSwift.HTTPClient.(handleResponse in _FE766703D5549F1B40C57034ACE23394)&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withData: Swift.Optional&lt;Foundation.Data&gt;, urlResponse: Swift.Optional&lt;__C.NSURLResponse&gt;, error: Swift.Optional&lt;Swift.Error&gt;, request: TestCleanSwift.Request, completion: Swift.Optional&lt;(TestCleanSwift.Result&lt;A&gt;) -&gt; ()&gt;) -&gt; TestCleanSwift.Result&lt;A&gt;"
+                  moduleName = "TestCleanSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanasak.nge/Desktop/TestCleanSwift/TestCleanSwift/Network/NilNetwork/swift/http/HTTPClient.swift"
+                  timestampString = "552223221.761703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "5838">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in TestCleanSwift.HTTPClient.(handleResponse in _FE766703D5549F1B40C57034ACE23394)&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withData: Swift.Optional&lt;Foundation.Data&gt;, urlResponse: Swift.Optional&lt;__C.NSURLResponse&gt;, error: Swift.Optional&lt;Swift.Error&gt;, request: TestCleanSwift.Request, completion: Swift.Optional&lt;(TestCleanSwift.Result&lt;A&gt;) -&gt; ()&gt;) -&gt; TestCleanSwift.Result&lt;A&gt;"
+                  moduleName = "TestCleanSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tanasak.nge/Desktop/TestCleanSwift/TestCleanSwift/Network/NilNetwork/swift/http/HTTPClient.swift"
+                  timestampString = "552223221.764621"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestCleanSwift/Network/NilNetwork/swift/http/HTTPClient.swift"
+            timestampString = "552223221.637387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "handleResponse(withData:urlResponse:error:request:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestCleanSwift/Network/NilNetwork/swift/http/Util.swift"
+            timestampString = "552223221.63752"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "urlEncodedQueryStringWithEncoding()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestCleanSwift/Network/NilNetwork/swift/http/Util.swift"
+            timestampString = "552223241.427168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "urlEncodedQueryStringWithEncoding()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

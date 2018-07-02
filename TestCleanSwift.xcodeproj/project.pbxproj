@@ -44,6 +44,8 @@
 		A10D809B20E0DBD800B5A1A8 /* MainContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D809A20E0DBD800B5A1A8 /* MainContext.swift */; };
 		A10D809E20E0E18100B5A1A8 /* XCUIElementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D809D20E0E18100B5A1A8 /* XCUIElementExtension.swift */; };
 		A11CAA3F20DA4DE7003D9F83 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11CAA3E20DA4DE7003D9F83 /* Logger.swift */; };
+		A169DE3720E9E7EE00B8A382 /* TokenEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A169DE3620E9E7EE00B8A382 /* TokenEndPoint.swift */; };
+		A169DE3920EA390D00B8A382 /* ActivateEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A169DE3820EA390D00B8A382 /* ActivateEndPoint.swift */; };
 		A16EA07420BFF6D5007B7201 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16EA07220BFF6D5007B7201 /* MainTableViewCell.swift */; };
 		A16EA07520BFF6D5007B7201 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16EA07320BFF6D5007B7201 /* MainTableViewCell.xib */; };
 		A16EA07820C0F69E007B7201 /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16EA07720C0F69E007B7201 /* ImageCaching.swift */; };
@@ -139,6 +141,8 @@
 		A11CAA3E20DA4DE7003D9F83 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A11CAA4420DB5A23003D9F83 /* TestCleanSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCleanSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11CAA4820DB5A23003D9F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A169DE3620E9E7EE00B8A382 /* TokenEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEndPoint.swift; sourceTree = "<group>"; };
+		A169DE3820EA390D00B8A382 /* ActivateEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateEndPoint.swift; sourceTree = "<group>"; };
 		A16EA07220BFF6D5007B7201 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A16EA07320BFF6D5007B7201 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		A16EA07720C0F69E007B7201 /* ImageCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				208A0B7C20E3EF9500C50FC8 /* MovieEndPoint.swift */,
+				A169DE3620E9E7EE00B8A382 /* TokenEndPoint.swift */,
+				A169DE3820EA390D00B8A382 /* ActivateEndPoint.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -589,6 +595,8 @@
 				A11CAA4020DB5A23003D9F83 /* Sources */,
 				A11CAA4120DB5A23003D9F83 /* Frameworks */,
 				A11CAA4220DB5A23003D9F83 /* Resources */,
+				7FD3326F7A5175978EE8C4E3 /* [CP] Embed Pods Frameworks */,
+				D365BF75A245133BD72C72E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -608,6 +616,8 @@
 				A17894F820B80615008C40A3 /* Sources */,
 				A17894F920B80615008C40A3 /* Frameworks */,
 				A17894FA20B80615008C40A3 /* Resources */,
+				4B223604930B7E3EE1178A93 /* [CP] Embed Pods Frameworks */,
+				CB6B17EE4BD4EEBD384E80FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -626,6 +636,8 @@
 				A178950C20B80616008C40A3 /* Sources */,
 				A178950D20B80616008C40A3 /* Frameworks */,
 				A178950E20B80616008C40A3 /* Resources */,
+				8169FC6E03FF5CAF09FAAB1C /* [CP] Embed Pods Frameworks */,
+				D6CB078F67877A3D5325575C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -711,6 +723,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4B223604930B7E3EE1178A93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4C4BB502409BC1F93F50C7A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -763,6 +790,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FD3326F7A5175978EE8C4E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftUITests/Pods-TestCleanSwiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8169FC6E03FF5CAF09FAAB1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB6B17EE4BD4EEBD384E80FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D365BF75A245133BD72C72E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftUITests/Pods-TestCleanSwiftUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6CB078F67877A3D5325575C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -832,12 +934,14 @@
 				208A0BA820E3F1D900C50FC8 /* Util.swift in Sources */,
 				208365ED20D18526003F899D /* UITableView.swift in Sources */,
 				208A0BA420E3F1D900C50FC8 /* DefaultSessionDelegate.swift in Sources */,
+				A169DE3720E9E7EE00B8A382 /* TokenEndPoint.swift in Sources */,
 				208A0BA120E3F1D900C50FC8 /* Serializable.swift in Sources */,
 				20621C6920CD54C70014C3B2 /* APIs.swift in Sources */,
 				A178954720BBEEAB008C40A3 /* InfoModels.swift in Sources */,
 				A1C43B1120C652970000F306 /* NetworkQueue.swift in Sources */,
 				208A0BAE20E3F1D900C50FC8 /* Container.swift in Sources */,
 				A1C43B0F20C651620000F306 /* NetworkLog.swift in Sources */,
+				A169DE3920EA390D00B8A382 /* ActivateEndPoint.swift in Sources */,
 				A178955020BC07C8008C40A3 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,10 +13,24 @@
 import UIKit
 
 class TestHttpClient: HTTPClient {
+  let lock = NSLock()
   override func handleUnauthorized() {
-    if let request = requestsToRetry.dequeue() {
-      request()
+    lock.lock()
+    let request = Request(endpoint: TokenEndPoint.getToken)
+    HTTPClient.shared.executeRequest(request: request) { (result: Result<TokenResponse>) in
+      self.lock.unlock()
+      switch result {
+      case .success(let response):
+        TokenResponse.shared = response.bodyObject
+        while !self.requestsToRetry.isEmpty {
+          let request = self.requestsToRetry.dequeue()
+          request?()
+        }
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
     }
+
   }
 }
 
@@ -51,8 +65,8 @@ class MainWorker {
 
   static func testError() {
     let httpClient = TestHttpClient()
-    let request = Request(endpoint: FetchMovieEndPoint.testError)
-    httpClient.executeRequest(request: request) { (result: Result<testPostModel>) in
+    let request = Request(endpoint: ActivateEndPoint.activate)
+    httpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
 
     }
   }

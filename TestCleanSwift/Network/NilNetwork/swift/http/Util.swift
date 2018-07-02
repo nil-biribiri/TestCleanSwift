@@ -85,7 +85,7 @@ extension Dictionary {
     /// Used to create an url encoded string from a dictionary
     ///
     /// - Parameter encoding: The specific encoding type of th
-    public func urlEncodedQueryStringWithEncoding(encoding: String.Encoding) -> String {
+    public func urlEncodedQueryStringWithEncoding() -> String {
         var queryItems = [URLQueryItem]()
         var urlComponents = URLComponents()
         

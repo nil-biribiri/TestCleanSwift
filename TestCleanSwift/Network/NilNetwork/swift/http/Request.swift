@@ -18,11 +18,11 @@ public enum HTTPMethod: String {
 /// All of its properties are immutable. 
 /// Different init methods are provided, with or without the ServiceEndpoint and RequestGenerator.
 public struct Request: Equatable {
-  public let url: URL
-  public let method: HTTPMethod
-  public let parameters: Any?
-  public let headerFields: [String: String]
-  public let body: Data?
+  private(set) var url: URL
+  private(set) var method: HTTPMethod
+  private(set) var parameters: Any?
+  private(set) var headerFields: [String: String] = [:]
+  private(set) var body: Data? = nil
   //    public let sslCredentials: SSLCredentials?
 
   public static func ==(l: Request, r: Request) -> Bool {
@@ -32,7 +32,6 @@ public struct Request: Equatable {
       && l.method == r.method
   }
 
-
   /// Initialize with a given service endpoint.
   ///
   /// It is the caller's responsibility to ensure that the values represent valid `ServiceEndpoint` values, if that is what is desired.
@@ -40,69 +39,81 @@ public struct Request: Equatable {
     var mutableRequest = endpoint.requestGenerator.generateRequest(withMethod: endpoint.method)
     mutableRequest.updateParameters(parameters: endpoint.parameters)
     mutableRequest.updateQueryParameters(parameters: endpoint.queryParameters)
+    mutableRequest.updateHTTPHeaderFields(headerFields: endpoint.headerParameters)
     let path = endpoint.baseURL.appendingPathComponent(endpoint.path)
 
-    if mutableRequest.queryString != nil {
-      if let queryString = path.appendQueryString(queryString: mutableRequest.queryString!) {
-        self.url = queryString
-      } else {
-        self.url = path as URL
-      }
-    } else {
-      self.url = path as URL
-    }
-
+    self.url = path
     self.method = endpoint.method
     self.parameters = mutableRequest.parameters
 
-    if mutableRequest.parameters != nil && mutableRequest.method != .GET {
-      self.body = mutableRequest.body
-    } else {
-      self.body = nil
-    }
+    buildURLRequest(mutableRequest: mutableRequest,
+                    requestUrl: path)
 
-    self.headerFields = mutableRequest.headerFields
+    updateURLEncode(mutableRequest: &mutableRequest)
     //        self.sslCredentials = mutableRequest.sslCredentials
   }
 
-  public init(URL: URL,
+  public init(url: URL,
               method: HTTPMethod,
               parameters: Codable? = nil,
               queryParameters: [String: String]? = [:],
+              headerParameters: [String: String]? = [:],
               requestGenerator: RequestGenerator) {
     var mutableRequest = requestGenerator.generateRequest(withMethod: method)
     mutableRequest.updateParameters(parameters: parameters)
     mutableRequest.updateQueryParameters(parameters: queryParameters)
+    mutableRequest.updateHTTPHeaderFields(headerFields: headerParameters)
 
-    if method == .GET && mutableRequest.queryString != nil {
-      if let queryString = URL.appendQueryString(queryString: mutableRequest.queryString!) {
-        self.url = queryString
-      } else {
-        self.url = URL
-      }
-    } else {
-      self.url = URL
-    }
-
+    self.url = url
     self.method = method
     self.parameters = mutableRequest.parameters
 
+    buildURLRequest(mutableRequest: mutableRequest,
+                    requestUrl: url)
+
+    updateURLEncode(mutableRequest: &mutableRequest)
+    //        self.sslCredentials = mutableRequest.sslCredentials
+  }
+
+  public init(url: URL, method: HTTPMethod = .GET, queryParameters: [String: String] = [:]) {
+    let requestGenerator = StandardRequestGenerator()
+    self.init(url: url,
+              method: method,
+              queryParameters: queryParameters,
+              requestGenerator: requestGenerator)
+  }
+
+}
+
+private extension Request {
+
+  private mutating func buildURLRequest(mutableRequest: MutableRequest,
+                                        requestUrl: URL) {
+    if method == .GET && mutableRequest.queryString != nil {
+      if let queryString = requestUrl.appendQueryString(queryString: mutableRequest.queryString!) {
+        self.url = queryString
+      } else {
+        self.url = requestUrl
+      }
+    } else {
+      self.url = requestUrl
+    }
+
+  }
+
+  private mutating func updateURLEncode(mutableRequest: inout MutableRequest) {
     if mutableRequest.parameters != nil && mutableRequest.method != .GET {
+      if mutableRequest.headerFields["Content-Type"]?.contains("application/x-www-form-urlencoded") ?? false {
+        if let params = mutableRequest.parameters as? [String: Any] {
+          mutableRequest.parameters = params.urlEncodedQueryStringWithEncoding()
+        }
+      }
+      mutableRequest.createJsonBodyFromParameters()
       self.body = mutableRequest.body
     } else {
       self.body = nil
     }
-
     self.headerFields = mutableRequest.headerFields
-    //        self.sslCredentials = mutableRequest.sslCredentials
-  }
-
-  public init(URL: URL, method: HTTPMethod = .GET, queryParameters: [String: String] = [:]) {
-    let requestGenerator = StandardRequestGenerator()
-    self.init(URL: URL,
-              method: method,
-              queryParameters: queryParameters,
-              requestGenerator: requestGenerator)
   }
 
 }
@@ -139,7 +150,7 @@ public struct MutableRequest : RequestGenerator {
   public mutating func updateQueryParameters(parameters: Any?) {
     if let params = parameters as? [String: AnyObject] {
       self.queryString =
-        params.urlEncodedQueryStringWithEncoding(encoding: String.Encoding.utf8)
+        params.urlEncodedQueryStringWithEncoding()
     }
   }
 
@@ -147,8 +158,33 @@ public struct MutableRequest : RequestGenerator {
   //        self.sslCredentials = sslCredentials
   //    }
 
-  public mutating func updateHTTPHeaderFields(headerFields: [String: String]) {
-    self.headerFields += headerFields
+  public mutating func updateHTTPHeaderFields(headerFields: [String: String]?) {
+    if let headerFields = headerFields {
+      self.headerFields += headerFields
+    }
+  }
+
+  public mutating func createJsonBodyFromParameters() {
+    do {
+      if let dictionary = self.parameters as? [String : Any] {
+        self.body = try JSONSerialization.data(withJSONObject: dictionary,
+                                               options: .prettyPrinted)
+      } else if let encodableObject = self.parameters as? Serializable {
+        self.body = encodableObject.toData()
+      } else if let array = self.parameters as? [Any] {
+        self.body = try JSONSerialization.data(withJSONObject: array,
+                                               options: .prettyPrinted)
+      } else if let string = self.parameters as? String {
+        self.body = string.data(using: .utf8, allowLossyConversion: true)!
+      }
+
+      if let bodyToUse = self.body {
+        self.updateHTTPHeaderFields(
+          headerFields: [Constants.ContentLength : "\(bodyToUse.count)"])
+      }
+    } catch {
+//      Log.debug("Error creating body from parameters.")
+    }
   }
 
 }
@@ -161,6 +197,7 @@ extension Encodable {
 
   var jsonData: Data? {
     let encoder = JSONEncoder()
+    encoder.dataEncodingStrategy = .deferredToData
     encoder.outputFormatting  = .prettyPrinted
     encoder.keyEncodingStrategy = .convertToSnakeCase
     do {

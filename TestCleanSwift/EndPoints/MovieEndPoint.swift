@@ -8,12 +8,6 @@
 
 import Foundation
 
-struct SecureRequestGenerator: RequestGenerator {
-  func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
-    return request(withMethod: method) |> withJsonSupport
-  }
-}
-
 enum FetchMovieEndPoint {
   case FetchMovieList(page: String)
   case testPost(name: String, job: String)
@@ -64,7 +58,7 @@ extension FetchMovieEndPoint: ServiceEndpoint {
   
   var requestGenerator: RequestGenerator {
     get {
-      return SecureRequestGenerator()
+      return StandardRequestGenerator()
     }
   }
   

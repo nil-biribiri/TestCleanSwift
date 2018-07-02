@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
 
     MainWorker.testError()
-
     if ProcessInfo.processInfo.environment["XCInjectBundleInto"] != nil {
       return false
     }
@@ -59,4 +58,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
 }
-
