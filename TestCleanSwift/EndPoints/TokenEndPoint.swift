@@ -12,6 +12,15 @@ struct TokenRequestGenerator: RequestGenerator {
   func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
     return request(withMethod: method) |> withBasicAuth
   }
+
+  var authUserName: String? {
+    return Constants.AuthUsername
+  }
+
+  var authPassword: String? {
+    return Constants.AuthPassword
+  }
+  
 }
 
 enum TokenEndPoint {

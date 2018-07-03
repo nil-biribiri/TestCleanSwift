@@ -83,6 +83,10 @@ public struct Request: Equatable {
               requestGenerator: requestGenerator)
   }
 
+  public mutating func updateHTTPHeaderFields(headerFields: [String: String]) {
+    self.headerFields += headerFields
+  }
+
 }
 
 private extension Request {
@@ -183,7 +187,7 @@ public struct MutableRequest : RequestGenerator {
           headerFields: [Constants.ContentLength : "\(bodyToUse.count)"])
       }
     } catch {
-//      Log.debug("Error creating body from parameters.")
+      //      Log.debug("Error creating body from parameters.")
     }
   }
 
@@ -197,9 +201,8 @@ extension Encodable {
 
   var jsonData: Data? {
     let encoder = JSONEncoder()
-    encoder.dataEncodingStrategy = .deferredToData
     encoder.outputFormatting  = .prettyPrinted
-    encoder.keyEncodingStrategy = .convertToSnakeCase
+//    encoder.keyEncodingStrategy = .convertToSnakeCase
     do {
       return try encoder.encode(self)
     } catch {

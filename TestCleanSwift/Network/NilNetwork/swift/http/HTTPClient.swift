@@ -51,6 +51,8 @@ public class HTTPClient {
   //        }
   //        return nil
   //    }
+  func adapter(request: inout Request) {}
+
   func handleUnauthorized() {}
 
   func getErrorFromPayload(json: [String:AnyObject]??) -> (statusCode: String?, statusMessage: String?)? {
@@ -81,9 +83,13 @@ extension HTTPClient: HTTP {
 
   public func executeRequest<_Result: Codable>(request: Request) -> Result<_Result> {
     var result: Result<_Result> = Result.failure(NetworkServiceError.cannotGetErrorMessage)
-    let urlRequest: URLRequest = URLRequest(request: request)
-    requestsPool.append(request)
-    Logger.log(message: "Request: \(request)", event: .d)
+    var mutableRequest = request
+
+    adapter(request: &mutableRequest)
+    let urlRequest: URLRequest = URLRequest(request: mutableRequest)
+    requestsPool.append(mutableRequest)
+    Logger.log(message: "Request: \(mutableRequest)", event: .d)
+
     urlSession.sendSynchronousRequest(request: urlRequest) { [unowned self]
       data, urlResponse, error in
       self.removeFromPool(request: request)
@@ -99,9 +105,13 @@ extension HTTPClient: HTTP {
 
   public func executeRequest<_Result: Codable>(request: Request,
                                                completionHandler: @escaping (Result<_Result>) -> Void) {
-    let urlRequest: URLRequest = URLRequest(request: request)
-    requestsPool.append(request)
-    Logger.log(message: "Request: \(request)", event: .d)
+    var mutableRequest = request
+
+    adapter(request: &mutableRequest)
+    let urlRequest: URLRequest = URLRequest(request: mutableRequest)
+    requestsPool.append(mutableRequest)
+    Logger.log(message: "Request: \(mutableRequest)", event: .d)
+
     urlSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
       self.removeFromPool(request: request)
       let result: Result<_Result> = self.handleResponse(withData: data,
@@ -173,6 +183,7 @@ extension HTTPClient: HTTP {
             }
           }
           handleUnauthorized()
+
           return Result.failure(NetworkServiceError.unauthorized)
         default:
           let responseError = parseError(data: data, statusCode: httpResponse.statusCode)

@@ -13,7 +13,9 @@
 import UIKit
 
 class TestHttpClient: HTTPClient {
+
   let lock = NSLock()
+
   override func handleUnauthorized() {
     lock.lock()
     let request = Request(endpoint: TokenEndPoint.getToken)
@@ -30,7 +32,10 @@ class TestHttpClient: HTTPClient {
         print(error.localizedDescription)
       }
     }
+  }
 
+  override func adapter(request: inout Request) {
+    request.updateHTTPHeaderFields(headerFields: [Constants.Authorization : "\(TokenResponse.shared.tokenType) \(TokenResponse.shared.accessToken)"])
   }
 }
 
@@ -67,7 +72,12 @@ class MainWorker {
     let httpClient = TestHttpClient()
     let request = Request(endpoint: ActivateEndPoint.activate)
     httpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
-
+      switch result {
+      case .success(let response):
+        print(response)
+      case .failure(let error):
+        print(error)
+      }
     }
   }
 

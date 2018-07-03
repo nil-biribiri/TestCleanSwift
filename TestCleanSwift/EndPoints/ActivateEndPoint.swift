@@ -38,8 +38,9 @@ extension ActivateEndPoint: ServiceEndpoint {
                               imei: "596A19A6-F",
                               latitude: 13.774509378684309,
                               longitude: 100.64252445261097,
-                              password: "0000")
+                              password: "1111")
   }
+
 }
 
 public class EDCActivateRequest: Codable {
