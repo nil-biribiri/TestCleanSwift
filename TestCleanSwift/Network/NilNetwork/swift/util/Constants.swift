@@ -12,6 +12,7 @@ struct Constants {
   static let Authorization: String    = "Authorization"
   static let BasicAuth: String        = "Basic"
   static let Accept: String           = "Accept"
+  static let ContentType: String      = "Content-Type"
   static let JSONHeader: String       = "application/json"
   static let LogLevel: String         = "logLevel"
   static let ContentLength: String    = "Content-Length"

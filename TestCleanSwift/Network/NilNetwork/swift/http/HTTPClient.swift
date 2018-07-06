@@ -53,7 +53,9 @@ public class HTTPClient {
   //    }
   func adapter(request: inout Request) {}
 
-  func handleUnauthorized() {}
+  func handleUnauthorized() {
+
+  }
 
   func getErrorFromPayload(json: [String:AnyObject]??) -> (statusCode: String?, statusMessage: String?)? {
     guard let serializeJSON = json, let convertedJSON = serializeJSON else {
@@ -115,10 +117,10 @@ extension HTTPClient: HTTP {
     urlSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
       self.removeFromPool(request: request)
       let result: Result<_Result> = self.handleResponse(withData: data,
-                                                         urlResponse: urlResponse,
-                                                         error: error,
-                                                         request: request,
-                                                         completion: completionHandler)
+                                                        urlResponse: urlResponse,
+                                                        error: error,
+                                                        request: request,
+                                                        completion: completionHandler)
       DispatchQueue.main.async {
         completionHandler(NetworkBaseService.transformServiceResponse(result))
       }
@@ -143,38 +145,39 @@ extension HTTPClient: HTTP {
                                                 error: Error?,
                                                 request: Request,
                                                 completion: ((Result<_Result>) -> Void)? = nil) -> Result<_Result> {
-      if let data = data,
-        let json  = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
-        let logJson = json {
-        Logger.log(message: "Response: \(logJson.prettyPrint())", event: .d)
+    if let data = data,
+      let json  = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
+      let logJson = json {
+      Logger.log(message: "Response: \(logJson.prettyPrint())", event: .d)
+    }
+    if let error = error {
+      let errorCode = (error as NSError).code
+      switch errorCode {
+      case -1001:
+        return Result.failure(NetworkServiceError.connectionTimeout(message: error.localizedDescription))
+      case -1009:
+        return Result.failure(NetworkServiceError.noInternetConnection(message: error.localizedDescription))
+      default:
+        return Result.failure(NetworkServiceError.unknownError(message: error.localizedDescription))
       }
-      if let error = error {
-        let errorCode = (error as NSError).code
-        switch errorCode {
-        case -1001:
-          return Result.failure(NetworkServiceError.connectionTimeout(message: error.localizedDescription))
-        case -1009:
-          return Result.failure(NetworkServiceError.noInternetConnection(message: error.localizedDescription))
-        default:
-          return Result.failure(NetworkServiceError.unknownError(message: error.localizedDescription))
+    }
+    if let httpResponse = urlResponse as? HTTPURLResponse {
+      switch httpResponse.statusCode {
+      case 200..<300:
+        let bodyObject: ParseResult<_Result> = self.parseBody(data: data)
+        switch bodyObject {
+        case .success(let bodyObject):
+          let response: Response<_Result> = Response(statusCode: httpResponse.statusCode,
+                                                     body: data as Data?,
+                                                     bodyObject: bodyObject,
+                                                     responseHeaders: httpResponse.allHeaderFields,
+                                                     url: httpResponse.url)
+          return Result.success(response)
+        case .error(let error):
+          return Result.failure(error)
         }
-      }
-      if let httpResponse = urlResponse as? HTTPURLResponse {
-        switch httpResponse.statusCode {
-        case 200..<300:
-          let bodyObject: ParseResult<_Result> = self.parseBody(data: data)
-          switch bodyObject {
-          case .success(let bodyObject):
-            let response: Response<_Result> = Response(statusCode: httpResponse.statusCode,
-                                                       body: data as Data?,
-                                                       bodyObject: bodyObject,
-                                                       responseHeaders: httpResponse.allHeaderFields,
-                                                       url: httpResponse.url)
-            return Result.success(response)
-          case .error(let error):
-            return Result.failure(error)
-          }
-        case 401:
+      case 401:
+        self.synced(self) {
           requestsToRetry.enqueue {
             if let completionHandler = completion {
               self.executeRequest(request: request, completionHandler: completionHandler)
@@ -183,14 +186,15 @@ extension HTTPClient: HTTP {
             }
           }
           handleUnauthorized()
-
-          return Result.failure(NetworkServiceError.unauthorized)
-        default:
-          let responseError = parseError(data: data, statusCode: httpResponse.statusCode)
-          return Result.failure(responseError)
         }
+
+        return Result.failure(NetworkServiceError.unauthorized)
+      default:
+        let responseError = parseError(data: data, statusCode: httpResponse.statusCode)
+        return Result.failure(responseError)
       }
-      return Result.failure(NetworkServiceError.cannotGetErrorMessage)
+    }
+    return Result.failure(NetworkServiceError.cannotGetErrorMessage)
   }
   
   /// Parses the response body data.
@@ -201,7 +205,7 @@ extension HTTPClient: HTTP {
     do {
       // Decode result to object
       let jsonDecoder = JSONDecoder()
-//      jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+      //      jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
       if let data = data {
         let result  = try jsonDecoder.decode(_Result.self, from: data)
         return ParseResult.success(result)
@@ -224,12 +228,19 @@ extension HTTPClient: HTTP {
         let displayCode = (errorMessageFromPayload.statusCode ?? String(statusCode))
         let message     = (errorMessageFromPayload.statusMessage ?? errorMessage)
         return NetworkServiceError.receiveErrorFromService(statusCode: statusCode,
-                                                                             displayCode: displayCode,
-                                                                             message: message)
+                                                           displayCode: displayCode,
+                                                           message: message)
       }
     }
     return NetworkServiceError.unknownError(message: errorMessage)
   }
+
+  private func synced(_ lock: Any, closure: () -> ()) {
+    objc_sync_enter(lock)
+    closure()
+    objc_sync_exit(lock)
+  }
+
 
 }
 

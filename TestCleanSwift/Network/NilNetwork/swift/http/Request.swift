@@ -147,7 +147,7 @@ public struct MutableRequest : RequestGenerator {
     self.parameters = parameters?.toDictionary
     if let param = parameters?.jsonData {
       self.body = param
-      self.updateHTTPHeaderFields(headerFields: [Constants.ContentLength : "\(param.count)"])
+//      self.updateHTTPHeaderFields(headerFields: [Constants.ContentLength : "\(param.count)"])
     }
   }
 
@@ -183,8 +183,8 @@ public struct MutableRequest : RequestGenerator {
       }
 
       if let bodyToUse = self.body {
-        self.updateHTTPHeaderFields(
-          headerFields: [Constants.ContentLength : "\(bodyToUse.count)"])
+//        self.updateHTTPHeaderFields(
+//          headerFields: [Constants.ContentLength : "\(bodyToUse.count)"])
       }
     } catch {
       //      Log.debug("Error creating body from parameters.")

@@ -76,7 +76,9 @@ public extension RequestGenerator {
   public func withJsonSupport(request: MutableRequest) -> MutableRequest {
     var request = request
     let jsonHeader = [Constants.Accept : Constants.JSONHeader]
+    let jsonContentType = [Constants.ContentType : Constants.JSONHeader]
     request.updateHTTPHeaderFields(headerFields: jsonHeader)
+    request.updateHTTPHeaderFields(headerFields: jsonContentType)
     return request
   }
 

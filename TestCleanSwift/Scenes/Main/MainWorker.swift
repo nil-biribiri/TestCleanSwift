@@ -17,6 +17,7 @@ class TestHttpClient: HTTPClient {
   let lock = NSLock()
 
   override func handleUnauthorized() {
+
     lock.lock()
     let request = Request(endpoint: TokenEndPoint.getToken)
     HTTPClient.shared.executeRequest(request: request) { (result: Result<TokenResponse>) in
@@ -32,6 +33,8 @@ class TestHttpClient: HTTPClient {
         print(error.localizedDescription)
       }
     }
+
+    
   }
 
   override func adapter(request: inout Request) {
@@ -74,7 +77,7 @@ class MainWorker {
     httpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
       switch result {
       case .success(let response):
-        print(response)
+        print(response.bodyObject)
       case .failure(let error):
         print(error)
       }
