@@ -14,11 +14,11 @@ public class HTTPClient {
   static let shared = HTTPClient()
 
   var requestsToRetry: Queue<() -> Void> = Queue()
-  private var isRefreshToken: Bool = false
   private let sessionDelegate: DefaultSessionDelegate = DefaultSessionDelegate()
   private let urlSession: URLSession
 
   private(set) var requestsPool: [Request] = [Request]()
+  private(set) var isRefreshToken: Bool = false
 
   /// Init method with possibility to customise the NSURLSession used for the requests.
   public init(urlSession: URLSession) {
@@ -29,8 +29,8 @@ public class HTTPClient {
   public init() {
     let configuration                           = URLSessionConfiguration.default
     configuration.requestCachePolicy            = .reloadIgnoringLocalAndRemoteCacheData
-    configuration.timeoutIntervalForRequest     = 30
-    configuration.timeoutIntervalForResource    = 30
+    configuration.timeoutIntervalForRequest     = 60
+    configuration.timeoutIntervalForResource    = 60
     configuration.urlCache                      = nil
 
     self.urlSession = URLSession(configuration: configuration,
@@ -53,9 +53,7 @@ public class HTTPClient {
   //    }
   func adapter(request: inout Request) {}
 
-  func handleUnauthorized() {
-
-  }
+  func handleUnauthorized(request: Request) {}
 
   func getErrorFromPayload(json: [String:AnyObject]??) -> (statusCode: String?, statusMessage: String?)? {
     guard let serializeJSON = json, let convertedJSON = serializeJSON else {
@@ -95,7 +93,12 @@ extension HTTPClient: HTTP {
     urlSession.sendSynchronousRequest(request: urlRequest) { [unowned self]
       data, urlResponse, error in
       self.removeFromPool(request: request)
-      result = self.handleResponse(withData: data, urlResponse: urlResponse, error: error, request: request)
+      if let checkedResult: Result<_Result> = self.handleResponse(withData: data,
+                                                                  urlResponse: urlResponse,
+                                                                  error: error,
+                                                                  request: request) {
+        result = checkedResult
+      }
     }
     return result
   }
@@ -116,13 +119,15 @@ extension HTTPClient: HTTP {
 
     urlSession.dataTask(with: urlRequest) { (data, urlResponse, error) in
       self.removeFromPool(request: request)
-      let result: Result<_Result> = self.handleResponse(withData: data,
-                                                        urlResponse: urlResponse,
-                                                        error: error,
-                                                        request: request,
-                                                        completion: completionHandler)
+      let result: Result<_Result>? = self.handleResponse(withData: data,
+                                                         urlResponse: urlResponse,
+                                                         error: error,
+                                                         request: request,
+                                                         completion: completionHandler)
       DispatchQueue.main.async {
-        completionHandler(NetworkBaseService.transformServiceResponse(result))
+        if let result = result {
+          completionHandler(NetworkBaseService.transformServiceResponse(result))
+        }
       }
       }.resume()
   }
@@ -144,7 +149,7 @@ extension HTTPClient: HTTP {
                                                 urlResponse: URLResponse?,
                                                 error: Error?,
                                                 request: Request,
-                                                completion: ((Result<_Result>) -> Void)? = nil) -> Result<_Result> {
+                                                completion: ((Result<_Result>) -> Void)? = nil) -> Result<_Result>? {
     if let data = data,
       let json  = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
       let logJson = json {
@@ -177,18 +182,22 @@ extension HTTPClient: HTTP {
           return Result.failure(error)
         }
       case 401:
-        self.synced(self) {
-          requestsToRetry.enqueue {
-            if let completionHandler = completion {
-              self.executeRequest(request: request, completionHandler: completionHandler)
-            } else {
-              let _: Result<_Result> = self.executeRequest(request: request)
-            }
-          }
-          handleUnauthorized()
-        }
 
-        return Result.failure(NetworkServiceError.unauthorized)
+        if let completionHandler = completion {
+          requestsToRetry.enqueue {
+            self.executeRequest(request: request, completionHandler: completionHandler)
+          }
+        } else {
+          requestsToRetry.enqueue {
+            let _: Result<_Result> = self.executeRequest(request: request)
+          }
+        }
+        handleUnauthorized(request: request)
+        while !self.requestsToRetry.isEmpty {
+          let request = self.requestsToRetry.dequeue()
+          request?()
+        }
+        return nil
       default:
         let responseError = parseError(data: data, statusCode: httpResponse.statusCode)
         return Result.failure(responseError)

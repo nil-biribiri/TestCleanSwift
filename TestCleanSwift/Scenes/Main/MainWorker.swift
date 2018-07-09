@@ -14,31 +14,25 @@ import UIKit
 
 class TestHttpClient: HTTPClient {
 
-  let lock = NSLock()
+  static let sharedHttpClient = TestHttpClient()
 
-  override func handleUnauthorized() {
-
-    lock.lock()
-    let request = Request(endpoint: TokenEndPoint.getToken)
-    HTTPClient.shared.executeRequest(request: request) { (result: Result<TokenResponse>) in
-      self.lock.unlock()
+  override func handleUnauthorized(request: Request) {
+    if TokenResponse.shared.accessToken.isEmpty {
+    let tokenRequest = Request(endpoint: TokenEndPoint.getToken)
+      let result: Result<TokenResponse> = HTTPClient.shared.executeRequest(request: tokenRequest)
       switch result {
       case .success(let response):
         TokenResponse.shared = response.bodyObject
-        while !self.requestsToRetry.isEmpty {
-          let request = self.requestsToRetry.dequeue()
-          request?()
-        }
       case .failure(let error):
         print(error.localizedDescription)
       }
     }
-
-    
   }
 
   override func adapter(request: inout Request) {
-    request.updateHTTPHeaderFields(headerFields: [Constants.Authorization : "\(TokenResponse.shared.tokenType) \(TokenResponse.shared.accessToken)"])
+    if !TokenResponse.shared.accessToken.isEmpty {
+      request.updateHTTPHeaderFields(headerFields: [Constants.Authorization : "\(TokenResponse.shared.tokenType) \(TokenResponse.shared.accessToken)"])
+    }
   }
 }
 
@@ -48,21 +42,6 @@ class MainWorker {
     HTTPClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
       completion(result)
     }
-
-
-//    let requestURL = APIs.fetchSeriesList.fectchSeries(withPage: page)
-
-
-//    NetworkClient.request(url: requestURL,
-//                          params: nil,
-//                          paramsType: MovieList.self,
-//                          method: HTTPMethod.get,
-//                          headers: nil,
-//                          resultType: MovieList.self) { (result) in
-//                            DispatchQueue.main.async {
-//                              completion(NetworkBaseService.transformServiceResponse(result))
-//                            }
-//    }
   }
 
   static func testPost() {
@@ -72,12 +51,12 @@ class MainWorker {
   }
 
   static func testError() {
-    let httpClient = TestHttpClient()
+//    let httpClient = TestHttpClient()
     let request = Request(endpoint: ActivateEndPoint.activate)
-    httpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
+    TestHttpClient.sharedHttpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
       switch result {
       case .success(let response):
-        print(response.bodyObject)
+        print("ERRRRR  \(response.bodyObject)")
       case .failure(let error):
         print(error)
       }
