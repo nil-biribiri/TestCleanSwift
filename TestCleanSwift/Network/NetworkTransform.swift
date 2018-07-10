@@ -40,12 +40,7 @@ class NetworkBaseService: NSObject {
         return .failure(NetworkErrorResponse(message: "ParseJSON \(resultType) Error: \(errorMessage).",
           code: 10002,
           displayCode: "APP10002"))
-        
-        //      case NetworkServiceError.parseJSONError:
-        //        return .failure(NetworkErrorResponse(message: "ParseJSON Error.",
-        //                                         code: 10002,
-        //                                         displayCode: "APP10002"))
-        
+
       case NetworkServiceError.connectionTimeout(let message):
         return .failure(NetworkErrorResponse(message: message,
                                              code: 10003,
@@ -83,7 +78,5 @@ extension NetworkErrorResponse: LocalizedError {
 public extension Error {
   var errorObject: NetworkErrorResponse {
     return self as? NetworkErrorResponse ?? NetworkErrorResponse()
-    //    let _self = Result<NetworkServiceError>.failure(self)
-    //    return NetworkBaseService.transformServiceResponse(_self).error as? NetworkErrorResponse ?? NetworkErrorResponse()
   }
 }

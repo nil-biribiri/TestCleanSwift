@@ -14,11 +14,11 @@ struct TokenRequestGenerator: RequestGenerator {
   }
 
   var authUserName: String? {
-    return Constants.AuthUsername
+    return "j7BMIiZg00loIx6RIztodwfiroYq0x7F"
   }
 
   var authPassword: String? {
-    return Constants.AuthPassword
+    return "k0LdyNWpusGXDZbZ"
   }
   
 }

@@ -1,15 +1,15 @@
 import Foundation
 //import GRSecurity
 
-private let ClientP12Key = "clientP12"
-private let ClientP12PasswordKey = "clientP12Password"
-private let CaServerKey = "caServer"
+//private let ClientP12Key = "clientP12"
+//private let ClientP12PasswordKey = "clientP12Password"
+//private let CaServerKey = "caServer"
 
 /// Loads the required certificate data from the configuration.
 ///
 /// - Returns: An instance of a X.509 certificate containing the loaded data.
 /// Nil if the data is invalid or the according data could not be found in the configuration.
-func anchorsFromConfiguration() -> [SecCertificate]? {
+//func anchorsFromConfiguration() -> [SecCertificate]? {
 //    guard let caServerName = Configuration.sharedInstance[CaServerKey] as? String else {
 //        return nil
 //    }
@@ -24,14 +24,14 @@ func anchorsFromConfiguration() -> [SecCertificate]? {
 //    } catch {
 //        return nil
 //    }
-  return nil
-}
+//  return nil
+//}
 
 /// Loads the PKCS#12 data and the accoring password from the configuration.
 ///
 /// - Returns: An array containing a dictionary of the extracted data.
 /// Nil if the data is invalid or the according data could not be found in the configuration.
-func clientKeyStoresFromConfiguration() -> [Any]? {
+//func clientKeyStoresFromConfiguration() -> [Any]? {
 //    guard let password = Configuration.sharedInstance[ClientP12PasswordKey] as? String,
 //        let clientP12 = Configuration.sharedInstance[ClientP12Key] as? String else {
 //            return nil
@@ -47,5 +47,5 @@ func clientKeyStoresFromConfiguration() -> [Any]? {
 //    } catch {
 //        return nil
 //    }
-  return nil
-}
+//  return nil
+//}

@@ -15,18 +15,28 @@ import UIKit
 class TestHttpClient: HTTPClient {
 
   static let sharedHttpClient = TestHttpClient()
+  private var isRefreshToken: Bool = false
 
-  override func handleUnauthorized(request: Request) {
-    if TokenResponse.shared.accessToken.isEmpty {
-    let tokenRequest = Request(endpoint: TokenEndPoint.getToken)
-      let result: Result<TokenResponse> = HTTPClient.shared.executeRequest(request: tokenRequest)
-      switch result {
-      case .success(let response):
-        TokenResponse.shared = response.bodyObject
-      case .failure(let error):
-        print(error.localizedDescription)
+  override func handleUnauthorized(request: Request, completion: @escaping (Bool) -> Result<Error>?) {
+
+    if !isRefreshToken {
+      isRefreshToken = true
+      let tokenRequest = Request(endpoint: TokenEndPoint.getToken)
+      HTTPClient.shared.executeRequest(request: tokenRequest) { (result: Result<TokenResponse>) in
+        self.isRefreshToken = false
+        switch result {
+        case .success(let response):
+          TokenResponse.shared = response.bodyObject
+          while !self.requestsToRetry.isEmpty {
+            let request = self.requestsToRetry.dequeue()
+            request?()
+          }
+        case .failure(_):
+          _ = completion(false)
+        }
       }
     }
+
   }
 
   override func adapter(request: inout Request) {
@@ -51,7 +61,7 @@ class MainWorker {
   }
 
   static func testError() {
-//    let httpClient = TestHttpClient()
+    //    let httpClient = TestHttpClient()
     let request = Request(endpoint: ActivateEndPoint.activate)
     TestHttpClient.sharedHttpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
       switch result {

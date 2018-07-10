@@ -12,13 +12,11 @@ import Foundation
 public class HTTPClient {
   
   static let shared = HTTPClient()
-
-  var requestsToRetry: Queue<() -> Void> = Queue()
   private let sessionDelegate: DefaultSessionDelegate = DefaultSessionDelegate()
   private let urlSession: URLSession
 
   private(set) var requestsPool: [Request] = [Request]()
-  private(set) var isRefreshToken: Bool = false
+  var requestsToRetry: Queue<() -> Void> = Queue()
 
   /// Init method with possibility to customise the NSURLSession used for the requests.
   public init(urlSession: URLSession) {
@@ -43,17 +41,9 @@ public class HTTPClient {
   ///
   /// - Parameter request: The given url request.
   /// - Returns: The ssl credentials for a given request, returns nil if no credentials were found.
-  //    public func credentialsForRequest(request: URLRequest) -> SSLCredentials? {
-  //        for current in requestsPool {
-  //            if request.matches(request: current) {
-  //                return current.sslCredentials
-  //            }
-  //        }
-  //        return nil
-  //    }
   func adapter(request: inout Request) {}
 
-  func handleUnauthorized(request: Request) {}
+  func handleUnauthorized(request: Request, completion: @escaping (Bool) -> Result<Error>?) {}
 
   func getErrorFromPayload(json: [String:AnyObject]??) -> (statusCode: String?, statusMessage: String?)? {
     guard let serializeJSON = json, let convertedJSON = serializeJSON else {
@@ -100,7 +90,7 @@ extension HTTPClient: HTTP {
         result = checkedResult
       }
     }
-    return result
+    return NetworkBaseService.transformServiceResponse(result)
   }
 
   public func get<_Result: Codable>(url: URL) -> Result<_Result> {
@@ -182,7 +172,6 @@ extension HTTPClient: HTTP {
           return Result.failure(error)
         }
       case 401:
-
         if let completionHandler = completion {
           requestsToRetry.enqueue {
             self.executeRequest(request: request, completionHandler: completionHandler)
@@ -192,10 +181,12 @@ extension HTTPClient: HTTP {
             let _: Result<_Result> = self.executeRequest(request: request)
           }
         }
-        handleUnauthorized(request: request)
-        while !self.requestsToRetry.isEmpty {
-          let request = self.requestsToRetry.dequeue()
-          request?()
+        handleUnauthorized(request: request) { isSuccess -> Result<Error>? in
+          if !isSuccess {
+            return Result.failure(NetworkServiceError.cannotGetErrorMessage)
+          } else {
+            return nil
+          }
         }
         return nil
       default:
@@ -243,13 +234,6 @@ extension HTTPClient: HTTP {
     }
     return NetworkServiceError.unknownError(message: errorMessage)
   }
-
-  private func synced(_ lock: Any, closure: () -> ()) {
-    objc_sync_enter(lock)
-    closure()
-    objc_sync_exit(lock)
-  }
-
 
 }
 

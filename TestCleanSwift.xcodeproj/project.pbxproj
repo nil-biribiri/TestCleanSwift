@@ -28,8 +28,6 @@
 		208A0BAA20E3F1D900C50FC8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9420E3F1D900C50FC8 /* Errors.swift */; };
 		208A0BAB20E3F1D900C50FC8 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9520E3F1D900C50FC8 /* ServiceEndpoint.swift */; };
 		208A0BAC20E3F1D900C50FC8 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9620E3F1D900C50FC8 /* RequestGenerator.swift */; };
-		208A0BAD20E3F1D900C50FC8 /* HTTPPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9820E3F1D900C50FC8 /* HTTPPromise.swift */; };
-		208A0BAE20E3F1D900C50FC8 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9A20E3F1D900C50FC8 /* Container.swift */; };
 		208A0BB020E3F23D00C50FC8 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0BAF20E3F23C00C50FC8 /* HTTP.swift */; };
 		20AD77B020C6DC780028A2E5 /* UIViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */; };
 		2C6479A771C981D569F984BB /* Pods_TestCleanSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38DDDD0F293B96AC82D8989 /* Pods_TestCleanSwiftTests.framework */; };
@@ -123,8 +121,6 @@
 		208A0B9420E3F1D900C50FC8 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		208A0B9520E3F1D900C50FC8 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
 		208A0B9620E3F1D900C50FC8 /* RequestGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGenerator.swift; sourceTree = "<group>"; };
-		208A0B9820E3F1D900C50FC8 /* HTTPPromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPPromise.swift; sourceTree = "<group>"; };
-		208A0B9A20E3F1D900C50FC8 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		208A0BAF20E3F23C00C50FC8 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewcontroller.swift; sourceTree = "<group>"; };
 		50CA5BD23A48BF02C620068A /* Pods-TestCleanSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,8 +241,6 @@
 				208A0B8820E3F1D900C50FC8 /* serialization */,
 				208A0B8A20E3F1D900C50FC8 /* storage */,
 				208A0B8D20E3F1D900C50FC8 /* http */,
-				208A0B9720E3F1D900C50FC8 /* promise */,
-				208A0B9920E3F1D900C50FC8 /* dependencyInjection */,
 			);
 			path = swift;
 			sourceTree = "<group>";
@@ -301,22 +295,6 @@
 				208A0B9620E3F1D900C50FC8 /* RequestGenerator.swift */,
 			);
 			path = http;
-			sourceTree = "<group>";
-		};
-		208A0B9720E3F1D900C50FC8 /* promise */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B9820E3F1D900C50FC8 /* HTTPPromise.swift */,
-			);
-			path = promise;
-			sourceTree = "<group>";
-		};
-		208A0B9920E3F1D900C50FC8 /* dependencyInjection */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B9A20E3F1D900C50FC8 /* Container.swift */,
-			);
-			path = dependencyInjection;
 			sourceTree = "<group>";
 		};
 		4940D398A8541D242E302F29 /* Frameworks */ = {
@@ -913,7 +891,6 @@
 				208A0BAB20E3F1D900C50FC8 /* ServiceEndpoint.swift in Sources */,
 				A178955320BE59E8008C40A3 /* NetworkClient.swift in Sources */,
 				208A0BA220E3F1D900C50FC8 /* KeychainStorage.swift in Sources */,
-				208A0BAD20E3F1D900C50FC8 /* HTTPPromise.swift in Sources */,
 				208A0B7D20E3EF9500C50FC8 /* MovieEndPoint.swift in Sources */,
 				A178953520B8072D008C40A3 /* MainPresenter.swift in Sources */,
 				A178954620BBEEAB008C40A3 /* InfoRouter.swift in Sources */,
@@ -939,7 +916,6 @@
 				20621C6920CD54C70014C3B2 /* APIs.swift in Sources */,
 				A178954720BBEEAB008C40A3 /* InfoModels.swift in Sources */,
 				A1C43B1120C652970000F306 /* NetworkQueue.swift in Sources */,
-				208A0BAE20E3F1D900C50FC8 /* Container.swift in Sources */,
 				A1C43B0F20C651620000F306 /* NetworkLog.swift in Sources */,
 				A169DE3920EA390D00B8A382 /* ActivateEndPoint.swift in Sources */,
 				A178955020BC07C8008C40A3 /* Movie.swift in Sources */,
