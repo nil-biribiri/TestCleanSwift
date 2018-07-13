@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       UIView.setAnimationsEnabled(false)
 //      UIApplication.shared.keyWindow?.layer.speed = MAXFLOAT
 //      UIApplication.shared.windows.first?.layer.speed = MAXFLOAT
-
     }
-
     ApplicationManager.sharedInstance.initCommon(window: self.window)
 
     return true
