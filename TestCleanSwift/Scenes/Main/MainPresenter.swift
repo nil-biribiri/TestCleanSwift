@@ -31,7 +31,7 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
   func presentMovieList(response: Main.Something.Response) {
     var viewModel: Main.Something.ViewModel = Main.Something.ViewModel(movieList: [])
 
-    response.movieList.movies.enumerated().forEach { (index, eachMovie) in
+    response.movieList.movies.compactMap{$0}.enumerated().forEach { (index, eachMovie) in
       let posterPath = APIs.downloadImage.loadImage(withSize: .thumbnail, withPath: eachMovie.posterPath)
       let rating     = "Rating: \(eachMovie.voteAverage)/10"
       var inputErrorMessage: String?

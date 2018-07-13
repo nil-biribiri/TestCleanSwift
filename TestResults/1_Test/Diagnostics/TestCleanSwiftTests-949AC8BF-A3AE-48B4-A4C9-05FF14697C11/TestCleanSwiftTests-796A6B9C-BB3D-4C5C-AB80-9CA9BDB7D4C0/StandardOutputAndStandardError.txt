@@ -1,0 +1,3443 @@
+objc[4570]: Class CLConnectionCachedMessage is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreLocation.framework/CoreLocation (0x1130c3c40) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreMotion.framework/CoreMotion (0x11d7db860). One of the two will be used. Which one is undefined.
+objc[4570]: Class CLLocationInternalClient is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreLocation.framework/CoreLocation (0x1130c3a60) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreMotion.framework/CoreMotion (0x11d7dbcc0). One of the two will be used. Which one is undefined.
+objc[4570]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x11eb88c10) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/AVConference (0x11af5ac80). One of the two will be used. Which one is undefined.
+objc[4570]: Class AXAccessQueue is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities (0x11a391ce0) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport (0x11a0636d8). One of the two will be used. Which one is undefined.
+objc[4570]: Class AXAccessQueueTimer is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities (0x11a38f260) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport (0x11a063728). One of the two will be used. Which one is undefined.
+2018-06-26 15:10:30.422306+0700 TestCleanSwift[4570:279460] [AXMediaCommon] Unable to look up screen scale
+2018-06-26 15:10:30.422446+0700 TestCleanSwift[4570:279460] [AXMediaCommon] Unexpected physical screen orientation
+2018-06-26 15:10:30.441366+0700 TestCleanSwift[4570:279460] [AXMediaCommon] Unable to look up screen scale
+2018-06-26 15:10:30.447607+0700 TestCleanSwift[4570:279460] [AXMediaCommon] Unable to look up screen scale
+2018-06-26 15:10:30.447718+0700 TestCleanSwift[4570:279460] [AXMediaCommon] Unexpected physical screen orientation
+2018-06-26 15:10:30.481144+0700 TestCleanSwift[4570:279460] Unknown class _TtC14TestCleanSwift14ViewController in Interface Builder file.
+Test Suite 'All tests' started at 2018-06-26 15:10:30.642
+Test Suite 'TestCleanSwiftTests.xctest' started at 2018-06-26 15:10:30.643
+Test Suite 'MainInteractorTests' started at 2018-06-26 15:10:30.644
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testFetchMovieFailure]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testFetchMovieFailure]' passed (0.016 seconds).
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testFetchMovieSuccess]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testFetchMovieSuccess]' passed (0.001 seconds).
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testLoadMoreMovieFailure]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testLoadMoreMovieFailure]' passed (0.001 seconds).
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testLoadMoreMovieSuccess]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testLoadMoreMovieSuccess]' passed (0.003 seconds).
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testRefreshMovieFailure]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testRefreshMovieFailure]' passed (0.001 seconds).
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testRefreshMovieSuccess]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testRefreshMovieSuccess]' passed (0.001 seconds).
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testValidateInput]' started.
+Test Case '-[TestCleanSwiftTests.MainInteractorTests testValidateInput]' passed (0.002 seconds).
+Test Suite 'MainInteractorTests' passed at 2018-06-26 15:10:30.679.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.025 (0.034) seconds
+Test Suite 'MainPresenterTests' started at 2018-06-26 15:10:30.679
+Test Case '-[TestCleanSwiftTests.MainPresenterTests testDisplayError]' started.
+Test Case '-[TestCleanSwiftTests.MainPresenterTests testDisplayError]' passed (0.001 seconds).
+Test Case '-[TestCleanSwiftTests.MainPresenterTests testDisplayFetchList]' started.
+Test Case '-[TestCleanSwiftTests.MainPresenterTests testDisplayFetchList]' passed (0.000 seconds).
+Test Case '-[TestCleanSwiftTests.MainPresenterTests testDisplayFetchListFormatData]' started.
+Test Case '-[TestCleanSwiftTests.MainPresenterTests testDisplayFetchListFormatData]' passed (0.001 seconds).
+Test Suite 'MainPresenterTests' passed at 2018-06-26 15:10:30.683.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.003 (0.004) seconds
+Test Suite 'MainViewControllerTests' started at 2018-06-26 15:10:30.684
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testDisplayError]' started.
+2018-06-26 03:10:30707 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30708 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+2018-06-26 15:10:30.722954+0700 TestCleanSwift[4570:279460] Presenting view controllers on detached view controllers is discouraged <TestCleanSwift.MainViewController: 0x7ff8eb410c70>.
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testDisplayError]' passed (0.060 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testDisplayFetchList]' started.
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testDisplayFetchList]' passed (0.007 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testFetchMoreMovieCalled]' started.
+2018-06-26 03:10:30756 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30756 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testFetchMoreMovieCalled]' passed (0.068 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testNumberOfRowsShouldEqualNumberOfMovieList]' started.
+2018-06-26 03:10:30825 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30826 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testNumberOfRowsShouldEqualNumberOfMovieList]' passed (0.010 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testRefreshMovieCalled]' started.
+2018-06-26 03:10:30835 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30835 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testRefreshMovieCalled]' passed (0.015 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testShouldConfigureTableViewCellToDisplayMovieDetail]' started.
+2018-06-26 03:10:30851 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30852 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testShouldConfigureTableViewCellToDisplayMovieDetail]' passed (0.025 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testShouldFetchMovieWhenViewIsLoaded]' started.
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testShouldFetchMovieWhenViewIsLoaded]' passed (0.007 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testTableViewSectionShouldAlwaysBeOne]' started.
+2018-06-26 03:10:30891 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30892 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testTableViewSectionShouldAlwaysBeOne]' passed (0.013 seconds).
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testValidateInputCalled]' started.
+2018-06-26 03:10:30904 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30904 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+Test Case '-[TestCleanSwiftTests.MainViewControllerTests testValidateInputCalled]' passed (0.015 seconds).
+Test Suite 'MainViewControllerTests' passed at 2018-06-26 15:10:30.912.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.219 (0.229) seconds
+Test Suite 'MainWorkerTests' started at 2018-06-26 15:10:30.913
+Test Case '-[TestCleanSwiftTests.MainWorkerTests testFetchList]' started.
+2018-06-26 03:10:30914 [💬][NetworkClient.swift]:67 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request URL: https://api.themoviedb.org/3/discover/tv?api_key=e2889e1e96107371259d511ce3c23f8b&language=en-US&sort_by=popularity.desc&page=1
+2018-06-26 03:10:30915 [💬][NetworkClient.swift]:68 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Request Headers: {
+    Accept = "application/json";
+    "Content-Type" = "application/json";
+}
+2018-06-26 03:10:35071 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:35681 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:35742 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:35791 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:35820 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:36029 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:36097 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+2018-06-26 03:10:36189 [💬][NetworkClient.swift]:93 request(url:urlRequest:params:paramsType:method:headers:resultType:completion:) -> 
+Response: {
+  "page" : 1,
+  "total_pages" : 3706,
+  "results" : [
+    {
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg",
+      "id" : 1418,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 304.53382499999998,
+      "poster_path" : "\/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "first_air_date" : "2007-09-24",
+      "overview" : "The Big Bang Theory is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.",
+      "original_name" : "The Big Bang Theory",
+      "original_language" : "en",
+      "vote_count" : 2987,
+      "name" : "The Big Bang Theory",
+      "vote_average" : 6.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        878,
+        37
+      ],
+      "backdrop_path" : "\/yp94aOXzuqcQHva90B3jxLfnOO9.jpg",
+      "id" : 63247,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 135.10356999999999,
+      "poster_path" : "\/6aj09UTMQNyfSfk0ZX8rYOEsXL2.jpg",
+      "first_air_date" : "2016-10-02",
+      "overview" : "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "original_name" : "Westworld",
+      "original_language" : "en",
+      "vote_count" : 1439,
+      "name" : "Westworld",
+      "vote_average" : 8.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/qYTIuJJ7fIehicAt3bl0vW70Sq6.jpg",
+      "id" : 48866,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 117.147356,
+      "poster_path" : "\/fjJAcCmeSRQIpFttRX6NGdjnTIh.jpg",
+      "first_air_date" : "2014-03-19",
+      "overview" : "Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "original_name" : "The 100",
+      "original_language" : "en",
+      "vote_count" : 1145,
+      "name" : "The 100",
+      "vote_average" : 6.4000000000000004
+    },
+    {
+      "id" : 1402,
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/xVzvD5BPAU4HpleFSo8QOdHkndo.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 82.079914000000002,
+      "poster_path" : "\/yn7psGTZsHumHOkLUmYpyrIcA2G.jpg",
+      "first_air_date" : "2010-10-31",
+      "overview" : "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "original_name" : "The Walking Dead",
+      "original_language" : "en",
+      "vote_count" : 3442,
+      "name" : "The Walking Dead",
+      "vote_average" : 7.2999999999999998
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/kOvt2BOOwSAQCT8yo3pM3X2GXjh.jpg",
+      "id" : 2734,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 79.301914999999994,
+      "poster_path" : "\/yzMQBlirydvKp4Zgr5FbXlsrRmw.jpg",
+      "first_air_date" : "1999-09-20",
+      "overview" : "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+      "original_name" : "Law & Order: Special Victims Unit",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Law & Order: Special Victims Unit",
+      "vote_average" : 6.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/beIjmWr3OBOtcWK4tKMObOIDJ1C.jpg",
+      "id" : 63639,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 77.744895,
+      "poster_path" : "\/prJFWxJ0x8tBPTliMjj51wgYnSK.jpg",
+      "first_air_date" : "2015-12-14",
+      "overview" : "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
+      "original_name" : "The Expanse",
+      "original_language" : "en",
+      "vote_count" : 564,
+      "name" : "The Expanse",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/f5uNbUC76oowt5mt5J9QlqrIYQ6.jpg",
+      "id" : 456,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 74.965216999999996,
+      "poster_path" : "\/yTZQkSsxUFJZJe67IenRM0AEklc.jpg",
+      "first_air_date" : "1989-12-17",
+      "overview" : "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "original_name" : "The Simpsons",
+      "original_language" : "en",
+      "vote_count" : 1527,
+      "name" : "The Simpsons",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        80,
+        18
+      ],
+      "backdrop_path" : "\/a906PH7CDmSOdS7kmnAgdWk5mhv.jpg",
+      "id" : 67744,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 70.544317000000007,
+      "poster_path" : "\/r7RIwuceOaDP4KTmU1EFeDniRq4.jpg",
+      "first_air_date" : "2017-10-13",
+      "overview" : "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
+      "original_name" : "Mindhunter",
+      "original_language" : "en",
+      "vote_count" : 364,
+      "name" : "Mindhunter",
+      "vote_average" : 7.5
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/2hF2RnjVwHvxfhH2lkB9H9FdQHb.jpg",
+      "id" : 61555,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 64.975920000000002,
+      "poster_path" : "\/w1FDeOGoFS1qsSRHlj2Jzp2P0e1.jpg",
+      "first_air_date" : "2014-10-28",
+      "overview" : "A gripping anthological relationship thriller series exploring the emotional fallout of a child's abduction not only on the family but on the wider community, told over two time frames.",
+      "original_name" : "The Missing",
+      "original_language" : "en",
+      "vote_count" : 109,
+      "name" : "The Missing",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        35,
+        10763
+      ],
+      "backdrop_path" : "\/uyilhJ7MBLjiaQXboaEwe44Z0jA.jpg",
+      "id" : 2224,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 61.827559999999998,
+      "poster_path" : "\/tZlqGXWGzEJNRl9QCCUN8ioSv2D.jpg",
+      "first_air_date" : "1996-07-22",
+      "overview" : "Trevor Noah and The World's Fakest News Team tackle the biggest stories in news, politics and pop culture.",
+      "original_name" : "The Daily Show with Trevor Noah",
+      "original_language" : "en",
+      "vote_count" : 184,
+      "name" : "The Daily Show with Trevor Noah",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        9648,
+        10765
+      ],
+      "backdrop_path" : "\/koMUCyGWNtH5LXYbGqjsUwvgtsT.jpg",
+      "id" : 1622,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.190255999999998,
+      "poster_path" : "\/pui1V389cQft0BVFu9pbsYLEW1Q.jpg",
+      "first_air_date" : "2005-09-13",
+      "overview" : "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "original_name" : "Supernatural",
+      "original_language" : "en",
+      "vote_count" : 1471,
+      "name" : "Supernatural",
+      "vote_average" : 7.2000000000000002
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/pH38r4TWTqq7Mcs6XAlwgzNUeJe.jpg",
+      "id" : 1434,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 60.137155999999997,
+      "poster_path" : "\/gBGUL1UTUNmdRQT8gA1LUV4yg39.jpg",
+      "first_air_date" : "1999-01-31",
+      "overview" : "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+      "original_name" : "Family Guy",
+      "original_language" : "en",
+      "vote_count" : 1135,
+      "name" : "Family Guy",
+      "vote_average" : 6.5
+    },
+    {
+      "id" : 1668,
+      "genre_ids" : [
+        35
+      ],
+      "backdrop_path" : "\/efiX8iir6GEBWCD0uCFIi5NAyYA.jpg",
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076906999999999,
+      "poster_path" : "\/7buCWBTpiPrCF5Lt023dSC60rgS.jpg",
+      "first_air_date" : "1994-09-22",
+      "overview" : "The misadventures of a group of friends as they navigate the pitfalls of work, life and love in Manhattan.",
+      "original_name" : "Friends",
+      "original_language" : "en",
+      "vote_count" : 1173,
+      "name" : "Friends",
+      "vote_average" : 7.7999999999999998
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/qtr5i6hOm6oVzTYl3jOQAYP3oc7.jpg",
+      "id" : 1403,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 59.076222000000001,
+      "poster_path" : "\/xjm6uVktPuKXNILwjLXwVG5d5BU.jpg",
+      "first_air_date" : "2013-09-24",
+      "overview" : "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+      "original_name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "original_language" : "en",
+      "vote_count" : 1089,
+      "name" : "Marvel's Agents of S.H.I.E.L.D.",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10765
+      ],
+      "backdrop_path" : "\/mmxxEpTqVdwBlu5Pii7tbedBkPC.jpg",
+      "id" : 60735,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.449691000000001,
+      "poster_path" : "\/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg",
+      "first_air_date" : "2014-10-07",
+      "overview" : "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+      "original_name" : "The Flash",
+      "original_language" : "en",
+      "vote_count" : 2134,
+      "name" : "The Flash",
+      "vote_average" : 6.7000000000000002
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/gX8SYlnL9ZznfZwEH4KJUePBFUM.jpg",
+      "id" : 1399,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.429623999999997,
+      "poster_path" : "\/gwPSoYUHAKmdyVywgLpKKA4BjRr.jpg",
+      "first_air_date" : "2011-04-17",
+      "overview" : "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+      "original_name" : "Game of Thrones",
+      "original_language" : "en",
+      "vote_count" : 4615,
+      "name" : "Game of Thrones",
+      "vote_average" : 8.1999999999999993
+    },
+    {
+      "genre_ids" : [
+        80,
+        18,
+        9648
+      ],
+      "backdrop_path" : "\/7sJrNKwzyJWnFPFpDL9wnZ859LZ.jpg",
+      "id" : 1415,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 57.412045999999997,
+      "poster_path" : "\/q9dObe29W4bDpgzUfOOH3ZnzDbR.jpg",
+      "first_air_date" : "2012-09-27",
+      "overview" : "A modern-day drama about a crime-solving duo that cracks the NYPD's most impossible cases. Following his fall from grace in London and a stint in rehab, eccentric Sherlock escapes to Manhattan where his wealthy father forces him to live with his worst nightmare - a sober companion, Dr. Watson.",
+      "original_name" : "Elementary",
+      "original_language" : "en",
+      "vote_count" : 473,
+      "name" : "Elementary",
+      "vote_average" : 7.0999999999999996
+    },
+    {
+      "genre_ids" : [
+        18,
+        10759,
+        10765
+      ],
+      "backdrop_path" : "\/tQkigP2fItdzJWvtIhBvHxgs5yE.jpg",
+      "id" : 57243,
+      "origin_country" : [
+        "GB"
+      ],
+      "popularity" : 57.090024999999997,
+      "poster_path" : "\/74pYAFmEhj2DuoUeUF91CbLpXSd.jpg",
+      "first_air_date" : "2005-03-26",
+      "overview" : "The Doctor looks and seems human. He's handsome, witty, and could be mistaken for just another man in the street. But he is a Time Lord: a 900 year old alien with 2 hearts, part of a gifted civilization who mastered time travel. The Doctor saves planets for a living – more of a hobby actually, and he's very, very good at it. He's saved us from alien menaces and evil from before time began – but just who is he?",
+      "original_name" : "Doctor Who",
+      "original_language" : "en",
+      "vote_count" : 1160,
+      "name" : "Doctor Who",
+      "vote_average" : 7
+    },
+    {
+      "genre_ids" : [
+        16,
+        35,
+        10759
+      ],
+      "backdrop_path" : "\/x5VpDoFmCXA3MQIarOruAUIDcEy.jpg",
+      "id" : 37854,
+      "origin_country" : [
+        "JP"
+      ],
+      "popularity" : 53.228448999999998,
+      "poster_path" : "\/oag7edI9flSMawmNySEiSEJAbrf.jpg",
+      "first_air_date" : "1999-10-20",
+      "overview" : "Years ago, the fearsome pirate king Gol D. Roger was executed, leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new pirate king. Monkey D. Luffy, a boy who consumed one of the \"Devil's Fruits\", has it in his head that he'll follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and he's surrounded by a bevy of skilled fighters and thieves to help him along the way. Monkey D. Luffy brings a bunch of his crew followed by, Roronoa Zoro, Nami, Usopp, Sanji, Tony-Tony Chopper, Nico Robin, Franky, and Brook. They will do anything to get the One Piece and become King of the Pirates!",
+      "original_name" : "ワンピース",
+      "original_language" : "ja",
+      "vote_count" : 129,
+      "name" : "One Piece",
+      "vote_average" : 7.4000000000000004
+    },
+    {
+      "genre_ids" : [
+        16,
+        35
+      ],
+      "backdrop_path" : "\/mSDKNVvDfitFE6Fb6fSSl5DQmgS.jpg",
+      "id" : 2190,
+      "origin_country" : [
+        "US"
+      ],
+      "popularity" : 52.453547999999998,
+      "poster_path" : "\/v9zc0cZpy5aPSfAy6Tgb6I1zWgV.jpg",
+      "first_air_date" : "1997-08-13",
+      "overview" : "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+      "original_name" : "South Park",
+      "original_language" : "en",
+      "vote_count" : 842,
+      "name" : "South Park",
+      "vote_average" : 7.7000000000000002
+    }
+  ],
+  "total_results" : 74108
+}
+Test Case '-[TestCleanSwiftTests.MainWorkerTests testFetchList]' passed (5.325 seconds).
+Test Suite 'MainWorkerTests' passed at 2018-06-26 15:10:36.238.
+	 Executed 1 test, with 0 failures (0 unexpected) in 5.325 (5.325) seconds
+Test Suite 'TestCleanSwiftTests.xctest' passed at 2018-06-26 15:10:36.239.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 5.572 (5.595) seconds
+Test Suite 'All tests' passed at 2018-06-26 15:10:36.239.
+	 Executed 20 tests, with 0 failures (0 unexpected) in 5.572 (5.598) seconds
+
+
+Test session log:
+	/Users/tanasak.nge/Desktop/TestCleanSwift/TestResults/1_Test/Diagnostics/TestCleanSwiftTests-949AC8BF-A3AE-48B4-A4C9-05FF14697C11/TestCleanSwiftTests-796A6B9C-BB3D-4C5C-AB80-9CA9BDB7D4C0/Session-TestCleanSwiftTests-2561-06-26_151028-aBy7bm.log
+

@@ -9,13 +9,14 @@
 import Foundation
 
 struct MovieList: Codable, Equatable {
-  var movies: [Movie]
+  var movies: [Movie?]
   let page: Int
 
   enum CodingKeys: String, CodingKey {
     case movies = "results"
     case page
   }
+
 }
 
 struct Movie: Codable, Equatable {
@@ -23,6 +24,13 @@ struct Movie: Codable, Equatable {
   let voteAverage: Double
   let posterPath: String
   let overview: String
+
+  enum CodingKeys: String, CodingKey {
+    case name
+    case voteAverage = "vote_average"
+    case posterPath  = "poster_path"
+    case overview
+  }
 
   init(name: String,
        voteAverage: Double,
