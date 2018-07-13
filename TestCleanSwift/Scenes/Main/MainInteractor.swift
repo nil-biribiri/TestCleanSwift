@@ -44,11 +44,11 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
       switch result {
       case .success(let value):
         if self.movieList == nil {
-          self.movieList = value
+          self.movieList = value.bodyObject
         } else {
-          self.movieList?.movies += value.movies
+          self.movieList?.movies += value.bodyObject.movies
         }
-        self.currentPage = value.page
+        self.currentPage = value.bodyObject.page
         self.response = Main.Something.Response(movieList: self.movieList!, validateError: self.response?.validateError)
         self.presenter?.presentMovieList(response: self.response!)
       case .failure(let error):

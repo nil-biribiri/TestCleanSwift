@@ -58,6 +58,8 @@ class InfoViewController: UIViewController, InfoDisplayLogic
   override func viewDidLoad() {
     super.viewDidLoad()
     interactor?.showMovieDetail()
+    self.navigationController?.navigationBar.accessibilityLabel = "InfoScene.Title"
+
   }
   
   override func viewWillAppear(_ animated: Bool) {

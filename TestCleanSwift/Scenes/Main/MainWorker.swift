@@ -11,23 +11,15 @@
 //
 
 import UIKit
+import NilNetzwerk
 
 class MainWorker {
   func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
-    
-    let requestURL = APIs.fetchSeriesList.fectchSeries(withPage: page)
-    
-    NetworkClient.request(url: requestURL,
-                          params: nil,
-                          paramsType: MovieList.self,
-                          method: HTTPMethod.get,
-                          headers: nil,
-                          resultType: MovieList.self) { (result) in
-                            DispatchQueue.main.async {
-                              completion(NetworkBaseService.transformServiceResponse(result))
-                            }
+    let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
+    NilNetzwerk.shared.executeRequest(request: request) { (result: Result<MovieList>) in
+      completion(result)
     }
   }
 
-  
+
 }

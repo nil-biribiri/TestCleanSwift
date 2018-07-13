@@ -1,0 +1,15 @@
+15:10:28.631 xcodebuild[4296:278511] Sim iPhone X: Unregistering for sim device notification with token 4
+15:10:28.631 xcodebuild[4296:278511] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+15:10:28.632 xcodebuild[4296:278511] Sim iPhone X has testmanagerd socket at /private/tmp/com.apple.launchd.qbV2qJEOGE/com.apple.testmanagerd.unix-domain.socket
+15:10:28.632 xcodebuild[4296:278511] Validating test connection socket path (/private/tmp/com.apple.launchd.qbV2qJEOGE/com.apple.testmanagerd.unix-domain.socket)
+15:10:28.632 xcodebuild[4296:278511] Constructing transport for test connection socket
+15:10:28.632 xcodebuild[4296:278511] Connected socket 21 to testmanagerd for Sim iPhone X
+15:10:28.633 xcodebuild[4296:278511] Initiating control session with controller protocol version 29
+15:10:28.636 xcodebuild[4296:279339] Got reply to control session initiation request (result:error): 29: (null)
+15:10:28.636 xcodebuild[4296:279339] Completed protocol exchange, test daemon is running v29.
+15:10:30.524 xcodebuild[4296:279343] Got authorization request for pid 4570
+15:10:30.524 xcodebuild[4296:279343] Requesting authorization for pid 4570
+15:10:30.526 xcodebuild[4296:279344] Got reply to authorization request for pid 4570 (result:error): 1: (null)
+15:10:39.587 xcodebuild[4296:278511] Got authorization request for pid 4574
+15:10:39.587 xcodebuild[4296:279344] Requesting authorization for pid 4574
+15:10:39.587 xcodebuild[4296:278511] Got reply to authorization request for pid 4574 (result:error): 1: (null)

@@ -1,0 +1,96 @@
+objc[4574]: Class CLConnectionCachedMessage is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreLocation.framework/CoreLocation (0x116de5c40) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreMotion.framework/CoreMotion (0x121324860). One of the two will be used. Which one is undefined.
+objc[4574]: Class CLLocationInternalClient is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreLocation.framework/CoreLocation (0x116de5a60) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/CoreMotion.framework/CoreMotion (0x121324cc0). One of the two will be used. Which one is undefined.
+objc[4574]: Class VCWeakObjectHolder is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace (0x1226d1c10) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AVConference.framework/AVConference (0x11eaa3c80). One of the two will be used. Which one is undefined.
+objc[4574]: Class AXAccessQueue is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities (0x11dedace0) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport (0x11dbac6d8). One of the two will be used. Which one is undefined.
+objc[4574]: Class AXAccessQueueTimer is implemented in both /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities (0x11ded8260) and /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport (0x11dbac728). One of the two will be used. Which one is undefined.
+2018-06-26 15:10:39.414866+0700 TestCleanSwiftUITests-Runner[4574:279775] [AXMediaCommon] Unable to look up screen scale
+2018-06-26 15:10:39.415003+0700 TestCleanSwiftUITests-Runner[4574:279775] [AXMediaCommon] Unexpected physical screen orientation
+2018-06-26 15:10:39.443208+0700 TestCleanSwiftUITests-Runner[4574:279775] [AXMediaCommon] Unable to look up screen scale
+2018-06-26 15:10:39.448759+0700 TestCleanSwiftUITests-Runner[4574:279775] [AXMediaCommon] Unable to look up screen scale
+2018-06-26 15:10:39.448932+0700 TestCleanSwiftUITests-Runner[4574:279775] [AXMediaCommon] Unexpected physical screen orientation
+2018-06-26 15:10:39.457080+0700 TestCleanSwiftUITests-Runner[4574:279775] +[CATransaction synchronize] called within transaction
+2018-06-26 15:10:39.465414+0700 TestCleanSwiftUITests-Runner[4574:279775] Running in the background.
+2018-06-26 15:10:39.467977+0700 TestCleanSwiftUITests-Runner[4574:279775] Running tests...
+Test Suite 'All tests' started at 2018-06-26 15:10:39.670
+Test Suite 'TestCleanSwiftUITests.xctest' started at 2018-06-26 15:10:39.671
+Test Suite 'MainScreenTest' started at 2018-06-26 15:10:39.673
+Test Case '-[TestCleanSwiftUITests.MainScreenTest testMainScreen]' started.
+    t =     0.00s Start Test at 2018-06-26 15:10:39.674
+    t =     0.04s Set Up
+    t =     0.06s Reset app to first launch
+    t =     0.07s     Open com.Nilnilnil.TestCleanSwift
+    t =     0.11s         Launch com.Nilnilnil.TestCleanSwift
+    t =     3.06s             Wait for com.Nilnilnil.TestCleanSwift to idle
+    t =     4.46s Main view should be displayed
+    t =     4.48s     Find the "MainScene.Title" NavigationBar
+    t =     4.50s     Find the "Movies" NavigationBar
+    t =     4.52s Main tableView should be displayed
+    t =     4.52s     Waiting 20.0s for "MainScene.MainMovieTableView" Table to exist
+    t =     5.54s         Checking `Expect predicate `exists == 1` for object "MainScene.MainMovieTableView" Table`
+    t =     5.58s     Find the "MainScene.MainMovieTableView" Table
+    t =     5.61s     Find the "MainScene.MainMovieTableView" Table
+    t =     5.63s Main tableView cell should be displayed
+    t =     5.63s     Waiting 20.0s for Cell to exist
+    t =     6.65s         Checking `Expect predicate `exists == 1` for object Cell`
+    t =     6.70s     Find the Cell
+    t =     6.74s     Find the "mainCell_0" Cell
+    t =     6.76s     Waiting 20.0s for "mainCell.moviePosterImageView" Image to exist
+    t =     7.77s         Checking `Expect predicate `exists == 1` for object "mainCell.moviePosterImageView" Image`
+    t =     7.82s     Find the "mainCell.moviePosterImageView" Image
+    t =     7.85s     Find the "mainCell.moviePosterImageView" Image
+    t =     7.90s     Find the "mainCell.movieNameLabel" StaticText
+    t =     7.92s     Find the "mainCell.movieNameLabel" StaticText
+    t =     7.97s     Find the "mainCell.movieRateLabel" StaticText
+    t =     8.00s     Find the "mainCell.movieRateLabel" StaticText
+    t =     8.02s Screenshot of Main screen
+    t =     8.03s     Find the Window
+    t =     8.10s     Added attachment named 'Screenshot of Window'
+    t =     8.11s Tear Down
+Test Case '-[TestCleanSwiftUITests.MainScreenTest testMainScreen]' passed (8.314 seconds).
+Test Case '-[TestCleanSwiftUITests.MainScreenTest testNavigateToDetailScene]' started.
+    t =     0.00s Start Test at 2018-06-26 15:10:47.990
+    t =     0.04s Set Up
+    t =     0.14s Run app without re-launch
+    t =     0.14s     Open com.Nilnilnil.TestCleanSwift
+    t =     0.18s         Activate com.Nilnilnil.TestCleanSwift
+    t =     0.19s             Wait for com.Nilnilnil.TestCleanSwift to idle
+    t =     0.37s Main tableView cell should be displayed
+    t =     0.37s     Waiting 20.0s for Cell to exist
+    t =     1.40s         Checking `Expect predicate `exists == 1` for object Cell`
+    t =     1.44s     Find the Cell
+    t =     1.47s     Find the "mainCell_0" Cell
+    t =     1.50s     Waiting 20.0s for "mainCell.moviePosterImageView" Image to exist
+    t =     2.51s         Checking `Expect predicate `exists == 1` for object "mainCell.moviePosterImageView" Image`
+    t =     2.56s     Find the "mainCell.moviePosterImageView" Image
+    t =     2.59s     Find the "mainCell.moviePosterImageView" Image
+    t =     2.64s     Find the "mainCell.movieNameLabel" StaticText
+    t =     2.66s     Find the "mainCell.movieNameLabel" StaticText
+    t =     2.71s     Find the "mainCell.movieRateLabel" StaticText
+    t =     2.74s     Find the "mainCell.movieRateLabel" StaticText
+    t =     2.77s Movie detail scene should be displayed
+    t =     2.77s     Tap "mainCell_0" Cell
+    t =     2.77s         Wait for com.Nilnilnil.TestCleanSwift to idle
+    t =     2.81s         Find the "mainCell_0" Cell
+    t =     2.94s         Synthesize event
+    t =     3.04s         Wait for com.Nilnilnil.TestCleanSwift to idle
+    t =     3.59s     Waiting 20.0s for "InfoScene.Title" NavigationBar to exist
+    t =     4.60s         Checking `Expect predicate `exists == 1` for object "InfoScene.Title" NavigationBar`
+    t =     4.63s     Find the "InfoScene.Title" NavigationBar
+    t =     4.64s     Find the "The Big Bang Theory" NavigationBar
+    t =     4.65s Main scene should be disappeared from screen
+    t =     4.82s Screenshot of Detail screen
+    t =     4.82s     Find the Window
+    t =     5.01s     Added attachment named 'Screenshot of Window'
+    t =     5.02s Tear Down
+Test Case '-[TestCleanSwiftUITests.MainScreenTest testNavigateToDetailScene]' passed (5.022 seconds).
+Test Suite 'MainScreenTest' passed at 2018-06-26 15:10:53.012.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 13.337 (13.339) seconds
+Test Suite 'TestCleanSwiftUITests.xctest' passed at 2018-06-26 15:10:53.013.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 13.337 (13.341) seconds
+Test Suite 'All tests' passed at 2018-06-26 15:10:53.013.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 13.337 (13.343) seconds
+
+
+Test session log:
+	/Users/tanasak.nge/Desktop/TestCleanSwift/TestResults/1_Test/Diagnostics/TestCleanSwiftUITests-7874081E-1AB0-4ECC-BAA5-220CFA720EC5/TestCleanSwiftUITests-2829DE66-FAE9-4CDC-920D-D0611CFC2931/Session-TestCleanSwiftUITests-2561-06-26_151036-VS9GE1.log
+

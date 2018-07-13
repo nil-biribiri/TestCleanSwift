@@ -6,6 +6,7 @@ target 'TestCleanSwift' do
   use_frameworks!
 
   # Pods for TestCleanSwift
+  pod 'NilNetzwerk'
 
   target 'TestCleanSwiftTests' do
     inherit! :search_paths

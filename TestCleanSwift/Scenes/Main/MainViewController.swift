@@ -60,6 +60,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    self.navigationController?.navigationBar.accessibilityLabel = "MainScene.Title"
     showMovieList()
   }
   
@@ -84,6 +85,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
       tableView.backgroundColor = .black
       tableView.separatorStyle = .none
       tableView.refreshControl = refreshControl
+      tableView.accessibilityIdentifier = "MainScene.MainMovieTableView"
     }
   }
 
@@ -99,6 +101,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
 
   lazy var loadingSpinner: UIActivityIndicatorView = {
     let loadingSpinner = UIActivityIndicatorView(activityIndicatorStyle: .white)
+    loadingSpinner.accessibilityIdentifier = "MainScene.LoadMoreView"
     loadingSpinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 40.0)
     loadingSpinner.startAnimating()
     return loadingSpinner

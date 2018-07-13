@@ -89,7 +89,7 @@ class MainPresenterTests: XCTestCase
     
     // Then
     let displayedOrders = listOrdersDisplayLogicSpy.viewModel.movieList
-    let sourceOrders  = mockResponse.movieList.movies
+    let sourceOrders  = mockResponse.movieList.movies.compactMap{$0}
     for (displayedOrder, sourceOrder) in zip(displayedOrders, sourceOrders) {
       XCTAssertEqual(displayedOrder.movieTitle, sourceOrder.name, "Presenting fetched orders should properly format order movieTitle")
       XCTAssertEqual(displayedOrder.movieRating, "Rating: \(sourceOrder.voteAverage)/10", "Presenting fetched orders should properly format order movieRating")
