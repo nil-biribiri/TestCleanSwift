@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
 
-    for _ in 0...4 {
-      MainWorker.testError()
-    }
-
     if ProcessInfo.processInfo.environment["XCInjectBundleInto"] != nil {
       return false
     }
@@ -32,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
-//    ApplicationManager.sharedInstance.initCommon(window: self.window)
+    ApplicationManager.sharedInstance.initCommon(window: self.window)
 
     return true
   }

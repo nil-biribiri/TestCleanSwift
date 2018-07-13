@@ -25,6 +25,13 @@ struct Movie: Codable, Equatable {
   let posterPath: String
   let overview: String
 
+  enum CodingKeys: String, CodingKey {
+    case name
+    case voteAverage = "vote_average"
+    case posterPath  = "poster_path"
+    case overview
+  }
+
   init(name: String,
        voteAverage: Double,
        posterPath: String,

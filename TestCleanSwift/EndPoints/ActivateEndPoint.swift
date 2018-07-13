@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import NilNetzwerk
 
 enum ActivateEndPoint {
   case activate
@@ -25,12 +25,6 @@ extension ActivateEndPoint: ServiceEndpoint {
 
   var path: String {
     return "/v1/terminals/activate"
-  }
-
-  var requestGenerator: RequestGenerator {
-    get {
-      return StandardRequestGenerator()
-    }
   }
 
   var parameters: Codable? {

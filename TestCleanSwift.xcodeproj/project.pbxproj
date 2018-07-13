@@ -12,23 +12,6 @@
 		20621C6B20CD550B0014C3B2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20621C6A20CD550B0014C3B2 /* Config.swift */; };
 		208365ED20D18526003F899D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208365EC20D18526003F899D /* UITableView.swift */; };
 		208A0B7D20E3EF9500C50FC8 /* MovieEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B7C20E3EF9500C50FC8 /* MovieEndPoint.swift */; };
-		208A0B9B20E3F1D900C50FC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8120E3F1D900C50FC8 /* Constants.swift */; };
-		208A0B9C20E3F1D900C50FC8 /* DateStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8220E3F1D900C50FC8 /* DateStringUtils.swift */; };
-		208A0B9E20E3F1D900C50FC8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8420E3F1D900C50FC8 /* Utils.swift */; };
-		208A0B9F20E3F1D900C50FC8 /* ConfigUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8620E3F1D900C50FC8 /* ConfigUtil.swift */; };
-		208A0BA020E3F1D900C50FC8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8720E3F1D900C50FC8 /* Configuration.swift */; };
-		208A0BA120E3F1D900C50FC8 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8920E3F1D900C50FC8 /* Serializable.swift */; };
-		208A0BA220E3F1D900C50FC8 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8B20E3F1D900C50FC8 /* KeychainStorage.swift */; };
-		208A0BA320E3F1D900C50FC8 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8C20E3F1D900C50FC8 /* SecureStorage.swift */; };
-		208A0BA420E3F1D900C50FC8 /* DefaultSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8E20E3F1D900C50FC8 /* DefaultSessionDelegate.swift */; };
-		208A0BA520E3F1D900C50FC8 /* SSLUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B8F20E3F1D900C50FC8 /* SSLUtil.swift */; };
-		208A0BA620E3F1D900C50FC8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9020E3F1D900C50FC8 /* HTTPClient.swift */; };
-		208A0BA820E3F1D900C50FC8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9220E3F1D900C50FC8 /* Util.swift */; };
-		208A0BA920E3F1D900C50FC8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9320E3F1D900C50FC8 /* Request.swift */; };
-		208A0BAA20E3F1D900C50FC8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9420E3F1D900C50FC8 /* Errors.swift */; };
-		208A0BAB20E3F1D900C50FC8 /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9520E3F1D900C50FC8 /* ServiceEndpoint.swift */; };
-		208A0BAC20E3F1D900C50FC8 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0B9620E3F1D900C50FC8 /* RequestGenerator.swift */; };
-		208A0BB020E3F23D00C50FC8 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208A0BAF20E3F23C00C50FC8 /* HTTP.swift */; };
 		20AD77B020C6DC780028A2E5 /* UIViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */; };
 		2C6479A771C981D569F984BB /* Pods_TestCleanSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38DDDD0F293B96AC82D8989 /* Pods_TestCleanSwiftTests.framework */; };
 		8524997978C48F7E283F24E1 /* Pods_TestCleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4341517F93A30BFF0199B6C /* Pods_TestCleanSwift.framework */; };
@@ -67,14 +50,9 @@
 		A178954920BBEEAB008C40A3 /* InfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178954320BBEEAB008C40A3 /* InfoInteractor.swift */; };
 		A178954D20BBF164008C40A3 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A178954C20BBF164008C40A3 /* InfoViewController.xib */; };
 		A178955020BC07C8008C40A3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178954F20BC07C8008C40A3 /* Movie.swift */; };
-		A178955320BE59E8008C40A3 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178955220BE59E8008C40A3 /* NetworkClient.swift */; };
 		A1B15B6A20BFA9D8005510DB /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B15B6920BFA9D8005510DB /* ImageExtension.swift */; };
 		A1BA9C1220CA64740013F580 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA9C1120CA64740013F580 /* BasePresenter.swift */; };
 		A1BA9C1420CA677C0013F580 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA9C1320CA677C0013F580 /* BaseViewController.swift */; };
-		A1C43B0B20C64FCB0000F306 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C43B0A20C64FCB0000F306 /* NetworkErrors.swift */; };
-		A1C43B0D20C650170000F306 /* NetworkTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C43B0C20C650170000F306 /* NetworkTransform.swift */; };
-		A1C43B0F20C651620000F306 /* NetworkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C43B0E20C651620000F306 /* NetworkLog.swift */; };
-		A1C43B1120C652970000F306 /* NetworkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C43B1020C652970000F306 /* NetworkQueue.swift */; };
 		A1F229D020CF839C00B7AAFF /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229CC20CF839C00B7AAFF /* MainViewControllerTests.swift */; };
 		A1F229D120CF839C00B7AAFF /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229CD20CF839C00B7AAFF /* MainInteractorTests.swift */; };
 		A1F229D220CF839C00B7AAFF /* MainWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F229CE20CF839C00B7AAFF /* MainWorkerTests.swift */; };
@@ -105,23 +83,6 @@
 		20621C6A20CD550B0014C3B2 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		208365EC20D18526003F899D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		208A0B7C20E3EF9500C50FC8 /* MovieEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndPoint.swift; sourceTree = "<group>"; };
-		208A0B8120E3F1D900C50FC8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		208A0B8220E3F1D900C50FC8 /* DateStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateStringUtils.swift; sourceTree = "<group>"; };
-		208A0B8420E3F1D900C50FC8 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		208A0B8620E3F1D900C50FC8 /* ConfigUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigUtil.swift; sourceTree = "<group>"; };
-		208A0B8720E3F1D900C50FC8 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		208A0B8920E3F1D900C50FC8 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
-		208A0B8B20E3F1D900C50FC8 /* KeychainStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		208A0B8C20E3F1D900C50FC8 /* SecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
-		208A0B8E20E3F1D900C50FC8 /* DefaultSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSessionDelegate.swift; sourceTree = "<group>"; };
-		208A0B8F20E3F1D900C50FC8 /* SSLUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLUtil.swift; sourceTree = "<group>"; };
-		208A0B9020E3F1D900C50FC8 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		208A0B9220E3F1D900C50FC8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		208A0B9320E3F1D900C50FC8 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		208A0B9420E3F1D900C50FC8 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		208A0B9520E3F1D900C50FC8 /* ServiceEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
-		208A0B9620E3F1D900C50FC8 /* RequestGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestGenerator.swift; sourceTree = "<group>"; };
-		208A0BAF20E3F23C00C50FC8 /* HTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewcontroller.swift; sourceTree = "<group>"; };
 		50CA5BD23A48BF02C620068A /* Pods-TestCleanSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		68ABED78F9693490C02D7BB0 /* Pods-TestCleanSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCleanSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestCleanSwiftTests/Pods-TestCleanSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,14 +127,9 @@
 		A178954320BBEEAB008C40A3 /* InfoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoInteractor.swift; sourceTree = "<group>"; };
 		A178954C20BBF164008C40A3 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		A178954F20BC07C8008C40A3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		A178955220BE59E8008C40A3 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		A1B15B6920BFA9D8005510DB /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		A1BA9C1120CA64740013F580 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		A1BA9C1320CA677C0013F580 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		A1C43B0A20C64FCB0000F306 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
-		A1C43B0C20C650170000F306 /* NetworkTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTransform.swift; sourceTree = "<group>"; };
-		A1C43B0E20C651620000F306 /* NetworkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLog.swift; sourceTree = "<group>"; };
-		A1C43B1020C652970000F306 /* NetworkQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkQueue.swift; sourceTree = "<group>"; };
 		A1F229CC20CF839C00B7AAFF /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		A1F229CD20CF839C00B7AAFF /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
 		A1F229CE20CF839C00B7AAFF /* MainWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorkerTests.swift; sourceTree = "<group>"; };
@@ -223,78 +179,6 @@
 				A169DE3820EA390D00B8A382 /* ActivateEndPoint.swift */,
 			);
 			path = EndPoints;
-			sourceTree = "<group>";
-		};
-		208A0B7E20E3F1D900C50FC8 /* NilNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B7F20E3F1D900C50FC8 /* swift */,
-			);
-			path = NilNetwork;
-			sourceTree = "<group>";
-		};
-		208A0B7F20E3F1D900C50FC8 /* swift */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B8020E3F1D900C50FC8 /* util */,
-				208A0B8520E3F1D900C50FC8 /* config */,
-				208A0B8820E3F1D900C50FC8 /* serialization */,
-				208A0B8A20E3F1D900C50FC8 /* storage */,
-				208A0B8D20E3F1D900C50FC8 /* http */,
-			);
-			path = swift;
-			sourceTree = "<group>";
-		};
-		208A0B8020E3F1D900C50FC8 /* util */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B8120E3F1D900C50FC8 /* Constants.swift */,
-				208A0B8220E3F1D900C50FC8 /* DateStringUtils.swift */,
-				208A0B8420E3F1D900C50FC8 /* Utils.swift */,
-			);
-			path = util;
-			sourceTree = "<group>";
-		};
-		208A0B8520E3F1D900C50FC8 /* config */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B8620E3F1D900C50FC8 /* ConfigUtil.swift */,
-				208A0B8720E3F1D900C50FC8 /* Configuration.swift */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		208A0B8820E3F1D900C50FC8 /* serialization */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B8920E3F1D900C50FC8 /* Serializable.swift */,
-			);
-			path = serialization;
-			sourceTree = "<group>";
-		};
-		208A0B8A20E3F1D900C50FC8 /* storage */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B8B20E3F1D900C50FC8 /* KeychainStorage.swift */,
-				208A0B8C20E3F1D900C50FC8 /* SecureStorage.swift */,
-			);
-			path = storage;
-			sourceTree = "<group>";
-		};
-		208A0B8D20E3F1D900C50FC8 /* http */ = {
-			isa = PBXGroup;
-			children = (
-				208A0BAF20E3F23C00C50FC8 /* HTTP.swift */,
-				208A0B8E20E3F1D900C50FC8 /* DefaultSessionDelegate.swift */,
-				208A0B8F20E3F1D900C50FC8 /* SSLUtil.swift */,
-				208A0B9020E3F1D900C50FC8 /* HTTPClient.swift */,
-				208A0B9220E3F1D900C50FC8 /* Util.swift */,
-				208A0B9320E3F1D900C50FC8 /* Request.swift */,
-				208A0B9420E3F1D900C50FC8 /* Errors.swift */,
-				208A0B9520E3F1D900C50FC8 /* ServiceEndpoint.swift */,
-				208A0B9620E3F1D900C50FC8 /* RequestGenerator.swift */,
-			);
-			path = http;
 			sourceTree = "<group>";
 		};
 		4940D398A8541D242E302F29 /* Frameworks */ = {
@@ -428,7 +312,6 @@
 				A1784CE220D8FAF7003F5C37 /* AppDelegate */,
 				A16EA07620C0F65E007B7201 /* Data */,
 				A1B15B6820BFA9CB005510DB /* Extension */,
-				A178955120BE59D7008C40A3 /* Network */,
 				A178954E20BC07AC008C40A3 /* Models */,
 				A178952D20B8069D008C40A3 /* Scenes */,
 				A178950320B80615008C40A3 /* Main.storyboard */,
@@ -495,19 +378,6 @@
 				A178954F20BC07C8008C40A3 /* Movie.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		A178955120BE59D7008C40A3 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				208A0B7E20E3F1D900C50FC8 /* NilNetwork */,
-				A178955220BE59E8008C40A3 /* NetworkClient.swift */,
-				A1C43B0A20C64FCB0000F306 /* NetworkErrors.swift */,
-				A1C43B0C20C650170000F306 /* NetworkTransform.swift */,
-				A1C43B0E20C651620000F306 /* NetworkLog.swift */,
-				A1C43B1020C652970000F306 /* NetworkQueue.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		A1B15B6820BFA9CB005510DB /* Extension */ = {
@@ -707,9 +577,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NilNetzwerk/NilNetzwerk.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NilNetzwerk.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -870,53 +743,31 @@
 			files = (
 				A178953920B8072D008C40A3 /* MainViewController.swift in Sources */,
 				20AD77B020C6DC780028A2E5 /* UIViewcontroller.swift in Sources */,
-				208A0BA920E3F1D900C50FC8 /* Request.swift in Sources */,
-				208A0BAA20E3F1D900C50FC8 /* Errors.swift in Sources */,
 				A178954420BBEEAB008C40A3 /* InfoPresenter.swift in Sources */,
 				A178953720B8072D008C40A3 /* MainRouter.swift in Sources */,
 				A16EA07420BFF6D5007B7201 /* MainTableViewCell.swift in Sources */,
-				208A0BA320E3F1D900C50FC8 /* SecureStorage.swift in Sources */,
-				208A0BA620E3F1D900C50FC8 /* HTTPClient.swift in Sources */,
 				A1BA9C1420CA677C0013F580 /* BaseViewController.swift in Sources */,
-				208A0B9F20E3F1D900C50FC8 /* ConfigUtil.swift in Sources */,
 				A1784CE420D8FB0B003F5C37 /* ApplicationManager.swift in Sources */,
 				A11CAA3F20DA4DE7003D9F83 /* Logger.swift in Sources */,
 				A16EA07820C0F69E007B7201 /* ImageCaching.swift in Sources */,
 				A178953820B8072D008C40A3 /* MainModels.swift in Sources */,
 				A178954520BBEEAB008C40A3 /* InfoWorker.swift in Sources */,
-				208A0B9E20E3F1D900C50FC8 /* Utils.swift in Sources */,
 				A178954920BBEEAB008C40A3 /* InfoInteractor.swift in Sources */,
-				208A0BAC20E3F1D900C50FC8 /* RequestGenerator.swift in Sources */,
 				A1B15B6A20BFA9D8005510DB /* ImageExtension.swift in Sources */,
-				208A0BAB20E3F1D900C50FC8 /* ServiceEndpoint.swift in Sources */,
-				A178955320BE59E8008C40A3 /* NetworkClient.swift in Sources */,
-				208A0BA220E3F1D900C50FC8 /* KeychainStorage.swift in Sources */,
 				208A0B7D20E3EF9500C50FC8 /* MovieEndPoint.swift in Sources */,
 				A178953520B8072D008C40A3 /* MainPresenter.swift in Sources */,
 				A178954620BBEEAB008C40A3 /* InfoRouter.swift in Sources */,
 				A178953620B8072D008C40A3 /* MainWorker.swift in Sources */,
 				A178954820BBEEAB008C40A3 /* InfoViewController.swift in Sources */,
-				208A0BA020E3F1D900C50FC8 /* Configuration.swift in Sources */,
 				A178950020B80615008C40A3 /* AppDelegate.swift in Sources */,
 				A1BA9C1220CA64740013F580 /* BasePresenter.swift in Sources */,
-				208A0BB020E3F23D00C50FC8 /* HTTP.swift in Sources */,
 				A1F229D520D3708B00B7AAFF /* UIApplication.swift in Sources */,
 				A178953A20B8072D008C40A3 /* MainInteractor.swift in Sources */,
-				208A0B9B20E3F1D900C50FC8 /* Constants.swift in Sources */,
-				A1C43B0D20C650170000F306 /* NetworkTransform.swift in Sources */,
-				208A0BA520E3F1D900C50FC8 /* SSLUtil.swift in Sources */,
-				A1C43B0B20C64FCB0000F306 /* NetworkErrors.swift in Sources */,
-				208A0B9C20E3F1D900C50FC8 /* DateStringUtils.swift in Sources */,
 				20621C6B20CD550B0014C3B2 /* Config.swift in Sources */,
-				208A0BA820E3F1D900C50FC8 /* Util.swift in Sources */,
 				208365ED20D18526003F899D /* UITableView.swift in Sources */,
-				208A0BA420E3F1D900C50FC8 /* DefaultSessionDelegate.swift in Sources */,
 				A169DE3720E9E7EE00B8A382 /* TokenEndPoint.swift in Sources */,
-				208A0BA120E3F1D900C50FC8 /* Serializable.swift in Sources */,
 				20621C6920CD54C70014C3B2 /* APIs.swift in Sources */,
 				A178954720BBEEAB008C40A3 /* InfoModels.swift in Sources */,
-				A1C43B1120C652970000F306 /* NetworkQueue.swift in Sources */,
-				A1C43B0F20C651620000F306 /* NetworkLog.swift in Sources */,
 				A169DE3920EA390D00B8A382 /* ActivateEndPoint.swift in Sources */,
 				A178955020BC07C8008C40A3 /* Movie.swift in Sources */,
 			);

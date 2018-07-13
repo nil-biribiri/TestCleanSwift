@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NilNetzwerk
 
 enum FetchMovieEndPoint {
   case FetchMovieList(page: String)
@@ -53,12 +54,6 @@ extension FetchMovieEndPoint: ServiceEndpoint {
       return "/users"
     case .testError:
       return "/api/unknown/23"
-    }
-  }
-  
-  var requestGenerator: RequestGenerator {
-    get {
-      return StandardRequestGenerator()
     }
   }
   

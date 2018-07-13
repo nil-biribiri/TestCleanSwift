@@ -11,66 +11,15 @@
 //
 
 import UIKit
-
-class TestHttpClient: HTTPClient {
-
-  static let sharedHttpClient = TestHttpClient()
-  private var isRefreshToken: Bool = false
-
-  override func handleUnauthorized(request: Request, completion: @escaping (Bool) -> Result<Error>?) {
-
-    if !isRefreshToken {
-      isRefreshToken = true
-      let tokenRequest = Request(endpoint: TokenEndPoint.getToken)
-      HTTPClient.shared.executeRequest(request: tokenRequest) { (result: Result<TokenResponse>) in
-        self.isRefreshToken = false
-        switch result {
-        case .success(let response):
-          TokenResponse.shared = response.bodyObject
-          while !self.requestsToRetry.isEmpty {
-            let request = self.requestsToRetry.dequeue()
-            request?()
-          }
-        case .failure(_):
-          _ = completion(false)
-        }
-      }
-    }
-
-  }
-
-  override func adapter(request: inout Request) {
-    if !TokenResponse.shared.accessToken.isEmpty {
-      request.updateHTTPHeaderFields(headerFields: [Constants.Authorization : "\(TokenResponse.shared.tokenType) \(TokenResponse.shared.accessToken)"])
-    }
-  }
-}
+import NilNetzwerk
 
 class MainWorker {
   func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
     let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
-    HTTPClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
+    NilNetzwerk.shared.executeRequest(request: request) { (result: Result<MovieList>) in
       completion(result)
     }
   }
 
-  static func testPost() {
-    let request = Request(endpoint: FetchMovieEndPoint.testPost(name: "Yo!", job: "iOS"))
-    HTTPClient.shared.executeRequest(request: request) { (result: Result<testPostModel>) in
-    }
-  }
-
-  static func testError() {
-    //    let httpClient = TestHttpClient()
-    let request = Request(endpoint: ActivateEndPoint.activate)
-    TestHttpClient.sharedHttpClient.executeRequest(request: request) { (result: Result<EDCActivateResponse>) in
-      switch result {
-      case .success(let response):
-        print("ERRRRR  \(response.bodyObject)")
-      case .failure(let error):
-        print(error)
-      }
-    }
-  }
 
 }

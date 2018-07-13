@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NilNetzwerk
 
 struct TokenRequestGenerator: RequestGenerator {
   func generateRequest(withMethod method: HTTPMethod) -> MutableRequest {
