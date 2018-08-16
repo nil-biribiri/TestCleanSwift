@@ -10,64 +10,52 @@ import Foundation
 import NilNetzwerk
 
 enum FetchMovieEndPoint {
-  case FetchMovieList(page: String)
-  case testPost(name: String, job: String)
-  case testError
+    case FetchMovieList(page: String)
+    case GetMovieTrailer(movieId: String)
 }
 
 extension FetchMovieEndPoint: ServiceEndpoint {
 
-  var parameters: Codable?{
-    switch self {
-    case .FetchMovieList:
-      return nil
-    case .testPost(let name, let job):
-      return testPostModel(name: name, job: job)
-    case .testError:
-      return nil
+    var parameters: Codable?{
+        switch self {
+        case .FetchMovieList, .GetMovieTrailer:
+            return nil
+        }
     }
-  }
 
-  var baseURL: URL {
-    switch self {
-    case .FetchMovieList:
-      return URL(string: Config.baseAPI)!
-    case .testPost, .testError:
-      return URL(string: "https://reqres.in/api")!
+    var baseURL: URL {
+        switch self {
+        case .FetchMovieList, .GetMovieTrailer:
+            return URL(string: Config.baseAPI)!
+        }
     }
-  }
-  
-  var method: HTTPMethod {
-    switch self {
-    case .FetchMovieList, .testError:
-      return .GET
-    case .testPost:
-      return .POST
-    }
-  }
-  
-  var path: String {
-    switch self {
-    case .FetchMovieList:
-      return "/discover/tv"
-    case .testPost:
-      return "/users"
-    case .testError:
-      return "/api/unknown/23"
-    }
-  }
-  
-  var queryParameters: [String : String]? {
-    switch self {
-    case .FetchMovieList(let page):
-      return ["api_key" : Config.APIKeys, "language" : "en-US", "sort_by" : "popularity.desc", "page" : page ]
-    case .testPost, .testError:
-      return nil
-    }
-  }
-}
 
-struct testPostModel: Codable {
-  let name: String
-  let job: String
+    var method: HTTPMethod {
+        switch self {
+        case .FetchMovieList, .GetMovieTrailer:
+            return .GET
+        }
+    }
+
+    var path: String {
+        switch self {
+        case .FetchMovieList:
+            return "/discover/movie"
+        case .GetMovieTrailer(let movieId):
+            return "/movie/\(movieId)/videos"
+        }
+    }
+
+    var queryParameters: [String : String]? {
+        switch self {
+        case .FetchMovieList(let page):
+            return ["api_key" : Config.APIKeys,
+                    "language" : "en-US",
+                    "sort_by" : "popularity.desc",
+                    "page" : page ]
+        case .GetMovieTrailer:
+            return nil
+        }
+    }
+
 }

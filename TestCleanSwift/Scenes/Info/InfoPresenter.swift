@@ -27,7 +27,7 @@ class InfoPresenter: InfoPresentationLogic
   func presentMovie(response: Info.Something.Response) {
     let posterPath = APIs.downloadImage.loadImage(withSize: .original, withPath: response.movie.posterPath)
     let rating     = "Rating: \(response.movie.voteAverage)/10"
-    let movie = Info.Something.ViewModel.Movie(movieTitle: response.movie.name,
+    let movie = Info.Something.ViewModel.Movie(movieTitle: response.movie.title,
                                                movieRating: rating,
                                                moviePosterPath: posterPath,
                                                movieOverview: response.movie.overview)

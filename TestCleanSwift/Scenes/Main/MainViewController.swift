@@ -141,7 +141,7 @@ class MainViewController: BaseViewController, MainDisplayLogic
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
-  
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellIdentifier, for: indexPath) as? MainTableViewCell,
       movieList.indices.contains(indexPath.row)

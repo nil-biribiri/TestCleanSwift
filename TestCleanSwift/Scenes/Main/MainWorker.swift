@@ -16,10 +16,22 @@ import NilNetzwerk
 class MainWorker {
   func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
     let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
-    NilNetzwerk.shared.executeRequest(request: request) { (result: Result<MovieList>) in
+    NetworkClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
       completion(result)
     }
   }
+}
 
+struct StandardRequestGenerator: RequestGenerator {}
 
+class NetworkClient: NilNetzwerk {
+
+  override class var shared: NetworkClient{
+    return NetworkClient()
+  }
+
+  override init() {
+    super.init()
+    enableLog = true
+  }
 }

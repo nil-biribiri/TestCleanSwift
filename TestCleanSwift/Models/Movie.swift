@@ -9,45 +9,50 @@
 import Foundation
 
 struct MovieList: Codable, Equatable {
-  var movies: [Movie?]
-  let page: Int
+    var movies: [Movie?]
+    let page: Int
 
-  enum CodingKeys: String, CodingKey {
-    case movies = "results"
-    case page
-  }
+    enum CodingKeys: String, CodingKey {
+        case movies = "results"
+        case page
+    }
 
 }
 
 struct Movie: Codable, Equatable {
-  let name: String
-  let voteAverage: Double
-  let posterPath: String
-  let overview: String
+    let title: String
+    let id: Int
+    let voteAverage: Double
+    let posterPath: String
+    let overview: String
 
-  enum CodingKeys: String, CodingKey {
-    case name
-    case voteAverage = "vote_average"
-    case posterPath  = "poster_path"
-    case overview
-  }
+    enum CodingKeys: String, CodingKey {
+        case title
+        case id
+        case voteAverage = "vote_average"
+        case posterPath  = "poster_path"
+        case overview
+    }
 
-  init(name: String,
-       voteAverage: Double,
-       posterPath: String,
-       overview: String) {
-    self.name = name
-    self.voteAverage = voteAverage
-    self.posterPath = posterPath
-    self.overview = overview
-  }
-  
-  init(from decoder: Decoder) throws {
-    let container         = try decoder.container(keyedBy: CodingKeys.self)
-    
-    name                  = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
-    voteAverage           = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0
-    posterPath            = try container.decodeIfPresent(String.self, forKey: .posterPath) ?? ""
-    overview              = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
-  }
+    init(title: String,
+         id: Int,
+         voteAverage: Double,
+         posterPath: String,
+         overview: String) {
+        self.title = title
+        self.id = id
+        self.voteAverage = voteAverage
+        self.posterPath = posterPath
+        self.overview = overview
+    }
+
+    init(from decoder: Decoder) throws {
+        let container         = try decoder.container(keyedBy: CodingKeys.self)
+
+        title                 = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        id                    = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
+        voteAverage           = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0
+        posterPath            = try container.decodeIfPresent(String.self, forKey: .posterPath) ?? ""
+        overview              = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
+    }
 }

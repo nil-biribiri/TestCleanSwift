@@ -11,10 +11,14 @@
 //
 
 import UIKit
+import NilNetzwerk
 
 class InfoWorker
 {
-  func doSomeWork()
-  {
-  }
+//    func fetchTrailer(id: Int, completion: @escaping (Result<(MovieList)>) -> Void) {
+//        let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
+//        NetworkClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
+//            completion(result)
+//        }
+//    }
 }

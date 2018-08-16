@@ -38,7 +38,7 @@ class MainPresenter: BasePresenter, MainPresentationLogic {
       if let validateError = (response.validateError?.filter{ $0.validateErrorIndex == index }.first) {
         inputErrorMessage = validateError.validateErrorMessage
       }
-      let movie = Main.Something.ViewModel.Movie(movieTitle: eachMovie.name,
+      let movie = Main.Something.ViewModel.Movie(movieTitle: eachMovie.title,
                                                  movieRating: rating,
                                                  moviePosterPath: posterPath,
                                                  movieInputErrorMessage: inputErrorMessage)

@@ -81,8 +81,8 @@ class MainPresenterTests: XCTestCase
     sut.viewController = listOrdersDisplayLogicSpy
     
     // When
-    let mockMovieList = [Movie(name: "Inception", voteAverage: 10, posterPath: "InceptionPath", overview: "Some Inception detail"),
-                         Movie(name: "Shutter Island", voteAverage: 8.5, posterPath: "ShutterIslandPath", overview: "Some Shutter Island detail")]
+    let mockMovieList = [Movie(title: "Inception", voteAverage: 10, posterPath: "InceptionPath", overview: "Some Inception detail"),
+                         Movie(title: "Shutter Island", voteAverage: 8.5, posterPath: "ShutterIslandPath", overview: "Some Shutter Island detail")]
     let mockValidateErrorList = [Main.Something.Response.validateError(validateErrorIndex: 1, validateErrorMessage: "Empty Input.")]
     let mockResponse: Main.Something.Response = Main.Something.Response(movieList: MovieList(movies: mockMovieList, page: 1), validateError: mockValidateErrorList)
     sut.presentMovieList(response: mockResponse)
@@ -91,7 +91,7 @@ class MainPresenterTests: XCTestCase
     let displayedOrders = listOrdersDisplayLogicSpy.viewModel.movieList
     let sourceOrders  = mockResponse.movieList.movies.compactMap{$0}
     for (displayedOrder, sourceOrder) in zip(displayedOrders, sourceOrders) {
-      XCTAssertEqual(displayedOrder.movieTitle, sourceOrder.name, "Presenting fetched orders should properly format order movieTitle")
+      XCTAssertEqual(displayedOrder.movieTitle, sourceOrder.title, "Presenting fetched orders should properly format order movieTitle")
       XCTAssertEqual(displayedOrder.movieRating, "Rating: \(sourceOrder.voteAverage)/10", "Presenting fetched orders should properly format order movieRating")
       XCTAssertEqual(displayedOrder.moviePosterPath, "https://image.tmdb.org/t/p/w200\(sourceOrder.posterPath)", "Presenting fetched orders should properly format order moviePosterPath")
     }

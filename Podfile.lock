@@ -1,12 +1,16 @@
 PODS:
-  - NilNetzwerk (0.1.0)
+  - NilNetzwerk (0.1.1)
 
 DEPENDENCIES:
   - NilNetzwerk
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NilNetzwerk
+
 SPEC CHECKSUMS:
-  NilNetzwerk: 24bbc8301d125a0e5db2a9b769aaa96e202c8137
+  NilNetzwerk: 26d68aaf294a01007887a398523b980c3ac9339d
 
-PODFILE CHECKSUM: a1e35fef04f2138f07fd5206c5bae809b843a867
+PODFILE CHECKSUM: d400171e27c16ec62b7b78672e689392d98ffe5f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

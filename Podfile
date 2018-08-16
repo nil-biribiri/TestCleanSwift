@@ -11,11 +11,15 @@ target 'TestCleanSwift' do
   target 'TestCleanSwiftTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'NilNetzwerk'
+
   end
 
   target 'TestCleanSwiftUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'NilNetzwerk'
+
   end
 
 end
