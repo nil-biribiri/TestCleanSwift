@@ -52,6 +52,8 @@
 		A1B15B6A20BFA9D8005510DB /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B15B6920BFA9D8005510DB /* ImageExtension.swift */; };
 		A1BA9C1220CA64740013F580 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA9C1120CA64740013F580 /* BasePresenter.swift */; };
 		A1BA9C1420CA677C0013F580 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA9C1320CA677C0013F580 /* BaseViewController.swift */; };
+		A1CBF8302126829F00B1B860 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CBF82F2126829F00B1B860 /* Trailer.swift */; };
+		A1CBF83221269BD900B1B860 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CBF83121269BD900B1B860 /* UIView.swift */; };
 		A1DF958D21088733007E973E /* CustomSwizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF958C21088733007E973E /* CustomSwizzle.swift */; };
 		A1E1111A2105B40900F06A8E /* NetworkIntercepter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E111172105B40900F06A8E /* NetworkIntercepter.swift */; };
 		A1E1111B2105B40900F06A8E /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E111182105B40900F06A8E /* NetworkLogger.swift */; };
@@ -132,6 +134,8 @@
 		A1B15B6920BFA9D8005510DB /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		A1BA9C1120CA64740013F580 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		A1BA9C1320CA677C0013F580 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A1CBF82F2126829F00B1B860 /* Trailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
+		A1CBF83121269BD900B1B860 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A1DF958C21088733007E973E /* CustomSwizzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwizzle.swift; sourceTree = "<group>"; };
 		A1E111172105B40900F06A8E /* NetworkIntercepter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkIntercepter.swift; sourceTree = "<group>"; };
 		A1E111182105B40900F06A8E /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				A178954F20BC07C8008C40A3 /* Movie.swift */,
+				A1CBF82F2126829F00B1B860 /* Trailer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				20AD77AF20C6DC780028A2E5 /* UIViewcontroller.swift */,
 				208365EC20D18526003F899D /* UITableView.swift */,
 				A1F229D420D3708B00B7AAFF /* UIApplication.swift */,
+				A1CBF83121269BD900B1B860 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -619,10 +625,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestCleanSwift/Pods-TestCleanSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/NilNetzwerk/NilNetzwerk.framework",
+				"${BUILT_PRODUCTS_DIR}/YoutubeKit/YoutubeKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NilNetzwerk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YoutubeKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -746,6 +754,7 @@
 				A1BA9C1220CA64740013F580 /* BasePresenter.swift in Sources */,
 				A1E1111A2105B40900F06A8E /* NetworkIntercepter.swift in Sources */,
 				A1F229D520D3708B00B7AAFF /* UIApplication.swift in Sources */,
+				A1CBF8302126829F00B1B860 /* Trailer.swift in Sources */,
 				A178953A20B8072D008C40A3 /* MainInteractor.swift in Sources */,
 				A1E1111B2105B40900F06A8E /* NetworkLogger.swift in Sources */,
 				20621C6B20CD550B0014C3B2 /* Config.swift in Sources */,
@@ -753,6 +762,7 @@
 				20621C6920CD54C70014C3B2 /* APIs.swift in Sources */,
 				A1E1111C2105B40900F06A8E /* CustomUrlProtocolRequestInterceptor.swift in Sources */,
 				A117DF7F2105EC7A005C302A /* RequestModel.swift in Sources */,
+				A1CBF83221269BD900B1B860 /* UIView.swift in Sources */,
 				A178954720BBEEAB008C40A3 /* InfoModels.swift in Sources */,
 				A178955020BC07C8008C40A3 /* Movie.swift in Sources */,
 				A1DF958D21088733007E973E /* CustomSwizzle.swift in Sources */,

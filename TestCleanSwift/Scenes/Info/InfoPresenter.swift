@@ -25,12 +25,15 @@ class InfoPresenter: InfoPresentationLogic
   // MARK: Do something
   
   func presentMovie(response: Info.Something.Response) {
-    let posterPath = APIs.downloadImage.loadImage(withSize: .original, withPath: response.movie.posterPath)
-    let rating     = "Rating: \(response.movie.voteAverage)/10"
+    let posterPath  = APIs.downloadImage.loadImage(withSize: .original, withPath: response.movie.posterPath)
+    let rating      = "Rating: \(response.movie.voteAverage)/10"
+    let trailerId   = response.movieTrailers.flatMap{ $0.results }?.filter{ $0.site == "YouTube" && $0.type == "Trailer" }.first?.key
+    let trailerLink = APIs.youtubeLink.generateWithId(id: trailerId)
     let movie = Info.Something.ViewModel.Movie(movieTitle: response.movie.title,
                                                movieRating: rating,
                                                moviePosterPath: posterPath,
-                                               movieOverview: response.movie.overview)
+                                               movieOverview: response.movie.overview,
+                                               movieTrailerLink: trailerLink)
     let viewModel = Info.Something.ViewModel(movie: movie)
     viewController?.displayMovieDetail(viewModel: viewModel)
   }

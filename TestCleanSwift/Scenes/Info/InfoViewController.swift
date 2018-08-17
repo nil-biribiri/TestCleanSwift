@@ -11,89 +11,120 @@
 //
 
 import UIKit
+import WebKit
 
 protocol InfoDisplayLogic: class
 {
-  func displayMovieDetail(viewModel: Info.Something.ViewModel)
+    func displayMovieDetail(viewModel: Info.Something.ViewModel)
 }
 
 class InfoViewController: UIViewController, InfoDisplayLogic
 {
-  
-  var interactor: InfoBusinessLogic?
-  var router: (NSObjectProtocol & InfoRoutingLogic & InfoDataPassing)?
 
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = InfoInteractor()
-    let presenter = InfoPresenter()
-    let router = InfoRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-    
-  // MARK: View lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    interactor?.showMovieDetail()
-    self.navigationController?.navigationBar.accessibilityLabel = "InfoScene.Title"
+    var interactor: InfoBusinessLogic?
+    var router: (NSObjectProtocol & InfoRoutingLogic & InfoDataPassing)?
 
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    setUI()
-  }
-    
-  // MARK: Do something
-  
-//  @IBOutlet weak var movieNameLabel: UILabel!
-  @IBOutlet weak var movieImageView: NilImageCaching!
-  @IBOutlet weak var blurImageView: NilImageCaching! {
-    didSet{
-      blurImageView.addBlurEffect(withStyle: .dark)
+    // MARK: Object lifecycle
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  @IBOutlet weak var movieDetailLabel: UILabel! {
-    didSet{
-      movieDetailLabel.textColor = .white
-      movieDetailLabel.text = ""
+
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
     }
-  }
-  
-  private func setUI() {
-    view.backgroundColor = .black
-  }
-  
-  
-  func displayMovieDetail(viewModel: Info.Something.ViewModel) {
-    title = viewModel.movie.movieTitle
-    movieImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill) {
-      self.blurImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill)
-      self.movieDetailLabel.text = viewModel.movie.movieOverview
+
+    // MARK: Setup
+
+    private func setup()
+    {
+        let viewController = self
+        let interactor = InfoInteractor()
+        let presenter = InfoPresenter()
+        let router = InfoRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
     }
     
-  }
+    // MARK: View lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor?.showMovieDetail()
+        self.navigationController?.navigationBar.accessibilityLabel = "InfoScene.Title"
+
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUI()
+    }
+
+    // MARK: View elements
+
+    @IBOutlet weak var movieImageView: NilImageCaching!
+    @IBOutlet weak var blurImageView: NilImageCaching! {
+        didSet {
+            blurImageView.addBlurEffect(withStyle: .dark)
+        }
+    }
+    @IBOutlet weak var youtubePlayerView: UIView! {
+        didSet {
+            youtubePlayerView.isHidden = true
+            youtubePlayerView.backgroundColor = .clear
+            youtubePlayerView.addSubview(youtubePlayer)
+            youtubePlayer.layoutAttachAll(to: youtubePlayerView)
+        }
+    }
+    @IBOutlet weak var movieDetailLabel: UILabel! {
+        didSet {
+            movieDetailLabel.textColor = .white
+            movieDetailLabel.text = ""
+        }
+    }
+
+    private lazy var webConfiguration: WKWebViewConfiguration = {
+        let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.allowsInlineMediaPlayback = true
+        webConfiguration.mediaTypesRequiringUserActionForPlayback = .all
+        return webConfiguration
+    }()
+
+    private lazy var youtubePlayer: WKWebView = {
+        let webConfiguration = self.webConfiguration
+        return WKWebView(frame: .zero, configuration: webConfiguration)
+    }()
+    
+
+    // MARK: Business logic
+
+    private func setUI() {
+        view.backgroundColor = .black
+        youtubePlayer.isOpaque = false
+    }
+
+
+    func displayMovieDetail(viewModel: Info.Something.ViewModel) {
+        print(webConfiguration)
+        title = viewModel.movie.movieTitle
+        movieImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill) {
+            self.blurImageView.imageCaching(link: viewModel.movie.moviePosterPath, contentMode: .scaleAspectFill)
+            self.movieDetailLabel.text = viewModel.movie.movieOverview
+        }
+        if let trailerLink = viewModel.movie.movieTrailerLink,
+            let trailerURL = URL(string: trailerLink) {
+            youtubePlayerView.isHidden = false
+            youtubePlayer.load(URLRequest(url: trailerURL))
+        } else {
+            youtubePlayerView.isHidden = true
+        }
+    }
 }

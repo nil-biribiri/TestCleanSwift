@@ -15,10 +15,10 @@ import NilNetzwerk
 
 class InfoWorker
 {
-//    func fetchTrailer(id: Int, completion: @escaping (Result<(MovieList)>) -> Void) {
-//        let request = Request(endpoint: FetchMovieEndPoint.FetchMovieList(page: page))
-//        NetworkClient.shared.executeRequest(request: request) { (result: Result<MovieList>) in
-//            completion(result)
-//        }
-//    }
+    func fetchTrailer(movieId: Int, completion: @escaping (Result<(TrailerList)>) -> Void) {
+        let request = Request(endpoint: FetchMovieEndPoint.GetMovieTrailer(movieId: String(movieId)))
+        NetworkClient.shared.executeRequest(request: request) { (result: Result<TrailerList>) in
+            completion(result)
+        }
+    }
 }

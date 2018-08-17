@@ -9,11 +9,11 @@
 import Foundation
 
 struct Config {
-  private init() {}
+    private init() {}
 
-  static let baseAPI        = "https://api.themoviedb.org/3"
-  static let baseImageAPI   = "https://image.tmdb.org/t/p"
-  static let APIKeys        = "e2889e1e96107371259d511ce3c23f8b"
-  
+    static let baseAPI        = "https://api.themoviedb.org/3"
+    static let baseImageAPI   = "https://image.tmdb.org/t/p"
+    static let baseYoutubeAPI = "https://www.youtube.com/embed/"
+    static let APIKeys        = "e2889e1e96107371259d511ce3c23f8b"
 
 }

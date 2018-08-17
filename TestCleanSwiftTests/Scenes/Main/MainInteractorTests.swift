@@ -73,7 +73,7 @@ class MainInteractorTests: XCTestCase
   
   class MainWorkerSuccessSpy: MainWorker {
     var fetchListCalled = false
-    var movieList = MovieList(movies: [Movie(title: "", voteAverage: 0, posterPath: "", overview: "")], page: 1)
+    var movieList = MovieList(movies: [Movie(title: "", id: 0, voteAverage: 0, posterPath: "", overview: "")], page: 1)
     override func fetchList(page: String, completion: @escaping (Result<(MovieList)>) -> Void) {
       fetchListCalled = true
       completion(Result.success(Response(statusCode: 200, body: nil, bodyObject: movieList, responseHeaders: nil, url: nil)))
@@ -183,7 +183,7 @@ extension MainInteractorTests {
     sut.presenter = spy
     let workerSpy = MainWorkerSuccessSpy()
     sut.worker = workerSpy
-    sut.movieList = MovieList(movies: [Movie(title: "", voteAverage: 0, posterPath: "", overview: "")], page: 1)
+    sut.movieList = MovieList(movies: [Movie(title: "", id: 0, voteAverage: 0, posterPath: "", overview: "")], page: 1)
     sut.currentPage = 10
     let request = Main.Something.Request(loadingIndicator: false)
     let storedMovieList = sut.movieList!

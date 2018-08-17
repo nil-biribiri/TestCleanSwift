@@ -12,28 +12,25 @@
 
 import UIKit
 
-enum Info
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum Info {
+    // MARK: Use cases
+
+    enum Something {
+        struct Request {
+        }
+        struct Response {
+            let movie: Movie
+            let movieTrailers: TrailerList?
+        }
+        struct ViewModel {
+            struct Movie {
+                let movieTitle: String
+                let movieRating: String
+                let moviePosterPath: String
+                let movieOverview: String
+                let movieTrailerLink: String?
+            }
+            let movie: Movie
+        }
     }
-    struct Response
-    {
-      let movie: Movie
-    }
-    struct ViewModel
-    {
-      struct Movie {
-        let movieTitle: String
-        let movieRating: String
-        let moviePosterPath: String
-        let movieOverview: String
-      }
-      let movie: Movie
-    }
-  }
 }

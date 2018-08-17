@@ -54,7 +54,7 @@ extension FetchMovieEndPoint: ServiceEndpoint {
                     "sort_by" : "popularity.desc",
                     "page" : page ]
         case .GetMovieTrailer:
-            return nil
+            return ["api_key" : Config.APIKeys]
         }
     }
 

@@ -27,21 +27,28 @@ class InfoInteractor: InfoBusinessLogic, InfoDataStore
   var movie: Movie!
   
   var presenter: InfoPresentationLogic?
-  var worker: InfoWorker?
-  //var name: String = ""
-  
+  var worker = InfoWorker()
+
   // MARK: Do something
   
-  func doSomething(request: Info.Something.Request)
-  {
+  func doSomething(request: Info.Something.Request) {
 //    worker = InfoWorker()
 //    worker?.doSomeWork()
 //
 //    let response = Info.Something.Response()
 //    presenter?.presentSomething(response: response)
-  }
+}
   
   func showMovieDetail() {
-    presenter?.presentMovie(response: Info.Something.Response(movie: movie))
+    worker.fetchTrailer(movieId: movie.id) { (result) in
+        switch result {
+        case .success(let value):
+            self.presenter?.presentMovie(response: Info.Something.Response(movie: self.movie,
+                                                                      movieTrailers: value.bodyObject))
+        case .failure(_):
+            self.presenter?.presentMovie(response: Info.Something.Response(movie: self.movie,
+                                                                      movieTrailers: nil))
+        }
+    }
   }
 }

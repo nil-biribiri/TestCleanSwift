@@ -1,16 +1,20 @@
 PODS:
   - NilNetzwerk (0.1.1)
+  - YoutubeKit (0.2.3)
 
 DEPENDENCIES:
   - NilNetzwerk
+  - YoutubeKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - NilNetzwerk
+    - YoutubeKit
 
 SPEC CHECKSUMS:
   NilNetzwerk: 26d68aaf294a01007887a398523b980c3ac9339d
+  YoutubeKit: 7daf33f208f40bf5c3fe8966b918d52723667258
 
-PODFILE CHECKSUM: d400171e27c16ec62b7b78672e689392d98ffe5f
+PODFILE CHECKSUM: b994ffc281d08baf8bb524e3517b065f39b8e640
 
 COCOAPODS: 1.5.3

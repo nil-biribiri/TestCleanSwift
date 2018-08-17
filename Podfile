@@ -7,6 +7,7 @@ target 'TestCleanSwift' do
 
   # Pods for TestCleanSwift
   pod 'NilNetzwerk'
+  pod 'YoutubeKit'
 
   target 'TestCleanSwiftTests' do
     inherit! :search_paths
